@@ -10,7 +10,7 @@ Welcome to the snake pit!
 
 Please commit daily. That way we can provide you with feedback :) or just a thumbs up if everything looks good. Here is a good resource that describes how daily commit process should go.
 
-https://codingdojo-dallas.slack.com/files/katemoc/F427ZQZPY/github_workflow_v4.pdf
+https://www.dropbox.com/s/h3texmoqm801j8w/github_workflow_v4.pdf?dl=0
 
 # Videos
 
