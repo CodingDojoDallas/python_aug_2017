@@ -17,3 +17,10 @@ https://codingdojo-dallas.slack.com/files/katemoc/F427ZQZPY/github_workflow_v4.p
 Coming soon...
 
 # Resources
+
+[Python 2.7 Documentation](https://docs.python.org/2/library/index.html "Python 2.7 Documentation") <br>
+[PythonDocs - In Depth Tutorial](https://docs.python.org/2/tutorial/index.html "PythonDocs - In Depth Tutorial") <br>
+
+
+
+
