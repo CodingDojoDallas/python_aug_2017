@@ -1,4 +1,4 @@
-Python - March 2017
+Python - August 2017
 ====================
 
 Welcome to the snake pit! 
