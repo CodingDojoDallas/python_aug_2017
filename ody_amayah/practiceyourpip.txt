@@ -1,0 +1,9 @@
+Installed Django and the requirements are satisfied.
+Pip list brings up a bunch of weird list of installs
+Already installed and the requirements are still satisfied.
+Pip freeze brings up a list also like the pip list but with a different number.
+Pip freeze > requirements.txt created a .txt file that has  the pip list.
+Pip uninstall Django uninstalls a lot of .pyc files and then asks for a confirmation y/n.
+Y and it successfully uninstalled Django.
+Pip show Django brings out nothing
+Pip search Flask seems to be loading and I’m waiting for the files to show up.It brought up a lot of flasked installs.
