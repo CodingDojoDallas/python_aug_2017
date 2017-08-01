@@ -10,6 +10,8 @@
 # sum list
 a = [1, 2, 5, 10, 255, 3]
 print sum(a)
+
+#average list
 print sum(a)/len(a)
 
 
