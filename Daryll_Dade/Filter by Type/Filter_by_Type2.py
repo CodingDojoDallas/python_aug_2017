@@ -12,8 +12,3 @@ mL = [3, 5, 7, 34, 3, 2, 113, 65, 8, 89]
 lL = [4, 34, 22, 68, 9, 13, 3, 5, 7, 9, 2, 12, 45, 923]
 eL = []
 spL = ['name', 'address', 'phone number', 'social security number']
-
-def filterByType(sI):
-    if x is
-        print x + "is a number"
-        if x is
