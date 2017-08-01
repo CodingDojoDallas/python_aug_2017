@@ -1,5 +1,5 @@
 #find and replace
-words = "It's thanksgiving day. It's my birthday, too"
+words = "It's Thanksgiving day. It's my birthday, too"
 # string.find(substring): returns the index of the start of the first occurrence of substring within string.
 print words.find('day')
 print words.replace('day','month')
