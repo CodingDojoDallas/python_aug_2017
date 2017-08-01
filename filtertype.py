@@ -33,3 +33,34 @@ if len(list)>=10:
     print 'big list!'
 elif len(list)<10:
     print 'short list!'
+
+mixed_list = ['magical unicorns',19,'hello',98.98,'world']
+integer_list = [2,3,1,7,4,12]
+string_list = ['magical','unicorns']
+
+def type_list(lst):
+    new_string = ''
+    total = 0
+
+    for value in lst:
+        if isinstance(value, int) or isinstance(value, float):
+            total += value
+        elif isinstance(value, str):
+            new_string += value
+
+    if new_string and total:
+        print "The array you entered is of mixed type"
+        print "String:", new_string
+        print "Sum:", total
+
+    elif total:
+        print "The array you entered is of integer type"
+        print "Sum:", total
+
+    else:
+        print "The array you entered is of string type"
+        print "String:",new_string
+
+print type_list(mixed_list)
+print type_list(integer_list)
+print type_list(string_list)
