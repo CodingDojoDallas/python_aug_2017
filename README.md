@@ -14,7 +14,7 @@ https://www.dropbox.com/s/h3texmoqm801j8w/github_workflow_v4.pdf?dl=0
 
 # Videos
 
-Coming soon...
+[Intro to Python](https://youtu.be/Q7m9ktPyQXY "Intro to Python") <br>
 
 # Resources
 
