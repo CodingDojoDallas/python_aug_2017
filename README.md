@@ -15,7 +15,10 @@ https://www.dropbox.com/s/h3texmoqm801j8w/github_workflow_v4.pdf?dl=0
 # Videos
 
 [Intro to Python](https://youtu.be/Q7m9ktPyQXY "Intro to Python") <br>
-[Python OOP](https://youtu.be/8geYlZAOCQM "Python OOP") <br>
+[Python OOP - Intro](https://youtu.be/8geYlZAOCQM "Python OOP") <br>
+[Python OOP - Deck of Cards](https://youtu.be/jDq8xPocaAg "Python OOP - Deck of Cards") <br>
+
+
 
 # Resources
 
