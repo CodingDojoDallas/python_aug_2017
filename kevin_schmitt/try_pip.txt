@@ -1,0 +1,27 @@
+pip install Django:
+this installs django into your python path
+
+pip list:
+lists installed packages
+
+pip install django:
+collecting django
+collecting pytz
+installing the collected packages
+successfully installed django  pytz
+
+pip freeze:
+freeze                      Output installed packages in requirements format.
+list                        List installed packages.
+
+pip freeze > requirements.txt
+using cmd prompt doesn't allow ls cmd
+
+pip uninstall django:
+runs long list of items being unistalled
+
+pip show django:
+nothing happens. no django to show
+
+pip search flask:
+returns a long list of all files associated with flask
