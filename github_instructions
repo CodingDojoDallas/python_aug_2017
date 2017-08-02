@@ -15,16 +15,12 @@ update your repository
 	git fetch upstream
 	git merge upstream/master
 
-create a new branch
-	git checkout -b <Your Name>_<TIME>_<DATE>
-
 copy assignments from temp folder to your named folder in repo
 
 add and commit your new files/folders
 	git add .
 	git commit -m '<NAME OF ASSIGNMENTS TO TURN IN>'
-	git push (you'll receive a message saying to use a more specific command, USE IT!!)
-	<INSERT MORE SPECIFIC COMMAND>
+	git push
 
 Go to website of your repo on github github.com/<username>/<repo name>
 
