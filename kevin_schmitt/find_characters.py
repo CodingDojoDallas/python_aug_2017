@@ -3,7 +3,8 @@
 # # char = 'o'
 # output
 
-
+myList = ['hello','world','my','name','is','Anna']
+char = 'o'
 
 def find_char(arr, str):
     myList = []
@@ -12,8 +13,7 @@ def find_char(arr, str):
             myList.append(word)
     return myList
 
-myList = ['hello','world','my','name','is','Anna']
-char = 'o'
+
 print find_char(myList,char)
 
     
