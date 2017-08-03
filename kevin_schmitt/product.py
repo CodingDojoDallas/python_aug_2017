@@ -44,7 +44,7 @@ class product(object):
 
 
 
-pro1 = product(25,'Clorox',8,'great value',12,'for sale',.0825)
+pro1 = product(25,'Clorox',8,'great value',12,'sold',.0825)
 pro2 = product(14,'Cheerios',3,'general mills',2,'for sale',.0825)
 pro3 = product(16,'Pizza',5,'digorno',10,'for sale',.0825)
 
