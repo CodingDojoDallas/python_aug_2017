@@ -21,17 +21,30 @@ class Product(object):
 #  Return: takes reason for return as a parameter and changes status accordingly. If the item is being returned because it is defective change status to defective and change price to 0. If it is being returned in the box, like new mark it as for sale. If the box has been opened set status to used and apply a 20% discount.
     def giveBack(self, reason):
         if reason == "defective":
-            print 'test 1'
+            # print 'test 1'
+            self.status = defective
+            self.price = 0
+            return self
         elif reason == "like new":
-            print 'test 2'
+            # print 'test 2'
+            self.status = "for sale"
+            return self
         elif reason == "opened":
-            print 'test 3'
-            # self.status = "used"
-            # self.price += price* 1/5
+            # print 'test 3'
+            self.status = "used"
+            self.price -= self.price* 1/5
+            # print self.status, self.price
+            return self
 
-product1 = Product(.10,"apple", .5, "Fuji", .40)
+        #  Display Info: show all product details.
+        # price, item_name, weight, brand, cost
+    def displayInfo(self):
+        print "The price of this {} {} is:${}, it weighs:{}lbs, it cost:${}.".format(self.brand,self.item_name,self.price,self.weight,self.cost)
+
+
+product1 = Product(70.15,"apple", .5, "Fuji", 654.40)
 tax = .08
-product1.giveBack('opened')
+product1.displayInfo()
 
 
 # Product Class:
