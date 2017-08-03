@@ -46,5 +46,6 @@ crow = Animal('Crow',80)
 cat = Animal('Cat',70)
 bird = Animal('Tweety',20)
 dragon = Dragon('duke',199)
-# crow.walk().walk().walk().run().run().display_health()
+
+crow.walk().walk().walk().run().run().display_health()
 dragon.healthinfo()
