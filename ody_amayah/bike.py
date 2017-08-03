@@ -20,13 +20,18 @@ class bike(object):
         return self
 
 
-     def reverse(self):
+    def reverse(self):
          print 'reversing'
          if self.miles >= 10:
-             mile -= 10
+             self.miles -= 10
              return self
 
 
+
+bike1 = bike(100, 15)
+bike1.ride()
+bike1.displayInfo()
+bike1.reverse()
 
 
 
