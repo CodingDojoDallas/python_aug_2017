@@ -1,52 +1,43 @@
 class Product(object):
     def __init__(self, item_name, weight, price, brand, status):
-        self.item_name = name
+        self.item_name = item_name
         self.weight = weight
         self.price = price
         self.brand = brand
-        self.cost = cost
-        self.tax = 0.10
-                 
-
+        self.status = status            
+    
 
     def displayInfo(self):
-        print "Price is: ${} ".format(self.cost * self.tax)
-        print 'Item name is : ' + str(self.item_name)
-        print 'Weight is' + str(self.weight) + 'gram'
-        print 'Item is by' + str(self.brand) + 'brand'
+        print 'Item name is: ' + str(self.item_name)
+        print 'Weight is ' + str(self.weight) 
+        print 'Item is by ' + str(self.brand) + ' brand'
         return self
 
-    def sell(self):
-      if self.status == :
-         print "Fuel is: {} gal ".format(self.fuel) +  "Kind of Full"
+    def totalprice(self):
+        tax = 0.0825
+        self.price += tax
+        print self.price
 
-      elif self.fuel == 15:
-         print "Fuel is: {} gal ".format(self.fuel) +  "Full"
+    def return1(self):
+        if self.status == 'defective':
+            self.price = 0
+            print 'Price is $ ' + str(self.price)
+        elif self.status == 'used':
+            print "Price is $" .format(self.price * 0.20)    
+        else:
+            print "For Sale " + "Price is $" + str(self.price)
 
-      elif self.fuel == 5:
-         print "Fuel is: {} gal ".format(self.fuel) +  "Not Full"
-      else:       
-        print "Fuel is: {} gal ".format(self.fuel) +  "Empty"
         return self
 
     
              
 
-car1 = Car(12000, 65, 10, 10)
-car2 = Car(9000, 55, 5, 12)
-car3 = Car(15000, 55, 0, 16)
-car4 = Car(14500, 65, 15, 13)
-car5 = Car(7000, 30, 10, 15)
-car6 = Car(17000, 75, 15, 14)
-car1.display().gas()
+product1=Product('tidepods', 200, 4.60, 'tide', 'used' )
+product2=Product('Box', 50, 5.60, 'rubbermaid', 'new' )
+product3=Product('shorts', 100, 24.99, 'Merona', 'defective' )
+product1.displayInfo().return1().totalprice()
 print "  "
-car2.display().gas()
+product3.displayInfo().return1().totalprice()
 print "  "
-car3.display().gas()
-print "  "
-car4.display().gas()
-print "  "
-car6.display().gas()
-print "  "
-car5.display().gas()
+product2.displayInfo().return1().totalprice()
 print "  "
