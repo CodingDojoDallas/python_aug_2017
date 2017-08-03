@@ -21,6 +21,9 @@ class Bike(object):
         else:
             self.miles -= 0
             print "Can't reverse anymore."
+            return self
+            break
+
 
 
 
@@ -35,4 +38,4 @@ Road = Bike(1000, 40)
 
 # BMX.ride().ride().ride().reverse().displayInfo()
 # Mountain.ride().ride().reverse().reverse().displayInfo()
-Road.reverse().reverse().reverse()
+Road.reverse().reverse().reverse().displayInfo()
