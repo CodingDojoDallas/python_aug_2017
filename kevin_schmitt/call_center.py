@@ -27,12 +27,15 @@ class CallCenter(object):
     #     for i in queue:
     #         print "{}: {}".format(self.name,self.number)
     #         print len(queue)
-    def search_remove(self):
 
+    # def search_remove(self, number):
+    #     for i in range(0):
+    #         if i == number:
+    #            self.queue_list.pop(i) 
 
 center = CallCenter()
 dave = Call(231,'Dave','303-283-9485','8:43am','help')
 center.add(dave)
-center.remove()
+# center.remove()
 print center.calls
 print center.queue_size
