@@ -1,9 +1,0 @@
-pip install django - it has database API functionality, upports many different database servers ( PostgreSQL, MySQL, Oracle and SQLite)
-pip list - gives a list of all the installed packages and editables
-pip install django - Requirement already satisfied (use --upgrade to upgrade): django in c:\python27\lib\site-packages
-			basically it tells me that ive already installed django and to upgrade it i need to use the upgrade command
-pip freeze - packages are listed in a case-insensitive sorted order. its missing pip and setuptools.
-	i only saw the normal files/folders that were already in the desktop
-pip uninstall django - looks like it uninstalled a giant list of files
-pip show django - gives a list of the django info, name,version,summary, etc..
-pip search flask - searches for things with the name of flask
