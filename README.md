@@ -17,7 +17,9 @@ https://www.dropbox.com/s/h3texmoqm801j8w/github_workflow_v4.pdf?dl=0
 [Intro to Python](https://youtu.be/Q7m9ktPyQXY "Intro to Python") <br>
 [Python OOP - Intro](https://youtu.be/8geYlZAOCQM "Python OOP") <br>
 [Python OOP - Deck of Cards](https://youtu.be/jDq8xPocaAg "Python OOP - Deck of Cards") <br>
-[Python Flask - Render Templates & Passing Data](https://youtu.be/_pL-c6C6w_0 "Python Flask - Render Templates & Passing Data") <br>
+[Python Flask - Render Templates & Passing Data](https://youtu.be/itXnqPaOFFw "Python Flask - Render Templates & Passing Data") <br>
+[Python Flask - Post Requests](https://youtu.be/_pL-c6C6w_0 "Python Flask - Post Requests") <br>
+
 
 # Resources
 
