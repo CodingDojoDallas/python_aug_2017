@@ -1,0 +1,22 @@
+<html>
+    <head>
+
+    </head>
+    <body>
+        <div>
+            <h1>these are all of my users!</h1>
+            <table>
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                </tr>
+                {% for user in users %}
+                <tr>
+                    <td>{{ user['name'] }}</td>
+                    <td>{{ user['email'] }}</td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+    </body>
+</html>
