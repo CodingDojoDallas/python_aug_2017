@@ -54,7 +54,6 @@ class Player(object):
 
 
 a = Deck()
-print 'After Shuffle:'
 for card in a.deck:
     print "{} of {}".format(card.value, card.suit)
 
@@ -63,12 +62,12 @@ bob = Player('Bob')
 karen = Player('Kevin')
 players = [cody, bob, karen]
 
-a.shuffle()
+a.deal(players, 2)
 
 for player in players:
     print '*'*50
     print "{}'s hand contains:".format(player.name)
     for card in player.hand:
         print "{} of {}".format(card.value, card.suit)
-
-print "Deck contains {} cards".format(len(a.deck))
+print '*'*50
+print "Deck now contains {} cards".format(len(a.deck))
