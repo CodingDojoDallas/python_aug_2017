@@ -3,14 +3,16 @@ app = Flask(__name__)
 
 @app.route('/')
 def index_page():
-    return render_template(index.html)
+    return render_template("index.html")
 
 @app.route('/ninjas')
 def ninja_page():
-    return render_template(ninjas.html)
+    return render_template("ninjas.html")
 
 @app.route('/dojos/new')
 def dojo_page():
-    return render_template(dojo.html)
+    return render_template("dojos.html")
+
+
 
 app.run(debug=True)
