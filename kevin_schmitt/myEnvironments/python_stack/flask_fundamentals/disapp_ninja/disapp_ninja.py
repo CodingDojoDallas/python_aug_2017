@@ -16,6 +16,9 @@ def show_user_profile(username):
     print username
     return render_template('blue.html', username=username)
 
+@app.errorhandler(404)
+def page_not_found(e):
+    return render_template('404notFound.html'), 404
 
 
 
