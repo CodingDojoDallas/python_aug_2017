@@ -5,4 +5,9 @@
 
 
 def find_data_type(arrayToTest):
-    if
+    strings =[]
+    for element in array:
+    if element ==  type(string):
+        strings.append
+
+arrayToTest = [hello, world,  42, so, long]
