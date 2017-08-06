@@ -16,5 +16,6 @@ def result():
 	print name, location
 
 	return render_template('result.html', name = name, location = location, language = language, comment = comment)
+	
 
 app.run(debug=True)
