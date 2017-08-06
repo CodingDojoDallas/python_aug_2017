@@ -8,7 +8,7 @@ def index():
 
 @app.route('/process', methods=['POST'])       #must methods=['POST'] to take in info filled out from index
 def process():
-     print request.form['name']      #you HAVE to improt request at top for this to work
+     print request.form['name']      #you HAVE to improt request at top for this to work. this allows you to print the name filled in on the form.
      return redirect('/end')
 
 @app.route('/end')    

@@ -1,6 +1,8 @@
-from flask import Flask, render_template, redirect, request
+from flask import Flask, render_template, redirect, request, session
 
 app = Flask(__name__)
+app.secret_key = 'ThisIsSecret'   #this line is always needed when using the import 'session'
+
 
 @app.route('/')     #methods=['GET'] by default
 def index():
@@ -11,12 +13,12 @@ def ninja():
     return render_template('ninja.html')
 
 
-@app.route('/ninja/<username>')
+@app.route('/ninja/<username>')         #great example of using a variable in an html and the image needed on that specific page
 def show_user_profile(username):
     print username
     return render_template('blue.html', username=username)
 
-@app.errorhandler(404)
+@app.errorhandler(404)         #modifies your 404 url not found page to whatever you have on your html file
 def page_not_found(e):
     return render_template('404notFound.html'), 404
 
