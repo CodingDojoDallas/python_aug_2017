@@ -12,7 +12,7 @@ def index():
 
 
 @app.route('/guess', methods=['POST'])
-def number_guessing_game():    
+def number_guessing_game():
     number = random.randint(1,101)
     numguess = int(request.form['numguess'])
 
@@ -23,7 +23,7 @@ def number_guessing_game():
             return render_template('toohigh.html')
         elif numguess < number:
             return render_template('toolow.html')
-        
+
 app.route('/reset', methods=['POST'])
 def reset():
     return redirect('/')      
