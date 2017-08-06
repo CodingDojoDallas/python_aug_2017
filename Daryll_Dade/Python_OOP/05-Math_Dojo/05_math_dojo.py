@@ -21,3 +21,5 @@ class MathDojo(object):
             else:
                 self.result -= arg
         return self
+
+print 'C'
