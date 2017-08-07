@@ -2,3 +2,10 @@
     display: inline-block;
     background: yellow;
 }
+#activity{
+    border: 5px solid green;
+}
+#activity{
+    height: 300px;
+    overflow-y: auto;
+}
