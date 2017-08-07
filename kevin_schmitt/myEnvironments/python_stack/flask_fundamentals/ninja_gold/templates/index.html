@@ -37,7 +37,14 @@
         <input type="submit" value="Find Gold!"/>
         </form>
     </div>
+    <p>Activities:</p>
+    <div id='activity'>
+        {% for activity in activities%}
 
+        <p>{{ activity }}</p>
+
+        {% endfor %}
+    </div>
 
 </body>
 </html>

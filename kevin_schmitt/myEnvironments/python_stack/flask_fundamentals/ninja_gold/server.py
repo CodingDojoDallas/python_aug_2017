@@ -1,15 +1,18 @@
 from flask import Flask, render_template, redirect, request, session
 import random
+from datetime import datetime
+
 app = Flask(__name__)
 app.secret_key = 'somethingSecret'
-
 
 
 @app.route('/')     #methods=['GET'] by default
 def index(): 
     if 'gold' not in session: 
         session['gold']=0
-    return render_template('index.html', gold = session['gold'])
+    if 'activities' not in session:
+        session['activities'] = []
+    return render_template('index.html', gold = session['gold'], activities = session['activities'])
 
 @app.route('/process_money', methods=['POST'])       #must methods=['POST'] to take in info filled out from index
 def process_money():
@@ -27,9 +30,15 @@ def process_money():
     elif button == 'casino':
         number = random.randint(-50,51)
         session['gold'] += number
-    
+
+    #Earned 15 gold from the farm! 08/07/2017
+
+    session['activities'].append("Earned {} gold from the {}!  {}".format(number,button,str(datetime.now())))
+
     
     return redirect('/')
+
+
 
 
 
