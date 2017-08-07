@@ -7,33 +7,33 @@
 </head>
 <body>
     <div id='gold_count'>
-        <h51>Your Gold: {{  goldAmount  }}</h5>    
+        <h51>Your Gold: {{  gold  }}</h5>    
     </div>    
     <div id='farm'>
         <h4>Farm</h4><p>(earns 10-20 golds)</p>                         
         <form action="/process_money" method="post">
-        <input type="hidden" name="farm" value="farm" />
+        <input type="hidden" name="location" value="farm" />
         <input type="submit" value="Find Gold!"/>
         </form>
     </div>
     <div id='cave'>                    
         <h4>Cave</h4><p>(earns 5-10 golds)</p>                         
         <form action="/process_money" method="post">
-        <input type="hidden" name="cave" value="cave" />
+        <input type="hidden" name="location" value="cave" />
         <input type="submit" value="Find Gold!"/>
         </form>        
     </div>
     <div id='house'>
         <h4>House</h4><p>(earns 2-5 golds)</p>                         
         <form action="/process_money" method="post">
-        <input type="hidden" name="house" value="house" />
+        <input type="hidden" name="location" value="house" />
         <input type="submit" value="Find Gold!"/>
         </form>
     </div>
     <div id='casino'>
         <h4>Casino</h4><p>(earns/takes 0-50 golds)</p>                         
         <form action="/process_money" method="post">
-        <input type="hidden" name="casino" value="casino" />
+        <input type="hidden" name="location" value="casino" />
         <input type="submit" value="Find Gold!"/>
         </form>
     </div>
