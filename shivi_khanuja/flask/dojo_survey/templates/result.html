@@ -1,15 +1,32 @@
+<!DOCTYPE html>
 <html>
-    <head>
-        
-    </head>
+  <head>
+    <meta charset="utf-8">
+    <title>Dojo Survey Index</title>
+  </head>
+  <body>
+    <div>
 
-    <body>
-        <div>
-        <h1>Submitted Info :</h1>
-        </div> 
-       <div>
-           <button type="Submit">Go Back</button>
-       </div>
+    <h2><u>Submitted Info</u></h2>
+    <table>
+      <tr>
+        <th>Name</th>
+        <th>Location</th>
+        <th>Language</th>
+        <th>comments</th>
+      </tr>
+       {% for user in users %}
+       <tr>
+         <td>{{user['name']}}</td>
+         <td>{{user['location']}}</td>
+         <td>{{user['language']}}</td>
+         <td>{{user['comments']}}</td>
+       </tr>
 
-    </body>
+       {% endfor %}
+    </table>
+      <button type="button" name="submit"><a href="/">Go Back</a></button>
+
+</div>
+  </body>
 </html>
