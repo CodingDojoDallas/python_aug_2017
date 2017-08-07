@@ -13,9 +13,9 @@ class mathdojo(object):
         for num in nums:
             if type(num) == list or type(num) == tuple:
                 for k in num:
-                    self.result += k
+                    self.result -= k
             else:
-                self.result += num
+                self.result -= num
         return self
 
 # md = mathdojo()

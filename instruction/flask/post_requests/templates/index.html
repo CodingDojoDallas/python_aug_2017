@@ -1,11 +1,12 @@
 <html>
     <head>
-
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
     </head>
     <body>
         <div>
             <h1>Fill out the form to make a new user</h1>
             <form action="/users" method="post">
+                <input type="hidden" name="hidden" value="hidden_value">
                 <div>
                     <label for="">Name</label>
                     <input type="text" name="name">
@@ -14,8 +15,7 @@
                     <label for="">Email</label>
                     <input type="text" name="email">
                 </div>
-                <input type="submit" value="Create User">
-                <button type="submit">Create User B</button>
+                <input type="submit" value="Login">
             </form>
         </div>
     </body>

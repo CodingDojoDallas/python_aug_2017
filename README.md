@@ -22,7 +22,7 @@ https://www.dropbox.com/s/h3texmoqm801j8w/github_workflow_v4.pdf?dl=0
 [Python Flask - Session, Route Params, & Hidden Inputs
 ](https://youtu.be/1a7kQXdJ8q8 "Python Flask - Session, Route Params, & Hidden Inputs
 ") <br>
-
+[Python Flask - Form Validation](https://youtu.be/ibLTCJV6es4 "Python Flask - Form Validation") <br>
 
 # Resources
 
@@ -31,12 +31,6 @@ https://www.dropbox.com/s/h3texmoqm801j8w/github_workflow_v4.pdf?dl=0
 [Python Style Guide](https://www.python.org/dev/peps/pep-0008/#code-lay-out "Python Style Guide") <br>
 [Python - Built-In List Methods](https://infohost.nmt.edu/tcc/help/pubs/python/web/list-methods.html "Python - Built-In List Methods") <br>
 [Tutorials Point - Python](https://www.tutorialspoint.com/python/index.htm "Tutorials Point - Python") <br>
-
-
-
-
-
-
-
-
+[SQLZoo - MySQL Tutorials](http://sqlzoo.net/ "SQLZoo - mySQL Tutorials") <br>
+[Tutorials Point - MySQL](https://www.tutorialspoint.com/mysql/index.htm "Tutorials Point - MySQL") <br>
 
