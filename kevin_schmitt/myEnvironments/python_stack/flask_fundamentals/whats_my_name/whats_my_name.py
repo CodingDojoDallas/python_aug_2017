@@ -13,7 +13,7 @@ def process():
 
 @app.route('/end')    
 def end():    
-    return 'This is the end of the road.!'
+    return 'Thank you for submitting your information!!'
     
 
 

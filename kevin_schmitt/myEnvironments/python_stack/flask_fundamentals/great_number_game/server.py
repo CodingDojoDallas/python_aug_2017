@@ -24,7 +24,7 @@ def number_guessing_game():
         elif numguess < number:
             return render_template('toolow.html')
 
-app.route('/reset', methods=['POST'])
+@app.route('/reset', methods=['POST'])
 def reset():
     return redirect('/')      
 
