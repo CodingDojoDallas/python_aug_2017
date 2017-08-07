@@ -23,6 +23,7 @@ https://www.dropbox.com/s/h3texmoqm801j8w/github_workflow_v4.pdf?dl=0
 ](https://youtu.be/1a7kQXdJ8q8 "Python Flask - Session, Route Params, & Hidden Inputs
 ") <br>
 [Python Flask - Form Validation](https://youtu.be/ibLTCJV6es4 "Python Flask - Form Validation") <br>
+[MySQL - Intro to ERDs](https://youtu.be/WiGja4lAMdA "MySQL - Intro to ERDs") <br>
 
 # Resources
 
