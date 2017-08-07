@@ -18,7 +18,7 @@ def makeStudent():
 
 @app.route("/applicantCreated", methods=["GET"])
 def displayInfo():
-    
+    return render_template('applicantCreated.html')
 
 
 app.run(debug=True)
