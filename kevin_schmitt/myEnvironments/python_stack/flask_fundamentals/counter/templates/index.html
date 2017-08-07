@@ -1,0 +1,22 @@
+<html>
+<head>
+    <meta charset='utf-8'>
+  <title>Counter Index</title>
+  <link rel='stylesheet' type='text/css' href='{{ url_for('static', filename='index.css') }}'>
+  <script type='text/javascript' src='{{ url_for('static', filename='my_script.js') }}'></script>
+</head>
+<body>
+    <div>
+        <h1>You have visited this page {{ count }} time(s)!!!</h1>
+    </div>
+    <div>
+        <form action='/next' method='post'>
+        <input type='submit' value='reset'>
+        <button type='submit'>Reset</button>
+        </form>
+    </div>
+
+
+
+</body>
+</html>

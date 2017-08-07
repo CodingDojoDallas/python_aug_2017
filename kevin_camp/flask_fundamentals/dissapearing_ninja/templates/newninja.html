@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="/static/my_style.css">
+	<meta charset="utf-8">
+	<title>Ninja</title>
+</head>
+<body>
+  {% if filename %}
+      <img src="{{ url_for('static', filename = 'img/' + filename + '.jpg')}}">
+  {% endif %}
+  <button><a href="/ninja">Back</a></button>
+</body>
+</html>
