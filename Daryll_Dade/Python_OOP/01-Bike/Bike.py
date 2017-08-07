@@ -1,4 +1,4 @@
-class bike(object):
+class Bike(object):
     def __init__(self, price, max_speed, miles=0):
         self.price = price
         self.max_speed = max_speed
@@ -17,9 +17,9 @@ class bike(object):
         return self
 
 
-bike1 = bike(200, "25mph")
-bike2 = bike(300, "30 mph")
-bike3 = bike(400, "45 mph")
+bike1 = Bike(200, "25 mph")
+bike2 = Bike(300, "30 mph")
+bike3 = Bike(400, "45 mph")
 
 bike1.riding().riding().riding().reversing().displayInfo()
 bike2.riding().riding().reversing().reversing().displayInfo()
