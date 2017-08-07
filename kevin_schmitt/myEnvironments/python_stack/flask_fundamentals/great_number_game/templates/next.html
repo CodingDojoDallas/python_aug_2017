@@ -1,0 +1,29 @@
+<html>
+<head>
+    <meta charset='utf-8'>
+  <title>Counter Index</title>
+  <link rel='stylesheet' type='text/css' href='{{ url_for('static', filename='/css/index.css') }}'>
+  <script type='text/javascript' src='{{ url_for('static', filename='/js/my_script.js') }}'></script>
+</head>
+<body>
+    <div>
+        <h1>Welcome to the Great Number Game!</h1>
+        <p>I am thinking of a number between 1 and 100.</p>
+        <p>Take a guess!</p>
+    </div>
+    <div>
+            <label for=''>Your Name</label>
+            <input type='text' name='name'>
+                   
+        </div>
+    <div>
+        <form action='/guess' method='post'>
+        <input type='submit' value='submit'name='submit'>
+        <button type='submit' name='submit'>Submit</button>
+        </form>
+    </div>
+
+
+
+</body>
+</html>
