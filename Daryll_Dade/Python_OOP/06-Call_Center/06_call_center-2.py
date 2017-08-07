@@ -15,14 +15,14 @@ class Call():
         print len(self.call)
 # Call("01", "Sean", "55555555555", "7:00 AM", "Flat Tire").display()
 
-class CallCenter(Call):
+class CallCenter(?):
     def __init__(self, call):
         self.call
         self.queue = len(self.call)
-        print len(self.call)
+#        print len(self.call)
 
     def call(self):
-        self.queue.append(1)
+        self.queue.append(?)
         return self
 
     def remove(self):
@@ -33,10 +33,6 @@ class CallCenter(Call):
         print str(self.queue) + "calls in queue."
         return self
 
-
-
-
 Call("01", "Sean", "55555555555", "7:00 AM", "Flat Tire").display()
-CallCenter(Call).add().info()
 
 # CallCenter([1,2,3]).remove().info()
