@@ -1,18 +1,20 @@
-from flask import Flask, render_template, redirect
+from flask import Flask, render_template, redirect, request
 app = Flask(__name__)
 
 @app.route("/", methods=["GET"])
-def index_page():
+def index():
     return render_template("index.html")
 
 @app.route("/createUser", methods=["POST"])
 def createUser():
-    print "you made it HEEEEEEEEEEEEEEEEEEEEEEEERRRRRRRRRRE"
-    return redirect("/lastPage")
+    print "you made it HEEEERRRRE"
+    print request.form
+    return redirect("/process")
 
-@app.route("/lastPage")
-def lastPage():
-    return "as;dodivhafdiubvqavj asdasdf"
+@app.route("/process", methods=["GET"])
+def process():
+    
+    return "your done?"
 
 
 app.run(debug=True)
