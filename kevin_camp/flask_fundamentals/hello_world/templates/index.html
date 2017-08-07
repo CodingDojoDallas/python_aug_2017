@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<link rel="stylesheet" href="{{ url_for('static', filename = 'css/my_stylesheet.css') }}">
+	</head>
+	<body>
+		<h1>Hello World</h1>
+		<h2>Server's servin'</h2>
+		<p>My name is {{ name }}</p>
+		<img src="{{ url_for('static', filename = 'img/prince_served.gif') }}" alt="Prince Pancakes">
+	</body>
+</html>
