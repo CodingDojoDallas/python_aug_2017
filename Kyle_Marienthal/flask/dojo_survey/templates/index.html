@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="css/style.css" rel="stylesheet">
+    </head>
+    <body>
+        <h1>MY FORM</h1>
+        <form action="/createUser" method="POST">
+            <div>
+                <div>
+                    <label>Your Name:</label>
+                    <input type="text" name="name">
+                </div>
+
+                <div>
+                    <label>Dojo Location</label>
+                    <select name='location'>
+                        <option value="San Diego">San Diego</option>
+                        <option value="Dallas">Dallas</option>
+                        <option value="New York">New York</option>                                        
+                    </select>
+                </div>
+
+                <div>
+                    <label>Favorite Language:</label>
+                    <select name='lang'>
+                        <option value="Python">Python</option>
+                        <option value="Ruby">Ruby</option>
+                        <option value="JS">JS</option>
+                        <option value="English">English</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label>Comment (optional):</label>
+                </div>
+
+                <div>
+                    <textarea rows="10" cols="50" name="comment"></textarea>
+                </div>
+            </div>
+            <div>
+                <input type="submit" value="Submit that shit">
+            </div>
+        </form>
+    </body>
+</html>
