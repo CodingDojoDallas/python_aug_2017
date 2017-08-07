@@ -1,10 +1,7 @@
-star = "*"
-blank = " "
-print star + blank + star + blank + star + blank + star
-print blank + star + blank + star + blank + star + blank + star
-print star + blank + star + blank + star + blank + star
-print blank + star + blank + star + blank + star + blank + star
-print star + blank + star + blank + star + blank + star
-print blank + star + blank + star + blank + star + blank + star
-print star + blank + star + blank + star + blank + star
-print blank + star + blank + star + blank + star + blank + star
+star ="* "
+blank=" *"
+
+for i in range(6):
+    print star*4
+    print blank*4
+    
