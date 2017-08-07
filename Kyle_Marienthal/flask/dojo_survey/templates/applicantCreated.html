@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="css/style.css" rel="stylesheet">
+    </head>
+    <body>
+        <div>
+            <h1>Make sure its right!</h1>
+            <table>
+                <tr>
+                    <th>Submitted info</th>
+                </tr>
+                <tr>
+                    <td>name: {{ myObj['name'] }}</td>
+                </tr>
+                <tr>
+                <td>locale: {{ myObj["location"] }}</td>
+                </tr>
+                <tr>
+                <td>language: {{ myObj["language"] }}</td>
+                </tr>
+                <tr>
+                <td>comments you had: {{ myObj['comments'] }}</td>
+                </tr>                                
+            </table>
+        </div>    
+    </body>
+</html>
