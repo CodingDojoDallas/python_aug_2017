@@ -12,7 +12,7 @@ def ninja_page():
 @app.route('/dojos/new')
 def dojo_page():
     return render_template("dojos.html")
-
+# this is a comment
 
 
 app.run(debug=True)
