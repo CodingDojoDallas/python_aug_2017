@@ -40,6 +40,23 @@ order by percentage desc
 
    where government_form = 'Constitutional Monarchy' and capital > 200 and life_expectancy > 75
 
-7) SELECT * FROM cities
+7) SELECT 
+       countries.name
+       countries.id
+       cities.id
+       cities.name
+       cities.district
+       cities.population
+   FROM countries
+   JOIN cities ON countries.id = cities.countries_id
+   WHERE countries.name = 'Argentina' AND cities.district = 'Buenos Aires' and cities.population > 500000
 
-   where country_code = 'ARG' and district = 'Buenos Aires' and population > 500000
+8) SELECT 
+    
+	countries.region,
+
+        count(countries.id) as num_countries
+
+  FROM countries
+  
+GROUP BY countries.region;
