@@ -29,9 +29,8 @@ def show_users():
 
 @app.route('/route/<param>')
 def route_params(param):
-    if param == 'Cody':
-        return render_template('params.html', param=param)
-    else:
-        return render_template('params2.html')
+    if param == 'blue':
+        img = './static/cat.png' #path the to the img file
+    return render_template('params.html', param=param)
 
 app.run(debug=True)

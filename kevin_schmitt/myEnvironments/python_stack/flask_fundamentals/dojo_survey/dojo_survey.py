@@ -10,16 +10,16 @@ def index():
 
 @app.route('/users', methods=['POST'])       #must methods=['POST'] to take in info filled out from index
 def process():
-     print request.form['name']          #you HAVE to improt request at top for this to work
-     print request.form['email']
-     userDict = {
-         'name': request.form['name'],
-         'email': request.form['email'],
-         'location':request.form['location'],
-         'language':request.form['language'],
-     }
-     users.append(userDict)
-     return redirect('/result')
+    print request.form['name']          #you HAVE to improt request at top for this to work
+    print request.form['email']
+    userDict = {
+        'name': request.form['name'],
+        'email': request.form['email'],
+        'location':request.form['location'],
+        'language':request.form['language'],
+    }     
+    users.append(userDict)
+    return redirect('/result')
 
 @app.route('/result')    
 def end():    
