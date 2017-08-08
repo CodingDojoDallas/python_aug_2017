@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Ninjas</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+    <script type="text/javascript" src="{{ url_for('static', filename='js/myscript.js') }}"></script>
+  </head>
+  <body>
+     <h1>{{username}}</h1>
+     <img src="{{ url_for('static', filename='img/raphael.jpg') }}" alt"">
+  </body>
+</html>
