@@ -25,6 +25,7 @@ https://www.dropbox.com/s/h3texmoqm801j8w/github_workflow_v4.pdf?dl=0
 [Python Flask - Form Validation](https://youtu.be/ibLTCJV6es4 "Python Flask - Form Validation") <br>
 [MySQL - Intro to ERDs](https://youtu.be/WiGja4lAMdA "MySQL - Intro to ERDs") <br>
 [MySQL - Basic Queries](https://youtu.be/HnVZPsZBwGk "MySQL - Basic Queries") <br>
+[MySQL - Countries Demo](https://youtu.be/_2U8Gmvv9gw "MySQL - Countries Demo") <br>
 
 # Resources
 
