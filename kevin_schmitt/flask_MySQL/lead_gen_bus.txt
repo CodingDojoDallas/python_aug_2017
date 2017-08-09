@@ -22,4 +22,14 @@
 3) select * from sites
    where sites.client_id=10;
    
-4) 
+4) select
+	clients.client_id,
+    clients.first_name,
+    clients.last_name,
+    billing.client_id,
+    count(sites.domain_name)
+  from clients
+  join billing on billing.client_id=clients.client_id
+  join sites on sites.client_id=clients.client_id
+  where clients.client_id=1
+  group by clients.client_id;
