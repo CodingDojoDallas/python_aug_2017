@@ -73,4 +73,5 @@ SELECT
     countries.region,
     count(countries.id) as num_countries
 FROM countries
-GROUP by countries.region;
+GROUP by countries.region
+ORDER BY num_countries DESC;
