@@ -51,8 +51,69 @@
     clients.first_name as first,
     clients.last_name as last,
     year(leads.registered_datetime) as year,
+    month(leads.registered_datetime) as months,
     count(leads.site_id) as num_leads
   from clients
   join sites on sites.client_id=clients.client_id
   join leads on leads.site_id=sites.site_id
+  where year(leads.registered_datetime)=2011
   group by sites.site_id;
+  
+7) select
+	clients.client_id as client_id,
+    clients.first_name as first,
+    clients.last_name as last,
+    year(leads.registered_datetime) as year,
+    month(leads.registered_datetime) as months,
+    count(leads.site_id) as num_leads
+  from clients
+  join sites on sites.client_id=clients.client_id
+  join leads on leads.site_id=sites.site_id
+  where year(leads.registered_datetime)=2011 and month(leads.registered_datetime) < 7
+  group by sites.site_id;
+  
+8) select
+	clients.client_id as client_id,
+    clients.first_name as first,
+    clients.last_name as last,
+    sites.domain_name,
+    year(leads.registered_datetime) as year,
+    month(leads.registered_datetime) as months,
+    count(leads.site_id) as num_leads
+  from clients
+  join sites on sites.client_id=clients.client_id
+  join leads on leads.site_id=sites.site_id
+  where year(leads.registered_datetime)=2011
+  group by sites.site_id
+  order by client_id asc;
+  
+ select
+	clients.client_id as client_id,
+    clients.first_name as first,
+    clients.last_name as last,
+    sites.domain_name,
+    year(leads.registered_datetime) as year,
+    month(leads.registered_datetime) as months,
+    count(leads.site_id) as num_leads
+  from clients
+  join sites on sites.client_id=clients.client_id
+  join leads on leads.site_id=sites.site_id
+  group by sites.domain_name
+  order by client_id asc;
+  
+9) select
+	clients.client_id,
+    sum(billing.amount),
+    month(billing.charged_datetime)
+  from clients
+  join billing on billing.client_id=clients.client_id
+  group by clients.client_id
+  order by clients.client_id asc;
+  
+10) select
+	 clients.client_id,
+     sites.domain_name,
+     group_concat(sites.domain_name) as domain_names
+  from clients
+  join sites on sites.client_id=clients.client_id
+  group by clients.client_id;
