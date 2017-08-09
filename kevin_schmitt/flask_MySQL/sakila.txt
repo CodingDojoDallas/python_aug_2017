@@ -1,0 +1,105 @@
+1)select
+	
+       customer.customer_id,
+	
+       customer.first_name,
+    
+       customer.last_name,
+    
+       customer.email,
+    
+       customer.address_id,
+    
+       address.address_id,
+    
+       address.address,    
+    
+       address.city_id
+
+from customer
+
+join address on address.address_id = customer.address_id
+
+where address.city_id = 312;
+
+
+select * from city
+
+order by city_id desc;
+
+
+2)select
+
+	film.film_id,
+    
+    film.title,
+    
+    film.description,
+    
+    film.release_year,
+    
+    film.rating,
+    
+    film.special_features,
+    
+    film_category.film_id,
+
+        film_category.category_id,
+    
+    category.category_id
+
+  from film_category
+
+  join film ON film_category.film_id = film.film_id
+  
+join category on category.category_id = film_category.category_id
+  
+where category.name='comedy';
+
+3)select
+
+	actor.actor_id,
+
+        actor.first_name,
+    
+        actor.last_name,
+    
+        film.title,
+    
+        film.description,
+    
+        film.release_year,
+    
+        film.film_id,
+    
+        film_actor.actor_id,
+
+        film_actor.film_id
+
+from film
+
+join film_actor on film_actor.film_id = film.film_id
+
+join actor on actor.actor_id = film_actor.actor_id
+
+where actor.actor_id = 5;
+
+4) select
+
+	customer.store_id,
+    
+    customer.first_name,
+    
+    customer.last_name,
+    
+    address.address,
+    
+    city.city
+
+   from customer
+   
+join address on address.address_id=customer.address_id
+
+   join city on city.city_id=address.city_id
+   
+where customer.store_id=1;
