@@ -33,3 +33,15 @@
   join sites on sites.client_id=clients.client_id
   where clients.client_id=1
   group by clients.client_id;
+
+5) select
+	count(leads.leads_id),
+    leads.site_id,
+    month(leads.registered_datetime),
+    year(leads.registered_datetime),
+    day(leads.registered_datetime),
+    sites.domain_name
+  from leads
+  join sites on sites.site_id=leads.site_id
+  where month(leads.registered_datetime)<3 and year(leads.registered_datetime)=2011 and day(leads.registered_datetime)<16
+  group by leads.site_id;
