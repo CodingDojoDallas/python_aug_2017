@@ -1,4 +1,4 @@
-SELECT
+actor_idSELECT
 	languages.id as language_id,
 	languages.language,
     languages.percentage,

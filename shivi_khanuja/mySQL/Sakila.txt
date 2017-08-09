@@ -1,0 +1,44 @@
+SELECT 
+
+customer.customer_id,
+
+customer.first_name,
+
+customer.last_name,
+
+customer.email,
+
+address.address,
+
+address.city_id
+FROM customer
+
+JOIN address ON customer_id = address.address_id
+
+Where address.city_id = '312'
+
+
+SELECT
+film.film_id as film_pk,
+film.title,
+film.release_year,
+film.description,
+film.rating,
+film.special_features,
+film_category.category_id
+From film
+JOIN film_category ON film.film_pk = film_category.category_id
+WHERE film_category.category_id = 'comedy
+
+SELECT
+actor.actor_id,
+actor.first_name,
+actor.last_name,
+film.film_id,
+film.title,
+film.release_year,
+film.description
+From film
+JOIN actor ON actor_id = actor.actor_id
+WHERE actor_id= 5
+
