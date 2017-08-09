@@ -1,77 +1,26 @@
 SELECT 
-	languages.id as language_id,
-	languages.language,
-    languages.percentage,
-    countries.id as country_id,
-    countries.name
-FROM languages
-JOIN countries ON countries.id = languages.country_id
-WHERE languages.language = 'Slovene'
-ORDER BY languages.percentage DESC;
+	customer.customer_id,
+	customer.first_name,
+    customer.last_name,
+    customer.email,
+    address.address,
+    address.city_id
+FROM customer
+JOIN address ON customer.address_id = address.address_id
+WHERE address.city_id = 312;
 
 SELECT
-	count(countries.id) as num_cities,
-	countries.name,
-    countries.id as country_pk
-FROM countries
-JOIN cities ON countries.id = cities.country_id
-GROUP BY countries.id;
+	category.name,
+    category.category_id,
+    film_category.category_id,
+    film.film_id,
+    film.title,
+    film.description,
+    film.release_year,
+    film.rating,
+    film.special_features
+FROM film
+JOIN film_category ON film.film_id = film_category.film_id
+JOIN category ON film_category.category_id = category.category_id
+WHERE category.name = 'Comedy';
 
-SELECT
-	cities.id as city_pk,
-    cities.population,
-    cities.name,
-    countries.id as country_pk,
-    countries.name as country_name
-FROM countries
-JOIN cities ON countries.id = cities.country_id
-WHERE countries.name = 'Mexico' AND cities.population > 500000
-ORDER BY cities.population DESC;
-
-SELECT
-	languages.id as language_pk,
-    languages.language,
-    languages.percentage,
-    countries.id as country_pk,
-    countries.name
-FROM countries
-JOIN languages ON countries.id = languages.country_id
-WHERE languages.percentage > 89
-ORDER BY languages.percentage DESC;
-
-SELECT
-	countries.id as country_id,
-	countries.surface_area,
-    countries.population,
-    countries.name
-FROM countries
-WHERE countries.surface_area < 501 AND countries.population > 100000;
-
-SELECT
-	countries.id as country_id,
-    countries.name,
-    countries.government_form,
-    countries.capital,
-    countries.life_expectancy
-FROM countries
-WHERE countries.government_form = 'Constitutional Monarchy'
-AND countries.life_expectancy > 75
-AND countries.capital > 200;
-
-SELECT
-	countries.name,
-    countries.id as country_pk,
-    cities.id as city_pk,
-    cities.name,
-    cities.district,
-    cities.population
-FROM countries
-JOIN cities ON countries.id = cities.country_id
-WHERE countries.name = 'Argentina' AND cities.district = 'Buenos Aires' AND cities.population > 500000;
-
-SELECT
-    countries.region,
-    count(countries.id) as num_countries
-FROM countries
-GROUP by countries.region
-ORDER BY num_countries DESC;
