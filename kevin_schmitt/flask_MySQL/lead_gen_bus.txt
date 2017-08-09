@@ -1,0 +1,25 @@
+1) select
+	clients.client_id as id,
+    billing.billing_id,
+    #sum(billing.amount),
+    MONTH(billing.charged_datetime) as 'month',
+    YEAR(billing.charged_datetime) as 'year'
+  from clients
+  join billing on clients.client_id=billing.client_id
+  where YEAR(billing.charged_datetime)=2012 and MONTH(billing.charged_datetime)=3;
+
+
+2) select
+	clients.client_id,
+	clients.first_name,
+    clients.last_name,
+    sum(billing.amount),
+    billing.client_id
+  from clients
+  join billing on clients.client_id=billing.client_id
+  where clients.client_id=2;
+
+3) select * from sites
+   where sites.client_id=10;
+   
+4) 
