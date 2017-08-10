@@ -1,0 +1,17 @@
+<html>
+<head>
+  <title>Friends</title>
+</head>
+<body>
+ {{ all_friends }}
+<h1>These are all my friends!</h1>
+<!-- with all the data we can then construct a more structured output -->
+{% for friend in all_friends: %}
+   <p>ID: {{ friend['id'] }}</p>
+   <p>First Name: {{ friend['first_name'] }}</p>
+   <p>Last Name: {{ friend['last_name'] }}</p>
+   <p>Occupation: {{ friend['occupation'] }}</p>
+   <hr>
+{% endfor %}
+</body>
+</html>

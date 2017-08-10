@@ -1,0 +1,9 @@
+-- select * from books;
+-- insert into books (created_at, updated_at, author, title) 
+-- values (now(), now(), ' Martin Puryear', 'Algorithms Challenges' )
+-- select * from books;
+-- 
+-- insert into books (created_at, updated_at, author, title)
+-- values (now(), now(), 'Albert Einstein', 'The Laws of Physics')
+-- select * from books
+

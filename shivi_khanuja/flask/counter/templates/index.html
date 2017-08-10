@@ -1,0 +1,20 @@
+<html>
+    <head>
+        <title>Counter</title>
+        <link rel="stylesheet"  href="{{url_for ('static',filename = 'my_style.css')}}">
+    </head>
+    <body>
+        <div>
+            <h1>Counter</h1>
+            Counter: {{session['counter']}}
+        </div>
+        <div>
+            <form class ="two" action = "/add2" method ="post">
+                 <button >Add 2</button>            
+            </form>
+                <form class = "reset" action = "/reset_count" method = "post">
+                    <button >Reset</button>
+                </form>
+        </div>
+    </body>
+</html>
