@@ -1,0 +1,29 @@
+<html>
+    <head>
+        <meta name="description" content="">
+    </head>
+    <body>
+        <div>
+            <a href="/users/new">Create a New User</a>
+        </div>
+        <div>
+           <table>
+               <tr>
+                   <th>Name</th>
+                   <th>Email</th>
+               </tr>
+               {% for user in users %}
+                <tr>
+                    <td><a href="/users/{{ user.id }}">{{ user.name }}</a></td>        
+                    <td>{{ user.email }}</td>
+                    <td>
+                        <form action="/users/{{ user.id }}/destroy" method="post">
+                            <input type="submit" value="Delete">
+                        </form>
+                    </td>      
+                </tr>
+               {% endfor %}
+           </table>
+        </div>
+    </body>
+</html>
