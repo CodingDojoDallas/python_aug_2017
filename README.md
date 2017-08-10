@@ -27,6 +27,7 @@ https://www.dropbox.com/s/h3texmoqm801j8w/github_workflow_v4.pdf?dl=0
 [MySQL - Basic Queries](https://youtu.be/HnVZPsZBwGk "MySQL - Basic Queries") <br>
 [MySQL - Countries Demo](https://youtu.be/_2U8Gmvv9gw "MySQL - Countries Demo") <br>
 [MySQL - Self Join](https://youtu.be/sLDSe7Rti0E "MySQL - Self Join") <br>
+[Python Flask - Basic CRUD](https://youtu.be/IiHH5MD68Po "MySQL - Basic CRUD") <br>
 
 # Resources
 
@@ -37,4 +38,3 @@ https://www.dropbox.com/s/h3texmoqm801j8w/github_workflow_v4.pdf?dl=0
 [Tutorials Point - Python](https://www.tutorialspoint.com/python/index.htm "Tutorials Point - Python") <br>
 [SQLZoo - MySQL Tutorials](http://sqlzoo.net/ "SQLZoo - mySQL Tutorials") <br>
 [Tutorials Point - MySQL](https://www.tutorialspoint.com/mysql/index.htm "Tutorials Point - MySQL") <br>
-
