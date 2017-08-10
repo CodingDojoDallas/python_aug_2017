@@ -1,0 +1,31 @@
+insert into users (first_name, last_name, created_at, updated_at)
+
+values ('Jessica','Davidson', now(),now());
+
+
+
+
+insert into friendships ( user_id, friend_id, created_at, updated_at)
+
+values (4,1,now(),now());
+
+select * from users;
+
+
+
+SELECT 
+   users.first_name,
+   user2.first_name as friend_name 
+FROM users 
+
+JOIN friendships ON users.id=friendships.user_id 
+
+JOIN users as user2 ON users.id=friendships.friend_id;
+
+select
+ 
+   user2.first_name as friend_first_name,
+  
+ user2.last_name as freind_last_name
+
+from friendships;

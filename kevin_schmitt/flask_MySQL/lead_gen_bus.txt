@@ -1,0 +1,119 @@
+1) select
+	clients.client_id as id,
+    billing.billing_id,
+    #sum(billing.amount),
+    MONTH(billing.charged_datetime) as 'month',
+    YEAR(billing.charged_datetime) as 'year'
+  from clients
+  join billing on clients.client_id=billing.client_id
+  where YEAR(billing.charged_datetime)=2012 and MONTH(billing.charged_datetime)=3;
+
+
+2) select
+	clients.client_id,
+	clients.first_name,
+    clients.last_name,
+    sum(billing.amount),
+    billing.client_id
+  from clients
+  join billing on clients.client_id=billing.client_id
+  where clients.client_id=2;
+
+3) select * from sites
+   where sites.client_id=10;
+   
+4) select
+	clients.client_id,
+    clients.first_name,
+    clients.last_name,
+    billing.client_id,
+    count(sites.domain_name)
+  from clients
+  join billing on billing.client_id=clients.client_id
+  join sites on sites.client_id=clients.client_id
+  where clients.client_id=1
+  group by clients.client_id;
+
+5) select
+	count(leads.leads_id),
+    leads.site_id,
+    month(leads.registered_datetime),
+    year(leads.registered_datetime),
+    day(leads.registered_datetime),
+    sites.domain_name
+  from leads
+  join sites on sites.site_id=leads.site_id
+  where month(leads.registered_datetime)<3 and year(leads.registered_datetime)=2011 and day(leads.registered_datetime)<16
+  group by leads.site_id;
+  
+6) select
+	clients.client_id as client_id,
+    clients.first_name as first,
+    clients.last_name as last,
+    year(leads.registered_datetime) as year,
+    month(leads.registered_datetime) as months,
+    count(leads.site_id) as num_leads
+  from clients
+  join sites on sites.client_id=clients.client_id
+  join leads on leads.site_id=sites.site_id
+  where year(leads.registered_datetime)=2011
+  group by sites.site_id;
+  
+7) select
+	clients.client_id as client_id,
+    clients.first_name as first,
+    clients.last_name as last,
+    year(leads.registered_datetime) as year,
+    month(leads.registered_datetime) as months,
+    count(leads.site_id) as num_leads
+  from clients
+  join sites on sites.client_id=clients.client_id
+  join leads on leads.site_id=sites.site_id
+  where year(leads.registered_datetime)=2011 and month(leads.registered_datetime) < 7
+  group by sites.site_id;
+  
+8) select
+	clients.client_id as client_id,
+    clients.first_name as first,
+    clients.last_name as last,
+    sites.domain_name,
+    year(leads.registered_datetime) as year,
+    month(leads.registered_datetime) as months,
+    count(leads.site_id) as num_leads
+  from clients
+  join sites on sites.client_id=clients.client_id
+  join leads on leads.site_id=sites.site_id
+  where year(leads.registered_datetime)=2011
+  group by sites.site_id
+  order by client_id asc;
+  
+ select
+	clients.client_id as client_id,
+    clients.first_name as first,
+    clients.last_name as last,
+    sites.domain_name,
+    year(leads.registered_datetime) as year,
+    month(leads.registered_datetime) as months,
+    count(leads.site_id) as num_leads
+  from clients
+  join sites on sites.client_id=clients.client_id
+  join leads on leads.site_id=sites.site_id
+  group by sites.domain_name
+  order by client_id asc;
+  
+9) select
+	clients.client_id,
+    sum(billing.amount),
+    month(billing.charged_datetime)
+  from clients
+  join billing on billing.client_id=clients.client_id
+  group by clients.client_id
+  order by clients.client_id asc;
+  
+10) select
+	 clients.client_id,
+     sites.domain_name,
+     group_concat(sites.domain_name) as domain_names
+  from clients
+  join sites on sites.client_id=clients.client_id
+  group by clients.client_id;
