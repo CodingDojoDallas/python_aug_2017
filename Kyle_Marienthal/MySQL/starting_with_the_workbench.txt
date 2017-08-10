@@ -1,0 +1,5 @@
+open the file w/ a text editor 
+copy paste the content into the SQL workbench
+hit the lightning bolt and then select all and delete
+to switch files/schemas type "use <file_name/schema_name>
+enter in queries
