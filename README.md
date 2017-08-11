@@ -38,3 +38,7 @@ https://www.dropbox.com/s/h3texmoqm801j8w/github_workflow_v4.pdf?dl=0
 [Tutorials Point - Python](https://www.tutorialspoint.com/python/index.htm "Tutorials Point - Python") <br>
 [SQLZoo - MySQL Tutorials](http://sqlzoo.net/ "SQLZoo - mySQL Tutorials") <br>
 [Tutorials Point - MySQL](https://www.tutorialspoint.com/mysql/index.htm "Tutorials Point - MySQL") <br>
+[Flask Documentation](http://flask.pocoo.org/docs/0.12/ "Flask Documentation") <br>
+[Jinja2 Documentation](http://jinja.pocoo.org/docs/2.9/ "Jinja2 Documentation") <br>
+
+
