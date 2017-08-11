@@ -65,4 +65,26 @@ def create_user():
 def success():
     return render_template('success.html')
 
+@app.route('/sessions', methods=['POST'])
+def login():
+    #step1: confirm email
+    query = "SELECT * FROM users WHERE email = :email"
+    data = { 'email':request.form['email'] }
+    user = mysql.query_db(query,data)
+
+    if len(user) == 0:
+        flash('Invalid Credentials')
+        return redirect('/users/new')
+    else:
+    #step2 validate password
+        hashed_input_password = md5.new(request.form['password'] + user[0]['salt']).hexdigest()
+        if hashed_input_password == user[0]['password']:
+            return redirect('/success')
+        else:
+            flash('Invalid credentials')
+            return redirect('/users/new')
+
+
+
+
 app.run(debug=True)
