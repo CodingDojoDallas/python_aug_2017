@@ -28,6 +28,7 @@ https://www.dropbox.com/s/h3texmoqm801j8w/github_workflow_v4.pdf?dl=0
 [MySQL - Countries Demo](https://youtu.be/_2U8Gmvv9gw "MySQL - Countries Demo") <br>
 [MySQL - Self Join](https://youtu.be/sLDSe7Rti0E "MySQL - Self Join") <br>
 [Python Flask - Basic CRUD](https://youtu.be/IiHH5MD68Po "MySQL - Basic CRUD") <br>
+[Python - Basic Hashing w/ MD5](https://youtu.be/AXBuVJcWk0E "Python - Basic Hashing w/ MD5") <br>
 
 # Resources
 
