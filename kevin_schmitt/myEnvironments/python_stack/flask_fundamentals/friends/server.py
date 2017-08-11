@@ -19,11 +19,11 @@ def create():
     print request.form['occupation']
     data = {
              'first_name': request.form['first_name'],
-             'last_name':  request.form['last_name'],
+             'last_name': request.form['last_name'],
              'occupation': request.form['occupation']
             }
     # add a friend to the database!
-    print mysql.query_db(query, data)
+    mysql.query_db(query, data)
     
     return redirect('/')
 @app.route('/friends/<friend_id>')

@@ -1,0 +1,44 @@
+<html>
+<head>
+  <title>Login and Registration</title>
+</head>
+<body>
+<h1>These are all my Users!</h1>
+    <table> 
+     <tr>
+        <th>ID:</th> 
+        <th>Name:</th>
+        <th>Email:</th>
+      </tr>
+      {% for user in users: %}
+      
+      <tr>
+        <td>{{ user['id'] }}</td>
+        <td>{{ user['name'] }}</td>
+        <td>{{ user['email'] }}</td>
+      </tr>      
+      
+      {% endfor %}
+      
+     </table> 
+  <h2>Register</h2>
+  <form action='/users' method='POST'>
+    <label for="name">First Name:<input type="text" name="name" id="name"></label>
+    <label for="email">Eamil:<input type="text" name="email" id="email"></label>
+    <label for="password">Password:<input type="password" name="password" id="password"></label>
+    <input type="submit" value="Add">
+  </form>
+  <div>
+      {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            {% for error in messages %}
+                <p class='error'>{{ error }}</p>
+            {% endfor %}
+        {% endif %}
+      {% endwith %}
+  </div>
+</body>
+</html>
+
+
+    
