@@ -1,55 +1,68 @@
 from flask import Flask, request, redirect, render_template, session, flash
 from mysqlconnection import MySQLConnector
+import md5, os, binascii
 app = Flask(__name__)
-app.secret_key = 'secret'
-mysql = MySQLConnector(app,'users')
+app.secret_key = 'mykeysecret'
+mysql = MySQLConnector(app,'user_reg')
 @app.route('/')
 def index():
-    print 'IndeX ROute'
-    query = "SELECT * FROM users_table"                      # define your query
-    persons = mysql.query_db(query)                                       # run query with query_db()
-    return render_template('index.html', people=persons) # pass data to our template
-@app.route('/register', methods=['POST'])
+    query = "SELECT * FROM users"                     # define your query
+    users = mysql.query_db(query)  
+    # print friends                                   # run query with query_db()
+    return render_template('index.html', users=users) # pass data to our template
+@app.route('/usersnew', methods=['POST'])
 def create():
-    print 'creAte rOute'
-    print '*'*25
-    query = 'INSERT INTO users_table (email_address, name, created_at, updated_at) VALUES (:email_address, :name, NOW(), NOW())'
-    print request.form['email_address']
-    print request.form['name']
-    data = {
-             'email_address': request.form['email_address'],
-             'name': request.form['name']
-            }
-    # add a friend to the database!
-    mysql.query_db(query, data)
+    name = request.form['name']
+    email = request.form['email']
+    password = request.form['password']
+    password_confirmation = request.form['password_confirmation']
     
-    return redirect('/')
-@app.route('/check', methods=['POST'])
-def check():
     is_valid = True
+    if request.form['name'] == '':
+        is_valid = False
+        flash("Name cannot be blank")
     if request.form['email'] == '':
         is_valid = False
-        flash("Name cannot be blank.")
+        flash("Email cannot be blank")
+    if len(password) < 4:
+        is_valid = False
+        flash("Password must be atleast than 4 letters.")
+    if password != password_confirmation:
+        is_valid = False
+        flash("Password must match Confirmation.")
 
     if is_valid == True:
-        query = "SELECT * FROM users_table"
-        mysql.query_db(query)
-        return redirect('/check')
+        salt = binascii.b2a_hex(os.urandom(15))
+        hashed_pw = md5.new(password + salt).hexdigest()
+        query = 'INSERT INTO users (name, email, password, salt, created_at, updated_at) VALUES (:name, :email, :password, :salt, NOW(), NOW())'
+        data = {
+                'name': name,
+                'email': email,
+                'password': hashed_pw,
+                'salt': salt
+                }
+        mysql.query_db(query, data)
+        return redirect('/success')
     else:
-        
-    
         return redirect('/')
-app.run(debug=True)
+@app.route('/success')
+def success():
+        return render_template('success.html')
 
-# @app.route('/friends/<friend_id>')
-# def show(friend_id):
-#     # Write query to select specific user by id. At every point where
-#     # we want to insert data, we write ":" and variable name.
-#     query = "SELECT * FROM friends WHERE id = :specific_id"
-#     # Then define a dictionary with key that matches :variable_name in query.
-#     data = {'specific_id': friend_id}
-#     # Run query with inserted data.
-#     friends = mysql.query_db(query, data)
-#     # Friends should be a list with a single object,
-#     # so we pass the value at [0] to our template under alias one_friend.
-#     return render_template('index.html', one_friend=friends[0])
+@app.route('/sessions', methods=['POST'])
+def login():
+    query = 'select * from users where email = :email'
+    data = { 'email': request.form['email'] }
+    user = mysql.query_db(query, data)
+    print data
+    print user[0]['email']
+    if data == { 'email': user[0]['email'] }:
+        return redirect('/success')
+    else:
+        flash('WRONG credentials')
+        return redirect('/')
+
+
+
+
+app.run(debug=True)

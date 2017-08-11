@@ -1,59 +1,60 @@
 <html>
 <head>
-  <title>register</title>
+    <link rel="stylesheet" href='{{ url_for("static", filename='style.css') }}'>
+  <title>Login and Registration</title>
 </head>
 <body>
-  <!-- <h1>These are all my friends!</h1> -->
-  <!-- we can use the line below to see all of our data in our template -->
-<!-- {{ all_friends }} -->
-<h1>Register to become a member!</h1>
-
-<!-- with all the data we can then construct a more structured output -->
-
-     <table> 
+<!-- <h1>These are all my Users!</h1>
+    <table> 
      <tr>
         <th>ID:</th> 
         <th>Name:</th>
-        <th>Eamil:</th>
+        <th>Email:</th>
       </tr>
-      {% for person in people: %}
+      {% for user in users: %}
       
       <tr>
-        <td>{{ person['id'] }}</td>
-        <td>{{ person['name'] }}</td>
-        <td>{{ person['email_address'] }}</td>
+        <td>{{ user['id'] }}</td>
+        <td>{{ user['name'] }}</td>
+        <td>{{ user['email'] }}</td>
       </tr>      
+      
       {% endfor %}
-     </table>  
-
-
-  <h2>Please Register</h2>
-  <form action='/register' method='POST'>
-    <label for="name">Full Name:<input type="text" name="name" id="name"></label>
-    <label for="email_address">Email:<input type="text" name="email_address" id="email_address"></label>
-    <input type="submit" value="Submit!">
-  </form>
-
-  <form action='/check' method='POST'>
-    <label for="email">Email<input type="text" name="email" id="email"></label>
-    <input type="submit" value="Submit!">
-  </form>
-  {% with messages = get_flashed_messages() %}
-    {% if messages %}
-
-    {% endif %}
-  {% endwith %}
+      
+     </table>  -->
+    <div class='divs'>
+    <h2>Register</h2>
+    <form action='/usersnew' method='POST'>
+        <p><label for="name">Name:<input type="text" name="name" id="name"></label></p>
+        <p><label for="email">Eamil:<input type="text" name="email" id="email"></label></p>
+        <p><label for="password">Password:<input type="password" name="password" id="password"></label></p>
+        <label for="password_confirmation">Confirm Password:<input type="password" name="password_confirmation" id="password_confirmation"></label>
+        <input type="submit" value="Add">
+    </form>
+    <div>
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                {% for error in messages %}
+                    <p class='error'>{{ error }}</p>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+    </div>
+    </div>
+    <div class='divs'>
+        <h2>Login</h2>
+        <form action='/sessions' method='post'>
+            <div>
+                <label>Email</label>
+                <input type='text' name='email'>
+            </div>
+            <div>
+                <input type="submit" value="login">
+            </div>
+        </form>
+    </div>
 </body>
-</html>  
+</html>
 
 
-    <!-- <table>
-      {% for friend in all_friends: %}
-      <tr>ID: <td>{{ friend['id'] }}</td></tr>
-      <tr>First Name: <td>{{ friend['first_name'] }}</td></tr>
-      <p>Last Name: {{ friend['last_name'] }}</p>
-      <p>Occupation: {{ friend['occupation'] }}</p>
-      <hr>
-      {% endfor %}
-      <hr> 
-    </table> -->
+    
