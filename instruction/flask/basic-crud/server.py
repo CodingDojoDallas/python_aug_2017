@@ -1,6 +1,7 @@
 from flask import Flask, render_template, redirect, session, flash, request
 from mysqlconnection import MySQLConnector
 
+
 app = Flask(__name__)
 app.secret_key = 'mysuperdupersecret'
 
@@ -39,7 +40,7 @@ def create():
 
 @app.route('/users') #GET request
 def index():
-    users = mysql.query_db("SELECT * FROM users")
+    users = self.mysql.query_db("SELECT * FROM users")
     return render_template('get_users.html', users=users)
 
 @app.route('/users/new')
