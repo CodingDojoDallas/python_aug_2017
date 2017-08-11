@@ -13,7 +13,7 @@ def home():
 @app.route('/users', methods=['POST'])
 def create():
     is_valid = True
-    if request.form['email'] == '':
+    if request.form['email'] == '':#something wrong with this line video at 31:14
         is_valid = False
         flash('email cannot be blank') 
 
