@@ -1,6 +1,6 @@
 <html>
 <head>
-  <link rel="stylesheet" href="{{ url_for('static',filename='style.css') }}"> 
+  <link rel="stylesheet" href="{{ url_for('static',filename='css/style.css') }}"> 
   <!-- <title>Login and Register</title> -->
 </head>
 <body>
@@ -34,20 +34,20 @@
         <input type="submit" value="Register">
       </div>
     </form>
-  </div>
-  <div>
-    {% with messages = get_flashed_messages() %}
-      {% if messages %}
-        {% for error in messages %}
-          <p class='error'> {{ error }}</p>
-        {% endfor %}
-      {% endif %}
+    <div>
+      {% with messages = get_flashed_messages() %}
+        {% if messages %}
+          {% for error in messages %}
+            <p class='error'> {{ error }}</p>
+          {% endfor %}
+        {% endif %}
 
-    {% endwith %}
+      {% endwith %}
+    </div>
   </div>
   <div class="halfSize">
     <h1>Login</h1>
-    <form action="" method= 'post'>
+    <form action="/sessions" method= 'post'>
       <div>
         <label>Email</label>
         <input type="text" name="email" >
@@ -62,7 +62,7 @@
 
 
     </form>
-  
+  </div>
 
 </body>
 </html>
