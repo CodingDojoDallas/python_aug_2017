@@ -12,26 +12,48 @@
 	<div class="half">
 		<h1>Register</h1>
 		<form action="/users" method="post">
-			<div>
-				<label>First Name:</label>
-				<input type="text" name="first_name">
-			</div>
-			<div>
-				<label>Last Name:</label>
-				<input type="text" name="last_name">
-			</div>
-			<div>
-				<label>Email:</label>
-				<input type="text" name="email">
-			</div>
-			<div>
-				<label>Password</label>
-				<input type="password" name="password">
-			</div>
-			<div>
-				<label>Password Confirmation</label>
-				<input type="password" name="confirmation">
-			</div>
+			<table>
+				<tr>
+					<td>
+						<label>First Name:</label>
+					</td>
+					<td>
+						<input type="text" name="first_name">
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<label>Last Name:</label>
+					</td>
+					<td>
+						<input type="text" name="last_name">
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<label>Email:</label>
+					</td>
+					<td>
+						<input type="text" name="email">
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<label>Password:</label>
+					</td>
+					<td>
+						<input type="password" name="password">
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<label>PW Confirmation:</label>
+					</td>
+					<td>
+							<input type="password" name="confirmation">
+					</td>
+				</tr>
+			</table>
 			<div>
 				<input type="submit" value="Submit">
 			</div>
@@ -41,14 +63,24 @@
 	<div class="half">
 		<h1>Login</h1>
 		<form action="/sessions" method="post">
-			<div>
-				<label>Email:</label>
-				<input type="text" name="email">
-			</div>
-			<div>
-				<label>Password:</label>
-				<input type="password" name="password">
-			</div>
+			<table>
+				<tr>
+					<td>
+						<label>Email:</label>
+					</td>
+					<td>
+						<input type="text" name="email">
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<label>Password:</label>
+					</td>
+					<td>
+						<input type="password" name="password">
+					</td>
+				</tr>
+			</table>
 			<div>
 				<input type="submit" value="Submit">
 			</div>

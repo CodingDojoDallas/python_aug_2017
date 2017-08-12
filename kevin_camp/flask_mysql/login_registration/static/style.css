@@ -1,7 +1,20 @@
+html{
+	font-family: arial;
+	text-align: -webkit-center;
+}
 .half{
 	display: inline-block;
-	width: 15%;
+	width: 30%;
 	vertical-align: top;
+}
+table{
+	border: 2pt solid darkgrey;
+	border-radius: 10px;
+	margin: 0px 0px 20px 0px;
+	padding: 10px;
+}
+label{
+	font-weight: bold;
 }
 #errors{
 	color: red;
