@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="{{ url_for('static', filename='style.css' )}}">
+	<title>Login and Registration</title>
+</head>
+
+<body>
+	<!-- REGISTER -->
+	<div class="half">
+		<h1>Register</h1>
+		<form action="/users" method="post">
+			<div>
+				<label>First Name:</label>
+				<input type="text" name="first_name">
+			</div>
+			<div>
+				<label>Last Name:</label>
+				<input type="text" name="last_name">
+			</div>
+			<div>
+				<label>Email:</label>
+				<input type="text" name="email">
+			</div>
+			<div>
+				<label>Password</label>
+				<input type="password" name="password">
+			</div>
+			<div>
+				<label>Password Confirmation</label>
+				<input type="password" name="confirmation">
+			</div>
+			<div>
+				<input type="submit" value="Submit">
+			</div>
+		</form>
+	</div>
+	<!-- LOGIN -->
+	<div class="half">
+		<h1>Login</h1>
+		<form action="/sessions" method="post">
+			<div>
+				<label>Email:</label>
+				<input type="text" name="email">
+			</div>
+			<div>
+				<label>Password:</label>
+				<input type="password" name="password">
+			</div>
+			<div>
+				<input type="submit" value="Submit">
+			</div>
+		</form>
+	</div>
+	<!-- ERRORS -->
+	<div id="errors" class="half_errors">
+		{% with messages = get_flashed_messages() %} {% if messages %} {% for error in messages%}
+		<p>{{ error }}</p>
+		{% endfor %} {% endif %} {% endwith %}
+	</div>
+
+</body>
+
+</html>

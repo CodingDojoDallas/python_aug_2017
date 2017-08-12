@@ -1,0 +1,8 @@
+.half{
+	display: inline-block;
+	width: 15%;
+	vertical-align: top;
+}
+#errors{
+	color: red;
+}
