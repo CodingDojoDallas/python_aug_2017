@@ -56,14 +56,16 @@ def create_user():
             'password': hashed_pw,
             'salt': salt
         }
-        mysql.query_db(query, data)
+        user_id = mysql.query_db(query,data)
+        session['user_id'] = user_id
+        session['is_logged_in'] = True
         return redirect('/success')
     else:
         return redirect('/users/new')
 
 @app.route('/success')
 def success():
-    return render_template('success.html')
+    return render_template('success.html', session=session)
 
 @app.route('/sessions', methods=['POST'])
 def login():
@@ -72,17 +74,26 @@ def login():
     data = { 'email':request.form['email'] }
     user = mysql.query_db(query,data)
 
+    is_valid = True
+
     if len(user) == 0:
-        flash('Invalid Credentials')
-        return redirect('/users/new')
+        flash('invalid credentails')
+        return redirect('/users/new') 
+
+    hashed_input_password = md5.new(request.form['password'] + user[0]['salt']).hexdigest()
+    if len(user) != 0 and hashed_input_password == user[0]['password']:
+        session['user_id'] = user[0]['id']
+        session['is_logged_in'] = True  
+        return redirect('/success')
     else:
-    #step2 validate password
-        hashed_input_password = md5.new(request.form['password'] + user[0]['salt']).hexdigest()
-        if hashed_input_password == user[0]['password']:
-            return redirect('/success')
-        else:
-            flash('Invalid credentials')
-            return redirect('/users/new')
+        flash('Invalid credentials')
+        return redirect('/users/new')
+
+@app.route('/users/logout', methods=['POST'])
+def logout():
+    session['user_id'] = None
+    session['is_logged_in']= False
+    return redirect('/users/new')
 
 
 
