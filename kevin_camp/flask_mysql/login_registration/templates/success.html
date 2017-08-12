@@ -10,7 +10,7 @@
 		{% if session.is_logged_in %}
 			<h2>You are logged in as User # {{ session.user_id }}</h2>
 			<form action="/users/logout" method="post">
-				<input type="submit" value="Logout">
+				<input class="submit" type="submit" value="Logout">
 			</form>
 		{% endif%}
 	</body>
