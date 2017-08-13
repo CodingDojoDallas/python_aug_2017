@@ -1,0 +1,24 @@
+<html>
+    <head>
+
+    </head>
+    <body>
+        <h1>Welcome to the Wall!</h1>
+        <h3>Post messages and comments between users</h3>
+        <table> 
+            <tr>
+                <th>Messages:</th> 
+
+            </tr>
+            {% for message in messages %}
+
+            <tr>
+                <td>{{ message['message_text'] }}</td>
+            </tr>
+
+            {% endfor %}
+
+        </table> 
+
+
+        <form action='/message' method='POST'>
