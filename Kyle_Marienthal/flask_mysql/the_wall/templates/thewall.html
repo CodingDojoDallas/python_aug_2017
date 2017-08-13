@@ -8,21 +8,21 @@
         <table> 
             <tr>
                 <th>Messages:</th> 
-
+                
             </tr>
-            {% for message in messages %}
-
+            {% for message in messages %}          
             <tr>
+                <td><h5>{{ session['name'] }}</h5></td>
                 <td>{{ message['message_text'] }}</td>
-            </tr>
-
+            </tr>    
+            
             {% endfor %}
-
+        
         </table> 
 
 
         <form action='/message' method='POST'>
-            <p><label for="message"><textarea name="message" id="message" rows="4" cols="50" ></textarea></label></p>
+        <p><label for="message"><textarea name="message" id="message" rows="4" cols="50" ></textarea></label></p>
             <input type="submit" value="Post">
         </form>
 
