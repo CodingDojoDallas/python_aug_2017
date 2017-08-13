@@ -9,7 +9,7 @@ def index():
     query = "SELECT * FROM users"
     users = mysql.query_db(query)  
 # print friends                                  
-return render_template('index.html', users=users)
+    return render_template('index.html', users=users)
 @app.route('/usersnew', methods=['POST'])
 def create():
     name = request.form['name']
@@ -29,7 +29,6 @@ if len(password) < 4:
 if password != password_confirmation:
     is_valid = False
     flash("Password must match Confirmation.")
-
 if is_valid == True:        
     salt = binascii.b2a_hex(os.urandom(15))
     hashed_pw = md5.new(password + salt).hexdigest()
