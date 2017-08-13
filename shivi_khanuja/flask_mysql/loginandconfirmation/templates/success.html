@@ -1,1 +1,8 @@
-Hey welcome !!!!!!!!
+Thank you for registering!
+
+{% if session['is_logged_in'] %}
+    <p>You are logged in as User # {{ session['user_id']}}</p>
+    <form action="users/logout" method="post">
+        <input type="submit" value="Logout">
+    </form>
+{% endif %}
