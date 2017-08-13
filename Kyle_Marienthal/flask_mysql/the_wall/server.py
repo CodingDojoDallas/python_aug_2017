@@ -45,7 +45,7 @@ if is_valid == True:
     session['is_logged_in'] = True
     return redirect('/thewall')
 else:
-    return redirect('/')
+    return redirect('/') #for some reason this line is jamming up the server!!!!!!!!!!!!!!!!!!!
 @app.route('/thewall')
 def thewall():
     query = "SELECT * FROM messages"
