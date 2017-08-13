@@ -1,0 +1,2 @@
+I created a new connection with WAMP. Made sure the port #s matched up. Name the connection 'hello'. 
+Went into my SQL(books.mwb) and front engineered the file so it would show up in the database. I then went back into books.mwb and connected to 'hello' server.

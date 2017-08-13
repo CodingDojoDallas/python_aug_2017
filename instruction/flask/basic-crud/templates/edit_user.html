@@ -1,0 +1,36 @@
+<html>
+    <head>
+        
+    </head>
+    <body>
+        <div>
+            <h1>Edit User #{{ user.id }}</h1>
+            <form action="/users/{{ user.id }}/update" method="post">
+                <div>
+                    <label>Name</label>
+                    <input type="text" name="name" value="{{ user.name }}">
+                </div>
+                <div>
+                    <label>Email</label>
+                    <input type="text" name="email" value="{{ user.email }}">
+                </div>
+                <div>
+                    <label>Password</label>
+                    <input type="password" name="password" value="{{ user.password }}">
+                </div>
+                <div>
+                    <input type="submit" value="Update User">
+                </div>
+            </form>
+        </div>
+        <div>
+            {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                    {% for error in messages %}
+                        <p class="error">{{ error }}</p>
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
+        </div>
+    </body>
+</html>

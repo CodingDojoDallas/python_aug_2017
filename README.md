@@ -24,6 +24,12 @@ https://www.dropbox.com/s/h3texmoqm801j8w/github_workflow_v4.pdf?dl=0
 ") <br>
 [Python Flask - Form Validation](https://youtu.be/ibLTCJV6es4 "Python Flask - Form Validation") <br>
 [MySQL - Intro to ERDs](https://youtu.be/WiGja4lAMdA "MySQL - Intro to ERDs") <br>
+[MySQL - Basic Queries](https://youtu.be/HnVZPsZBwGk "MySQL - Basic Queries") <br>
+[MySQL - Countries Demo](https://youtu.be/_2U8Gmvv9gw "MySQL - Countries Demo") <br>
+[MySQL - Self Join](https://youtu.be/sLDSe7Rti0E "MySQL - Self Join") <br>
+[Python Flask - Basic CRUD](https://youtu.be/IiHH5MD68Po "MySQL - Basic CRUD") <br>
+[Python - Basic Hashing w/ MD5](https://youtu.be/AXBuVJcWk0E "Python - Basic Hashing w/ MD5") <br>
+[Python - Login & Registration](https://youtu.be/eIJhkEb1Cnk "Python - Login & Registration") <br>
 
 # Resources
 
@@ -34,4 +40,7 @@ https://www.dropbox.com/s/h3texmoqm801j8w/github_workflow_v4.pdf?dl=0
 [Tutorials Point - Python](https://www.tutorialspoint.com/python/index.htm "Tutorials Point - Python") <br>
 [SQLZoo - MySQL Tutorials](http://sqlzoo.net/ "SQLZoo - mySQL Tutorials") <br>
 [Tutorials Point - MySQL](https://www.tutorialspoint.com/mysql/index.htm "Tutorials Point - MySQL") <br>
+[Flask Documentation](http://flask.pocoo.org/docs/0.12/ "Flask Documentation") <br>
+[Jinja2 Documentation](http://jinja.pocoo.org/docs/2.9/ "Jinja2 Documentation") <br>
+
 

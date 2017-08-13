@@ -1,0 +1,5 @@
+Open Database with Visual Studio Code(or any text editor)
+Copy the code
+Paste the code on WAMP 
+click the top arrow to Execute the Database.
+That opens up the Query Page and rest functions can be performed from there.

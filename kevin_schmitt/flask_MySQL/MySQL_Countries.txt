@@ -1,0 +1,62 @@
+1) select * from languages
+
+   WHERE language = 'Slovene'
+
+   ORDER BY percentage DESC
+
+2) select count(countries.id) as num_cities, countries.name, countries.id
+
+   from countries 
+
+   join cities on countries.id = cities.country_id
+
+   #WHERE countries.id = 2;
+   group by countries.id;
+
+  select cities.*, countries.*
+
+  from countries
+
+  join cities on countries.id = cities.country_id
+
+  order by countries.name;
+
+3) SELECT * FROM cities
+   
+where country_code = 'MEX' and population > 500000
+   order by population desc
+
+4) SELECT * FROM languages
+   
+where percentage > 89
+   
+order by percentage desc
+
+5) SELECT * FROM countries
+
+   where surface_area < 501 and population > 100000
+
+6) SELECT * FROM countries
+
+   where government_form = 'Constitutional Monarchy' and capital > 200 and life_expectancy > 75
+
+7) SELECT 
+       countries.name
+       countries.id
+       cities.id
+       cities.name
+       cities.district
+       cities.population
+   FROM countries
+   JOIN cities ON countries.id = cities.countries_id
+   WHERE countries.name = 'Argentina' AND cities.district = 'Buenos Aires' and cities.population > 500000
+
+8) SELECT 
+    
+	countries.region,
+
+        count(countries.id) as num_countries
+
+  FROM countries
+  
+GROUP BY countries.region;

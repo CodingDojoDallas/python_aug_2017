@@ -1,0 +1,6 @@
+.divs{
+    display: inline-block;
+    width: 48%;
+    background: red;
+    vertical-align: top;
+}
