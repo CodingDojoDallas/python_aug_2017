@@ -22,16 +22,16 @@
         <td>{{ friend['first_name'] }}</td>
         <td>{{ friend['last_name'] }}</td>
         <td>{{ friend['occupation'] }}</td>
-        <td><a href=''>show</a></td>
-        <td><a href=''>edit</a></td>
-        <td><a href=''>delete</a></td>
+        <td><a href='/friends/{{ friend['id'] }}'>show</a></td>
+        <td><a href='/friends/{{ friend['id'] }}/edit'>edit</a></td>
+        <td><a href='/friends/{{ friend['id'] }}/destroy'>delete</a></td>
       </tr>      
       <!-- <hr> -->
       {% endfor %}
       <!-- <hr>  -->
      </table> 
         </div>
-
+    <a href='friends/new'>Add new friend</a>
 
 
 
