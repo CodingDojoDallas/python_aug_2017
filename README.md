@@ -44,3 +44,4 @@ https://www.dropbox.com/s/h3texmoqm801j8w/github_workflow_v4.pdf?dl=0
 [Flask Documentation](http://flask.pocoo.org/docs/0.12/ "Flask Documentation") <br>
 [Jinja2 Documentation](http://jinja.pocoo.org/docs/2.9/ "Jinja2 Documentation") <br>
 [Django Documentation](https://docs.djangoproject.com/en/1.11/ "Django Documentation") <br>
+[Common Django URL RegEx Patterns](https://github.com/codingforentrepreneurs/Guides/blob/master/all/common_url_regex.md "Common Django URL RegEx Patterns") <br>
