@@ -53,7 +53,7 @@ def create():
 
 @app.route('/thewall')
 def thewall():
-    query = "select users.name, messages.message_text from users join messages on users.id=messages.user_id"                    
+    query = "SELECT users.name, users.id, messages.message_text FROM users JOIN messages ON users.id=messages.user_id"                    
     messages = mysql.query_db(query)                
     return render_template('thewall.html', messages=messages)
 
