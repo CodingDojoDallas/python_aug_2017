@@ -29,7 +29,8 @@ https://www.dropbox.com/s/h3texmoqm801j8w/github_workflow_v4.pdf?dl=0
 [MySQL - Self Join](https://youtu.be/sLDSe7Rti0E "MySQL - Self Join") <br>
 [Python Flask - Basic CRUD](https://youtu.be/IiHH5MD68Po "MySQL - Basic CRUD") <br>
 [Python - Basic Hashing w/ MD5](https://youtu.be/AXBuVJcWk0E "Python - Basic Hashing w/ MD5") <br>
-[Python - Login & Registration](https://youtu.be/eIJhkEb1Cnk "Python - Login & Registration") <br>
+[Python Flask - Login & Registration](https://youtu.be/eIJhkEb1Cnk "Python - Login & Registration") <br>
+[Python Flask - The Wall ](https://youtu.be/DlNnXyM6KwQ "Python - The Wall") <br>
 
 # Resources
 
