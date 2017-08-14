@@ -21,5 +21,6 @@ urlpatterns = [
       url(r'^blogs', include('apps.blogs.urls')),
       url(r'^sureys/', include('apps.surveys.urls')),
       url(r'^users/', include('apps.users.urls')),
+      url(r'^time_display/', include('apps.time_display.urls')),
       url(r'^admin/', admin.site.urls),
 ]
