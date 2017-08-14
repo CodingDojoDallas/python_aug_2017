@@ -1,4 +1,6 @@
 # Create a deck of Cards and assign hands to players
+# Daryll, Kyle, Kevin
+
 class Deck(object):
     def __init__(self):
         self.deck = []
