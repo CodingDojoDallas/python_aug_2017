@@ -1,0 +1,28 @@
+.halfSize {
+    display: inline-block;
+    width: 48%;
+    vertical-align: top;
+}
+.header * {
+    display: inline-block;
+    vertical-align: center;
+}
+.header {
+    border-bottom: 1px solid black;
+}
+.main_body {
+    margin: auto;
+    width: 90%;
+}
+textarea {
+    width: 100%;
+}
+.create_button {
+    float: right;
+}
+.message_text {
+    margin-left: 5%;
+}
+.comments {
+    margin-left: 10%;
+}

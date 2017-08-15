@@ -1,0 +1,65 @@
+<html>
+    <head>
+        <link rel="stylesheet" href='{{ url_for("static", filename='style.css') }}'>
+    <title>Login and Registration</title>
+    </head>
+    <body>
+        <h1>These are all my Users!</h1>
+        <table> 
+        <tr>
+            <th>ID:</th> 
+            <th>Name:</th>
+            <th>Email:</th>
+            <th>Password:</th>
+        </tr>
+        {% for user in users: %}
+        
+        <tr>
+            <td>{{ user['id'] }}</td>
+            <td>{{ user['name'] }}</td>
+            <td>{{ user['email'] }}</td>
+            <td>{{ user['password'] }}</td>
+        </tr>      
+        
+        {% endfor %}
+        
+        </table>  
+        <div class='divs'>
+        <h2>Register</h2>
+        <form action='/usersnew' method='POST'>
+            <input type="hidden" name='hidden_id' value='hidden_id'>
+            <p><label for="name">Name:<input type="text" name="name" id="name"></label></p>
+            <p><label for="email">Eamil:<input type="text" name="email" id="email"></label></p>
+            <p><label for="password">Password:<input type="password" name="password" id="password"></label></p>
+            <label for="password_confirmation">Confirm Password:<input type="password" name="password_confirmation" id="password_confirmation"></label>
+            <input type="submit" value="Add">
+        </form>
+        <div>
+            {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                    {% for error in messages %}
+                        <p class='error'>{{ error }}</p>
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
+        </div>
+        </div>
+        <div class='divs'>
+            <h2>Login</h2>
+            <form action='/sessions' method='post'>
+                <div>
+                    <label>Email</label>
+                    <input type='text' name='email'>
+                </div>
+                <div>
+                    <label>Password</label>
+                    <input type='password' name='password'>
+                    <input type="submit" value="login">
+                </div>
+            </form>
+        </div>
+    </body>
+</html>
+
+
+    

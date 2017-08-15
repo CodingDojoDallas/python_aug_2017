@@ -1,0 +1,61 @@
+html{
+	background-color: #000018;
+	font-family: arial;
+}
+h1, h2{
+	color: #F0A818;
+	text-shadow: 2px 2px 2px black;
+	display: inline-block;
+}
+#welcome{
+	margin-left: 700px;
+}
+.header{
+	display: block;
+	margin: 0px 20px 0px 20px;
+	border-bottom: 2pt solid #2e5b85;
+}
+.inline{
+	display: inline-block;
+}
+.logout{
+	background-color: lightgrey;
+	border-radius: 5px;
+	font-size: 16px;
+	font-weight: bold;
+}
+.post{
+	margin-left: 20px;
+}
+.submit{
+	background-color: lightgrey;
+	border-radius: 5px;
+	font-size: 16px;
+	font-weight: bold;
+	vertical-align: top;
+}
+textarea{
+	resize: none;
+	border: 1pt solid black;
+	background-color: #6b7c9d;
+	font-family: arial;
+	font-size: 16px;
+	font-weight: bolder;
+	padding: 20px;
+	border-radius: 20px;
+}
+.wall{
+	color: #F0A818;
+	margin-left: 20px;
+}
+.message{
+	text-align: center;
+	color: black;
+	font-weight: bold;
+	border-radius: 5px;
+	padding: 5px;
+	background-color: #6b7c9d;
+}
+p label{
+	font-weight: bolder;
+}
