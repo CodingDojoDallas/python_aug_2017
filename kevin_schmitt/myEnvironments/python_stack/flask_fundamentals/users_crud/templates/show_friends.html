@@ -1,0 +1,39 @@
+<html>
+    <head>
+
+    </head>
+    <body>
+        <div>
+            <a href='/friends/new'>Create A New Firend</a>
+        </div>
+        <div>
+            <h1>These are all my friends!</h1>
+    <table> 
+     <tr>
+        <th>ID:</th> 
+        <th>First Name:</th>
+        <th>Last Name:</th>
+        <th>Occupation:</th>
+      </tr>
+      {% for friend in friends: %}
+      
+      <tr>
+        <td>{{ friend['id'] }}</td>
+        <td>{{ friend['first_name'] }}</td>
+        <td>{{ friend['last_name'] }}</td>
+        <td>{{ friend['occupation'] }}</td>
+        <td><a href='/friends/{{ friend['id'] }}'>show</a></td>
+        <td><a href='/friends/{{ friend['id'] }}/edit'>edit</a></td>
+        <td><a href='/friends/{{ friend['id'] }}/destroy'>delete</a></td>
+      </tr>      
+      <!-- <hr> -->
+      {% endfor %}
+      <!-- <hr>  -->
+     </table> 
+        </div>
+    <a href='friends/new'>Add new friend</a>
+
+
+
+    </body>
+</html>

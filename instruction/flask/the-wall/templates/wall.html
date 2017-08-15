@@ -1,0 +1,72 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    </head>
+    <body>
+        <div class="container">
+            <div class="header">
+                <h1>CodingDojoWall</h1>
+                <h3>Hello {{ current_user.name }}</h3>
+                <a href="/users/logout">Logout</a>
+            </div>
+            <div class="main_body">
+                <div class="new_message">
+                    <form action="/messages" method="post">
+                        <div>
+                            <label>Post a Message</label>
+                        </div>
+                        <div>
+                            <textarea name="message" rows="5"></textarea>
+                        </div>
+                        <div>
+                            <input class="create_button" type="submit" value="Post Message">
+                        </div>
+                    </form>
+                    {% with messages = get_flashed_messages() %}
+                        {% if messages %}
+                            {% for error in messages %}
+                                <p class="error">{{ error }}</p>
+                            {% endfor %}
+                        {% endif %}
+                    {% endwith %}
+                </div>
+                <div class="messages">
+                    {% for message in messages %}
+                        <div>
+                            <p>{{ message['user_name'] }} - {{ message['timestamp'] }}</p>
+                            <p class="message_text">{{ message['message'] }}</p>
+                        </div>
+                        {% for comment in message['comments'] %}
+                            <div>
+                                <p>{{ comment['user_name'] }} - {{  comment['timestamp'] }}</p>
+                                <p class="message_text">{{ comment['comment'] }}</p>
+                            </div>
+                        {% endfor %}
+                        <div class="comments">
+                            <form action="/comments" method="post">
+                                <input type="hidden" name="message_id" value="{{ message['pk'] }}">
+                                <div>
+                                    <label>Post a Comment</label>
+                                </div>
+                                <div>
+                                    <textarea name="comment" rows="3"></textarea>
+                                </div>
+                                <div>
+                                    <input type="submit" class="create_button" value="Post a Comment">
+                                </div>
+                            </form>
+                            {% with messages = get_flashed_messages() %}
+                                {% if messages %}
+                                    {% for error in messages %}
+                                        <p class="error">{{ error }}</p>
+                                    {% endfor %}
+                                {% endif %}
+                            {% endwith %}
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
+

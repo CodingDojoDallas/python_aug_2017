@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="{{ url_for('static', filename = 'css/wall_style.css') }}">
+		<title>Coding Dojo Wall</title>
+	</head>
+	<body>
+		{% if session.is_logged_in %}
+			<div class="header">
+				<h1>Coding Dojo Wall</h1><h1 id='welcome'> Welcome, {{ session.first_name }}</h1>
+				<form class="inline" action="/users/logout" method="post">
+					<input class="logout" type="submit" value="Logout">
+				</form>
+			</div>
+			<div class="post">
+				<h2>Post a message:</h2>
+				<form class="" action='/messages' method="post">
+					<textarea name="message" rows="3" cols="80"></textarea>
+					<input type="hidden" name="hidden_id" value={{ session.user_id }}>
+					<input class="submit" type="submit" name="submit" value="Submit">
+				</form>
+			</div>
+		{% endif %}
+		<div class="wall">
+		{% for message in messages %}
+			<table>
+				<tr>
+					<th>User Name</th>
+					<th>Message</th>
+				</tr>
+				<tr>
+					<td>
+						<p class="message">{{ message['user_id'] }}</p>
+					</td>
+					<td>
+						<p class = "message">{{ message['message'] }}</p>
+					</td>
+				</tr>
+			</table>
+			<form action="/comment" method="post">
+				<p><label>Post a comment:</label></p>
+				<textarea name="comment" rows="2" cols="80"></textarea>
+				<input type="hidden" name="hidden_comment_id" value={{ session.user_id }}>
+				<input type="hidden" name="message_id" value="">
+			</form>
+		{% endfor %}
+		</div>
+	</body>
+</html>

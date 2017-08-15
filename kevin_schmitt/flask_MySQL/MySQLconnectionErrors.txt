@@ -1,0 +1,21 @@
+$ python server.py
+Traceback (most recent call last):
+  File "server.py", line 4, in <module>
+    mysql = MySQLConnector(app,'friendsdb')
+  File "C:\Users\kschmit1\Documents\github_aug\python_aug_2017\kevin_schmitt\myE
+nvironments\python_stack\flask_fundamentals\friends\mysqlconnection.py", line 39
+, in MySQLConnector
+    return MySQLConnection(app, db)
+  File "C:\Users\kschmit1\Documents\github_aug\python_aug_2017\kevin_schmitt\myE
+nvironments\python_stack\flask_fundamentals\friends\mysqlconnection.py", line 8,
+ in __init__
+    'database': mydb, # we got db as an argument
+NameError: global name 'mydb' is not defined
+
+Corrections
+
+host : localhost,
+database : db,
+user : root,
+password : "",
+port : 3306

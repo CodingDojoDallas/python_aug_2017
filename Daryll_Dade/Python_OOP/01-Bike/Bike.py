@@ -1,3 +1,6 @@
+"""Ceatea a series of bikes using Object oriented programing and send them on varieous distances.
+Display their results
+"""
 class Bike(object):
     def __init__(self, price, max_speed, miles=0):
         self.price = price
