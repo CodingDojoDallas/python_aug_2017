@@ -1,7 +1,37 @@
+html{
+	background-color: #181848;
+	font-family: arial;
+	text-align: -webkit-center;
+}
+h1{
+	color: #F0A818;
+	text-shadow: 2px 2px 2px black;
+}
+h2{
+	color: white;
+}
 .half{
 	display: inline-block;
-	width: 15%;
+	width: 30%;
 	vertical-align: top;
+}
+table{
+	background-color: #304878;
+	border: 2pt solid darkgrey;
+	border-radius: 10px;
+	margin: 0px 0px 20px 0px;
+	padding: 10px;
+}
+label{
+	margin-right: 5px;
+	font-weight: bolder;
+	font-size: 20px;
+	text-shadow: 1px 1px 1px white;
+}
+.submit{
+	border-radius: 5px;
+	font-size: 16px;
+	font-weight: bold;
 }
 #errors{
 	color: red;
