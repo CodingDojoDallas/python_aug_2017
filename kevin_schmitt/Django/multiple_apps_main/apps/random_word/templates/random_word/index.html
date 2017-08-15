@@ -2,18 +2,20 @@
     <head>
         <meta charset='utf-8'>
         <title>Random Word</title>
+        <link rel="stylesheet" href='random_word/static/random_word/css/style.css' media="screen"  charset="utf-8">
     </head>
 
     <body>
         
         <div>
-            <h3>Random Word (attempt #)</h3>
-            <h1>    </h1>
+            <h3>Random Word (attempt #{{ count }})</h3>
+            <div class='random'><h1>    </h1>
+            </div>
             
             <form action="/random_word/generate" method='POST'>
                 {% csrf_token %}
+                <!-- <input type="hidden" name='size' value=10> -->
                 <input type="submit" value="Get String">
-                <button id='generate' name='generate' value='generate' action='generate'>Generate</button>
             </form>
         </div>
 

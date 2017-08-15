@@ -1,12 +1,18 @@
 from django.shortcuts import render, HttpResponse, redirect
-import string, random
-  # the index function is called when root is visited
+from django.utils.crypto import get_random_string
+unique_id = get_random_string(length=10)
 def index(request):
     return render(request, 'random_word/index.html')
 
-def generate(request, methods=['POST']):
-    if request.method == "POST":
-        print '***'*25
-        return redirect('/')
+def generate(request):
+    count = 0
+    print request.method
+    if request.method == 'POST':
+        print '*'*35
+        count += 1
+        print count
+        print unique_id
+        return redirect('/', count=count)
     else:
         return redirect('/')
+
