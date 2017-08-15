@@ -32,6 +32,7 @@ https://www.dropbox.com/s/h3texmoqm801j8w/github_workflow_v4.pdf?dl=0
 [Python Flask - Login & Registration](https://youtu.be/eIJhkEb1Cnk "Python - Login & Registration") <br>
 [Python Flask - The Wall ](https://youtu.be/DlNnXyM6KwQ "Python - The Wall") <br>
 [Python Django - Intro ](https://youtu.be/KCwRH0AJ4yU "Python Django - Intro ") <br>
+[Python Django - Forms, Session, & Route Params](https://youtu.be/GJJzeNJOXIw "Python Django - Forms, Session, & Route Params") <br>
 
 # Resources
 
@@ -46,3 +47,4 @@ https://www.dropbox.com/s/h3texmoqm801j8w/github_workflow_v4.pdf?dl=0
 [Jinja2 Documentation](http://jinja.pocoo.org/docs/2.9/ "Jinja2 Documentation") <br>
 [Django Documentation](https://docs.djangoproject.com/en/1.11/ "Django Documentation") <br>
 [Common Django URL RegEx Patterns](https://github.com/codingforentrepreneurs/Guides/blob/master/all/common_url_regex.md "Common Django URL RegEx Patterns") <br>
+[Pythex - Test Python Regex](https://pythex.org/ "Pythex - Test Python Regex") <br>
