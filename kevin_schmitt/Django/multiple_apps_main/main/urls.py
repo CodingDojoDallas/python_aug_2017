@@ -16,5 +16,11 @@ Including another URLconf
 from django.conf.urls import url, include # Notice we added include
 from django.contrib import admin
 urlpatterns = [
-      url(r'^', include('apps.first_app.urls')) # And now we use the include function to pull in our first_app.urls...
+      url(r'^$', include('apps.first_app.urls')), # And now we use the include function to pull in our first_app.urls...
+      url(r'^first_app/', include('apps.first_app.urls')),
+      url(r'^blogs', include('apps.blogs.urls')),
+      url(r'^sureys/', include('apps.surveys.urls')),
+      url(r'^users/', include('apps.users.urls')),
+      url(r'^time_display/', include('apps.time_display.urls')),
+      url(r'^admin/', admin.site.urls),
 ]
