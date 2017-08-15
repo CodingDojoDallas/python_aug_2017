@@ -1,0 +1,37 @@
+<html>
+<head>
+    <title>Survey Form</title>
+</head>
+<body>
+  <div>
+    <h2>This is the Survey Form!</h2>    
+    <form action='/form/display' method='post'>
+        {% csrf_token %}
+        <div>
+            <label for=''>Your Name:</label>
+            <input type='text' name='name'>
+                   
+        </div>
+        <div>
+            <label for=''>Email:</label>
+            <input type='text' name='email'>           
+        </div>
+        <div>
+            <label for=''>Location:</label>
+            <input type='text' name='location'>           
+        </div>
+        <div>
+            <label for=''>Favorite Language:</label>
+            <input type='text' name='language'>           
+        </div>
+        <div>
+            <label for=''>Comment (optional):</label>
+            <textarea name='comment'></textarea>
+            <!-- <input type='textarea' name='comment'>            -->
+        </div>
+        <input type='submit' vlaue='Send Info'>
+    </form>
+    </div>
+
+</body>
+</html>
