@@ -1,0 +1,34 @@
+<html>
+    <head>
+
+    </head>
+    <body>
+        <h3>Here is your info!</h3>
+        <div>
+            <table>
+                <tr>
+                    <td>Name:</td>
+                    <td>{{request.session.name}}</td>
+                </tr>
+                <tr>
+                    <td>Email:</td>
+                    <td>{{request.session.email}}</td>
+                </tr>
+                <tr>
+                    <td>Location:</td>
+                    <td>{{request.session.location}}</td>
+                </tr>
+                <tr>
+                    <td>Favorite Language:</td>
+                    <td>{{request.session.language}}</td>
+                </tr>
+                <tr>
+                    <td>Comment:</td>
+                    <td>{{request.session.comment}}</td>
+                </tr>
+            </table>
+        </div>
+
+
+    </body>
+</html>

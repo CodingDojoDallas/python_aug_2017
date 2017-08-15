@@ -12,5 +12,5 @@ def display(request):
     request.session['language']=request.POST['language']
     request.session['comment']=request.POST['comment']
     print request.session['comment']
-    return render(request, 'form/display.html')
+    return redirect(request, 'form/display.html')
 
