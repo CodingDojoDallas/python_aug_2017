@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        {% load static %}
+        <link href="{% static 'css/style.css' %}" rel="stylesheet">
+    </head>
+    <body>
+        <div>
+            <h1>Add a new word</h1>
+            <textarea rows="5" cols="50"></textarea>
+            <p>Choose color</p>
+            <div>
+                <input type="radio" name = "color">Red            
+            </div>
+            <div>            
+                <input type="radio" name = "color">Green
+            </div>
+            <div>
+            <input type="radio" name = "color">Blue            
+            </div>
+            <div>
+                <input type="checkbox" name = 'font_size'><span>show in BIG fonts!</span>
+            </div>
+                
+            <input type="submit" name="submit_button" value="Add to Session">
+        </div>
+    </body>
+</html>
