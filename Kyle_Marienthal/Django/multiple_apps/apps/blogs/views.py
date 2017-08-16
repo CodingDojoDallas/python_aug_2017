@@ -9,3 +9,4 @@ def new(request):
 
 def create(request):
     return render(request, 'blogs/create.html')
+
