@@ -34,6 +34,7 @@ https://www.dropbox.com/s/h3texmoqm801j8w/github_workflow_v4.pdf?dl=0
 [Python Django - Intro ](https://youtu.be/KCwRH0AJ4yU "Python Django - Intro ") <br>
 [Python Django - Forms, Session, & Route Params](https://youtu.be/GJJzeNJOXIw "Python Django - Forms, Session, & Route Params") <br>
 [Python Django - Session Words Demo ](https://youtu.be/Vfcp3fIrSrs "Python Django - Session Words Demo") <br>
+[Python Django - Intro to Models ](hhttps://youtu.be/wsSEMNWc6wY "Python Django - Intro to Models") <br>
 
 # Resources
 
