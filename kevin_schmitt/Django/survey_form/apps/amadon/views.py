@@ -3,11 +3,16 @@ from django.shortcuts import render, HttpResponse, redirect
 def index(request):
     print "Hello, I am your index request!"
 
-    return render(request, 'session_words/index.html', context)
+    return render(request, 'amadon/index.html')
 
 
-def checkout(request):
-    print '*'*25
+def buy(request):
+    print '*'*30
 
-    return redirect('/session_words')
+    return redirect('/amadon/receipt')
+
+def receipt(request):
+    print '$'*30
+
+    return render(request, 'amadon/receipt.html')
 
