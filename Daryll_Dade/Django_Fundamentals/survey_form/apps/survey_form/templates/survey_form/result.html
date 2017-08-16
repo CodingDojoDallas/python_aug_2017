@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Survey Form</title>
+    </head>
+    <body>
+        <p>Thanks for submitting this form!  You have submitted this form {{  request.session.count  }} times now.</p>
+        <h3>Submitted Information</h3>
+        <h4>Name: {{ request.session.name }}</h4>
+        <h4>Dojo Location: {{ request.session.location }}</h4>
+        <h4>Favorite Language: {{ request.session.language }}</h4>
+        <h4>Comment: {{ request.session.comments }}</h4>
+        <a href="/"><button>Go Back</button></a>
+    </body>
+</html>
