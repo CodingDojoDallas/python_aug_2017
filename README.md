@@ -49,3 +49,6 @@ https://www.dropbox.com/s/h3texmoqm801j8w/github_workflow_v4.pdf?dl=0
 [Django Documentation](https://docs.djangoproject.com/en/1.11/ "Django Documentation") <br>
 [Common Django URL RegEx Patterns](https://github.com/codingforentrepreneurs/Guides/blob/master/all/common_url_regex.md "Common Django URL RegEx Patterns") <br>
 [Pythex - Test Python Regex](https://pythex.org/ "Pythex - Test Python Regex") <br>
+[For a Good STRF Time](http://www.foragoodstrftime.com/ "For a Good STRF Time") <br>
+[Django Documentation - Making Queries](
+https://docs.djangoproject.com/en/1.11/topics/db/queries/ "Django Documentation - Making Queries") <br>
