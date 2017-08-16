@@ -1,0 +1,25 @@
+<html>  
+    <head>
+        <meta charset='utf-8'>
+        <title>Random Word</title>
+
+        <!-- <link rel="stylesheet" href='random_word/static/random_word/css/style.css' charset="utf-8"> -->
+
+
+    </head>
+
+    <body>
+        <div>
+            <h3>Random Word (attempt #{{ count }})</h3>
+            <div class='random'>
+                <h1>  {{ random }}  </h1>
+            </div>
+            
+            <form action="/random_word/generate" method='POST'>
+                {% csrf_token %}
+                <input type="submit" value="Get String">
+            </form>
+        </div>
+    </body>
+
+</html>

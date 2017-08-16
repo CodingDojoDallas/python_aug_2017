@@ -1,0 +1,36 @@
+<html>
+<head>
+    <title>Session Words</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'session_words/css/style.css' %}" media="screen" title="no title"  charset="utf-8">
+</head>
+<body>
+    <div id='left_container'>
+
+        <h2>Add a new word</h2>    
+        <form action='/session_words/add' method='post'>
+            {% csrf_token %}
+            <div>
+                <label>Word</label>
+                <input type='text' name='word'>
+                
+            </div>
+            <div>
+                <select name='color'>
+                    <option value='red'>Red</option>
+                    <option value='green'>Green</option>
+                    <option value='blue'>Blue</option>
+                </select>           
+            </div>
+            <div>
+                <label>Big Font?</label> 
+                <input type='checkbox' name="box" value=''>       
+            </div>               
+            <input type='submit' vlaue='Add to session'>
+        </form>
+    </div>
+    <div id='right_container'>
+        <p class="{{ myClass }}">This will be bold!</p>
+    </div> 
+</body>
+</html>
