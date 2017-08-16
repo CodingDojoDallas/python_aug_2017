@@ -1,0 +1,7 @@
+.time_Display{
+    border: 2px solid black;
+    background: red;
+    align-items: center;
+    display: inline-flex;
+    
+}
