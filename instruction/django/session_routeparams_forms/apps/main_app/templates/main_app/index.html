@@ -1,0 +1,25 @@
+<html>
+    <head></head>
+    <body>
+        <div class="container">
+            <h2>Welcome to {{ title }}</h2>
+            <p>Today is {{ date }}</p>
+            <form action="/login" method="post">
+                {% csrf_token %}
+                <div>
+                    <label>Please, enter your name:</label>
+                </div>
+                <div>
+                    <input type="text" name="name">
+                </div>
+                <div>
+                    <input type="submit" value="Enter">
+                    <span><-- Click here to send a POST Request</span>
+                    <p><a href="/login">Click here</a> to send a GET Request</p>
+                </div>
+            </form>
+            <p>For good measure here's a pic of the model 3</p>
+            <img src="{{ img_url }}" alt="tesla">
+        </div>
+    </body>
+</html>
