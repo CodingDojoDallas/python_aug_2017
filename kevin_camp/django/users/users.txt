@@ -25,9 +25,9 @@ python manage.py shell
 >>>User.objects.all().order_by('first_name')
 
 #retrieve user 3 and UPDATE last_name
->>>user3 = User.objects.get(id=3)
+>>>user3 = User.objects.filter(id=3)
 >>>user3.last_name = "Novilla"
 >>>user3.save()
 
 #delete user 4
->>>User.objects.get(id=4).delete()
+>>>User.objects.filter(id=4).delete()
