@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% load static%}
+    <link rel="stylesheet" href="{%static'session_apps/style.css'%}">
+</head>
+<body>
+    <div>
+        <h2>Session Words</h2>
+    </div>
+    <div class ="halfSize border-right">
+        <h2>Add a new Word</h2>
+        <form action="/words" method="post">
+            {% csrf token%}
+            <div>
+                <input type="text" name="word">
+            </div>
+            <div>
+                <input type="radio" name="color">Green
+            </div>
+            <div>
+                    <input type="radio" name="color">Red
+            </div>
+            <div>
+                    <input type="radio" name="color">Blue
+            </div>
+            <div>
+                <input type="checkbox" name="font">show in BIG font
+            </div>
+            <div>
+                    <input type="submit" value="Add to Session">
+            </div>
+        </form>
+        {% if messages %}
+        {% for message in messages%}
+        <p class="error">{{ message }}</p>
+        {% endfor %}
+        {% endif %}
+    </div>
+    <div class="halfSize border-left">
+        {% for word in request.session.word_array %}
+        <p class ="{{ word.color }}">{{ word.value }}</p>
+        {% endfor %}
+
+        </div>
+    </div>
+</body>
+</html>
