@@ -6,6 +6,7 @@ urlpatterns = [
     url(r'^$', views.index),
     url(r'^buy$', views.buy),
     url(r'^receipt$', views.receipt),
+    url(r'^reset$', views.reset),
 ]
 
 

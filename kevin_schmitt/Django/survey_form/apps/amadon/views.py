@@ -11,7 +11,7 @@ def index(request):
 
 def buy(request):
     print '*'*30
-    total_session = int(request.session['total'])
+    total_session = request.session['total']
     request.session['quantity'] = request.POST['quantity']
     request.session['product_id'] = request.POST['product_id']
     total_session += int(request.POST['quantity'])
@@ -39,3 +39,7 @@ def receipt(request):
     print request.session['total']
     return render(request, 'amadon/receipt.html', context)
 
+def reset(request):
+    if request.method == 'GET':
+        request.session.flush()
+    return redirect('/amadon')
