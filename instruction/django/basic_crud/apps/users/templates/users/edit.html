@@ -1,0 +1,27 @@
+<html>
+        <head>
+            {% load static %}
+            <link rel="stylesheet" href="{% static 'users/style.css' %}">
+        </head>
+        <body>
+            <h1>Update User ID #{{ user.id }}</h1>
+            <form action="/users/{{ user.id }}/update" method="post">
+                {% csrf_token %}
+                <div>
+                    <label>Name</label>
+                    <input type="text" name="name" value="{{ user.name }}">
+                </div>
+                <div>
+                    <label>Email</label>
+                    <input type="text" name="email" value="{{ user.email }}">
+                </div>
+                <div>
+                    <label>Age</label>
+                    <input type="number" name="age" min="1" step="1"  value="{{ user.age }}">
+                </div>
+                <div>
+                    <input type="submit" value="Update User">
+                </div>
+            </form>
+        </body>
+    </html>
