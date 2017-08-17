@@ -1,49 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    {% load static%}
-    <link rel="stylesheet" href="{%static'session_apps/style.css'%}">
+    <meta charset="UTF-8"> 
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'session_apps/style.css' %}">
 </head>
+
 <body>
     <div>
         <h2>Session Words</h2>
     </div>
-    <div class ="halfSize border-right">
+    <div class="halfSize border-right">
         <h2>Add a new Word</h2>
         <form action="/words" method="post">
-            {% csrf token%}
+            {% csrf_token %}
             <div>
                 <input type="text" name="word">
             </div>
             <div>
-                <input type="radio" name="color">Green
+                <label>Choose color:</label>
             </div>
             <div>
-                    <input type="radio" name="color">Red
+                <input type="radio" name="color" value="green">Green
             </div>
             <div>
-                    <input type="radio" name="color">Blue
+                <input type="radio" name="color" value="red">Red
             </div>
             <div>
-                <input type="checkbox" name="font">show in BIG font
+                <input type="radio" name="color" value="blue">Blue
             </div>
             <div>
-                    <input type="submit" value="Add to Session">
+                <input type="checkbox" name="font_size" value="font_size">show in BIG font
+            </div>
+            <div>
+                <input type="submit" value="Add to Session">
             </div>
         </form>
         {% if messages %}
-        {% for message in messages%}
-        <p class="error">{{ message }}</p>
-        {% endfor %}
+             {% for message in messages%}
+                <p class="error">{{ message }}</p>
+            {% endfor %}
         {% endif %}
     </div>
     <div class="halfSize border-left">
+            <form action ='/reset' method = 'POST'>
+                {% csrf_token %}
+                <input type="submit" value="Reset Session">
+                
+            </form>
+           
         {% for word in request.session.word_array %}
-        <p class ="{{ word.color }}">{{ word.value }}</p>
+             <p class="{{ word.color }} {{ word.font_size }}">{{ word.value }} - {{ word.time }}</p>
         {% endfor %}
 
-        </div>
-    </div>
+      </div>
 </body>
+
 </html>
