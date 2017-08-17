@@ -5,7 +5,7 @@
     <link rel="stylesheet" href="{% static 'session_words/css/style.css' %}" media="screen" title="no title"  charset="utf-8">
 </head>
 <body>
-    <div id='left_container'>
+    <div class='left_container'>
 
         <h2>Add a new word</h2>    
         <form action='/session_words/add' method='post'>
@@ -16,21 +16,37 @@
                 
             </div>
             <div>
-                <select name='color'>
-                    <option value='red'>Red</option>
-                    <option value='green'>Green</option>
-                    <option value='blue'>Blue</option>
-                </select>           
+                <label>Choose a color:</label>
+            </div>
+            <div>
+                <input type='radio' name='color' value='red'>Red
+            </div>
+            <div>
+                <input type='radio' name='color' value='green'>Green 
+            </div>
+            <div>
+                <input type='radio' name='color' value='blue'>Blue         
             </div>
             <div>
                 <label>Big Font?</label> 
-                <input type='checkbox' name="box" value=''>       
+                <input type='checkbox' name="font" value=''>       
             </div>               
             <input type='submit' vlaue='Add to session'>
         </form>
-    </div>
-    <div id='right_container'>
-        <p class="{{ myClass }}">This will be bold!</p>
+        {% if messages %}
+            {% for message in messages %}
+                <p class='error'>{{ message }}</p>
+            {% endfor %}
+        {% endif %}
+    </div><!--
+    --><div class='right_container'>
+        <form action="/session_words/reset" method='post'>
+            {% csrf_token %}
+            <input type='submit' value='Reset Session'>
+        </form>
+        {% for word in request.session.word_array %}
+            <p class='{{ word.color }} {{ word.font_size }}'>{{ word.value }} - {{ word.time }}</p>
+        {% endfor %}
     </div> 
 </body>
 </html>

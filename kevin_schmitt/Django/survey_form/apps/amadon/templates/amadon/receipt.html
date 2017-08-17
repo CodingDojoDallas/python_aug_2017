@@ -1,0 +1,17 @@
+<html>
+    <head>
+        <title>Receipt Page</title>
+        {% load static %}
+    <link rel="stylesheet" href="{% static 'amadon/css/style.css' %}" media="screen" title="no title"  charset="utf-8">
+    </head>
+    <body>
+        <h3>Here is your receipt!</h3>
+        <p>You have ordered {{ quantity }} items in this cart!</p>
+        <p>Your total price is ${{ total_price }}</p>
+        <p>You have ordered {{ total_quantity }} items altogether. Thanks for your loyalty!</p>
+        
+
+        <a href='/amadon'>Go Back</a>
+        <a href='/amadon/reset'>Reset Session</a>
+    </body>
+</html>
