@@ -1,0 +1,33 @@
+python manage.py makemigrations
+python manage.py migrate
+
+python manage.py shell
+
+
+
+#import User models
+>>>from apps.user_login.models import User
+
+#retrieve all users
+>>>User.objects.all()
+
+#create users
+>>>User.objects.create(first_name="Kevin", last_name="Camp", email="kcamp4632@yahoo.com", age="37")
+>>>User.objects.create(first_name="Jemma", last_name="Starr", email="jem@jem.com", age="25")
+>>>User.objects.create(first_name="Bob", last_name="Vila", email="bob@bob.com", age="71")
+>>>User.objects.create(first_name="Bobby", last_name="Lightning", email="bobby@lightning.com", age="42")
+
+
+#retrieve first user
+>>>first_user = User.objects.first()
+
+#retrieve users sorted by first name
+>>>User.objects.all().order_by('first_name')
+
+#retrieve user 3 and UPDATE last_name
+>>>user3 = User.objects.filter(id=3)
+>>>user3.last_name = "Novilla"
+>>>user3.save()
+
+#delete user 4
+>>>User.objects.filter(id=4).delete()

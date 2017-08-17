@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% load static%}
+    <title>Random Word Generator</title>
+   <link rel="stylesheet" href="{{%static 'random_word_css/style.css'%}}">
+</head>
+<body>
+    <div class = "container">
+       <form action="/generated" method ="post">
+        <div>
+            <label>Random Word</label>
+        </div>
+        <div>
+            <textarea rows="5" cols="60">{{unique_id}}</textarea>
+        </div>
+            <div>
+                <input type="submit" value="Generate">
+            </div>
+            
+        </form>
+        
+    </div>
+    
+</body>
+</html>

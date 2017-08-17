@@ -1,0 +1,54 @@
+<html>
+    <head>
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    </head>
+    <body>
+        <div class="container">
+            <div>
+                <h1>Session Words</h1>
+            </div>
+            <div class="halfSize border-right">
+                <h2>Add a new Word</h2>
+                <form action="/words" method="post">
+                    {% csrf_token %}
+                    <div>
+                        <input type="text" name="word">
+                    </div>
+                    <div>
+                        <label>Choose a color:</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="color" value="red">Red
+                    </div>
+                    <div>
+                        <input type="radio" name="color" value="green">Green
+                    </div>
+                    <div>
+                        <input type="radio" name="color" value="blue">Blue
+                    </div>
+                    <div>
+                        <input type="checkbox" name="font">show in BIG fonts!
+                    </div>
+                    <div>
+                        <input type="submit" value="Add to Session">
+                    </div>
+                </form>
+                {% if messages %}
+                    {% for message in messages %}
+                        <p class="error">{{ message }}</p>
+                    {% endfor %}
+                {% endif %}
+            </div><!--
+            --><div class="halfSize border-left">
+                <form action="/reset" method="post">
+                    {% csrf_token %}
+                    <input type="submit" value="Reset Session">
+                </form>
+                {% for word in request.session.word_array %}
+                    <p class="{{ word.color }} {{ word.font_size }}">{{ word.value }} - {{ word.time }}</p>
+                {% endfor %}
+            </div>
+        </div>
+    </body>
+</html>

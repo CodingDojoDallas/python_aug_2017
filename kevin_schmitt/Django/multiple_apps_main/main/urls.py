@@ -16,6 +16,7 @@ Including another URLconf
 from django.conf.urls import url, include # Notice we added include
 from django.contrib import admin
 urlpatterns = [
+    url(r'^user_login/', include('apps.user_login.urls')),
     url(r'^first_app/', include('apps.first_app.urls')),
     url(r'^blogs', include('apps.blogs.urls')),
     url(r'^sureys/', include('apps.surveys.urls')),
