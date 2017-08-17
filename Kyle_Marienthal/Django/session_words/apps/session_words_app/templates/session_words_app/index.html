@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        {% load static %}
+        <link href="{% static 'css/style.css' %}" rel="stylesheet">
+    </head>
+    <body>
+        <div class = 'halfSize border-right'>
+            <h1>Add a new word</h1>
+            <form action='/words' method='POST'>
+                {% csrf_token %}
+                <div>
+                    <input type="text" name="word">
+                </div>
+                <div>
+                    <label>Choose color:</label>
+                </div>
+                <div>
+                    <input type="radio" name = "color" value='red'>Red            
+                </div>
+                <div>            
+                    <input type="radio" name = "color" value='green'>Green
+                </div>
+                <div>
+                    <input type="radio" name = "color" value='blue'>Blue            
+                </div>
+                <div>
+                    <input type="checkbox" name = 'font_size'><span>show in BIG fonts!</span>
+                </div>
+                <div>
+                    <input type="submit" value="Add to Session">                 
+                </div>  
+            </form>
+            {% if messages %}
+                {% for message in messages %}
+                    <p class='error'>{{ message }}</p>
+                {% endfor %}
+            {% endif %}
+        </div>
+
+        <div class= 'halfSize border-left'>
+            <form action ='/reset' method = 'POST'>
+                {% csrf_token %}
+                <input type="submit" value="Reset Session">
+                
+            </form>
+            {% for word in request.session.word_array %}
+                <p class = '{{ word.color }} {{ word.font_size }}'>{{ word.value }} - {{ word.time }}</p>
+            {% endfor %}
+        </div>
+    </body>
+</html>
