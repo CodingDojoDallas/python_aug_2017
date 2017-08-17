@@ -1,0 +1,40 @@
+.halfSize {
+    width: 48%;
+    display: inline-block;
+    vertical-align: top;
+}
+.border-left {
+    border-left: 1px solid black
+}
+
+.border-right {
+    border-right: 1px solid black
+}
+
+.error {
+    color: red;
+}
+
+.red{
+    color: red;
+}
+
+.green{
+    color: green;
+}
+
+.blue{
+    color: blue;
+}
+
+.black{
+    color: black;
+}
+
+.default{
+
+}
+
+.large_font{
+    font-size: 20px;
+}
