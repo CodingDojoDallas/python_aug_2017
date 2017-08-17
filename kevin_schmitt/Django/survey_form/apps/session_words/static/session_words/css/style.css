@@ -1,14 +1,27 @@
-#left_container,#right_container{
-    display: inline-block;
-    width: 40%;
-    background: silver;
+.right_container,.left_container{
+    width: 48%;
     border-left: 5px solid black;
+    display: inline-block;
     vertical-align: top;
 }
-.checked {
-    font-weight: bold;
-    font-size: 22px;
+.error{
+    color: red
 }
-.unchecked{
+.red{
+    color: red;
+}
+.green{
+    color: green;
+}
+.blue{
+    color: blue;
+}
+.black {
+    color: black;
+}
+.default_font{
 
+}
+.large_font{
+    font-size: 22px;
 }
