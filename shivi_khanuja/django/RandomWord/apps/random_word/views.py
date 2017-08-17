@@ -10,3 +10,16 @@ def index(request):
     }
     return render(request, 'random_word/index.html')
 
+def generated(request):
+    unique_id = get_random_string(length = 14)
+
+    if 'count' not in request.session:
+        request.session['count'] = 1
+    else:
+        request.session['count'] += 1    
+
+    request.session['unique_id'] = unique_id    
+
+    return redirect(request, 'random_word/index.html')
+
+
