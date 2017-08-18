@@ -9,7 +9,6 @@ class User(models.Model):
     first_name = models.CharField(max_length=255)
     last_name = models.CharField(max_length=255)
     email = models.CharField(max_length=255)
-    notes = models.TextField(1000)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
@@ -18,11 +17,12 @@ class Book(models.Model):
     desc = models.TextField(1000)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
-    # authors = models.ManyToManyField(Author, related_name="books")
+    uploader = models.ForeignKey(User, related_name='uploaded_books')
+    likes = models.ManyToManyField(User, related_name="books_liked")
 
-class Like(models.Model):
-    user = models.ForeignKey(User, related_name='book')
-    book = models.ForeignKey(Book, related_name='user')
+# class Like(models.Model):
+#     user = models.ForeignKey(User, related_name='likes')
+#     book = models.ForeignKey(Book, related_name='likes')
 
 # class Book_author(models.Model):
 #     book = models.ForeignKey(Book, related_name='book')
