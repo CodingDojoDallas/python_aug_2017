@@ -36,6 +36,7 @@ https://www.dropbox.com/s/h3texmoqm801j8w/github_workflow_v4.pdf?dl=0
 [Python Django - Session Words Demo ](https://youtu.be/Vfcp3fIrSrs "Python Django - Session Words Demo") <br>
 [Python Django - Intro to Models ](https://youtu.be/wsSEMNWc6wY "Python Django - Intro to Models") <br>
 [Python Django - Basic CRUD](https://youtu.be/e-V4XsbKN5E "Python Django - Basic CRUD") <br>
+[Python Django - Login & Registration](https://youtu.be/vaNlU2BC2Lw "Python Django - Login & Registration") <br>
 
 # Resources
 
