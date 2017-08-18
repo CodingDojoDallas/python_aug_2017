@@ -1,0 +1,134 @@
+$ django-admin startproject likes_books
+(djangoenv)
+kschmit1@AISD241051 MINGW32 ~/Documents/github_aug/python_aug_2017/kevin_schmitt/Django (master)
+$ cd likes_books/
+(djangoenv)
+kschmit1@AISD241051 MINGW32 ~/Documents/github_aug/python_aug_2017/kevin_schmitt/Django/likes_books (master)
+$ mkdir apps
+c(djangoenv)
+kschmit1@AISD241051 MINGW32 ~/Documents/github_aug/python_aug_2017/kevin_schmitt/Django/likes_books (master)
+$ cd apps
+(djangoenv)
+kschmit1@AISD241051 MINGW32 ~/Documents/github_aug/python_aug_2017/kevin_schmitt/Django/likes_books/apps (master)
+$ touch __init__.py
+(djangoenv)
+kschmit1@AISD241051 MINGW32 ~/Documents/github_aug/python_aug_2017/kevin_schmitt/Django/likes_books/apps (master)
+$ python ../manage.py startapp book_reviews
+(djangoenv)
+kschmit1@AISD241051 MINGW32 ~/Documents/github_aug/python_aug_2017/kevin_schmitt/Django/likes_books/apps (master)
+$ subl .
+bash: subl: command not found
+(djangoenv)
+kschmit1@AISD241051 MINGW32 ~/Documents/github_aug/python_aug_2017/kevin_schmitt/Django/likes_books/apps (master)
+$ code .
+(djangoenv)
+kschmit1@AISD241051 MINGW32 ~/Documents/github_aug/python_aug_2017/kevin_schmitt/Django/likes_books/apps (master)
+$ cd ..
+c(djangoenv)
+kschmit1@AISD241051 MINGW32 ~/Documents/github_aug/python_aug_2017/kevin_schmitt/Django/likes_books (master)
+$ code .
+(djangoenv)
+kschmit1@AISD241051 MINGW32 ~/Documents/github_aug/python_aug_2017/kevin_schmitt/Django/likes_books (master)
+$ python manage.py makemigrations
+Migrations for 'book_reviews':
+  apps\book_reviews\migrations\0001_initial.py
+    - Create model Book
+    - Create model User
+    - Add field likes to book
+    - Add field uploader to book
+(djangoenv)
+kschmit1@AISD241051 MINGW32 ~/Documents/github_aug/python_aug_2017/kevin_schmitt/Django/likes_books (master)
+$ python manage.py migrate
+Operations to perform:
+  Apply all migrations: admin, auth, book_reviews, contenttypes, sessions
+Running migrations:
+  Applying contenttypes.0001_initial... OK
+  Applying auth.0001_initial... OK
+  Applying admin.0001_initial... OK
+  Applying admin.0002_logentry_remove_auto_add... OK
+  Applying contenttypes.0002_remove_content_type_name... OK
+  Applying auth.0002_alter_permission_name_max_length... OK
+  Applying auth.0003_alter_user_email_max_length... OK
+  Applying auth.0004_alter_user_username_opts... OK
+  Applying auth.0005_alter_user_last_login_null... OK
+  Applying auth.0006_require_contenttypes_0002... OK
+  Applying auth.0007_alter_validators_add_error_messages... OK
+  Applying auth.0008_alter_user_username_max_length... OK
+  Applying book_reviews.0001_initial... OK
+  Applying sessions.0001_initial... OK
+(djangoenv)
+kschmit1@AISD241051 MINGW32 ~/Documents/github_aug/python_aug_2017/kevin_schmitt/Django/likes_books (master)
+$ python manage.py shell
+C:\Users\kschmit1\Documents\github_aug\djangoenv\lib\site-packages\IPython\core\interactiveshell.py:726: UserWarning: Attempting to work in a virtualenv. If you encounter problems, please inst
+all IPython inside the virtualenv.
+  warn("Attempting to work in a virtualenv. If you encounter problems, please "
+Python 2.7.10 (default, May 23 2015, 09:44:00) [MSC v.1500 64 bit (AMD64)]
+Type "copyright", "credits" or "license" for more information.
+
+IPython 5.4.1 -- An enhanced Interactive Python.
+?         -> Introduction and overview of IPython's features.
+%quickref -> Quick reference.
+help      -> Python's own help system.
+object?   -> Details about 'object', use 'object??' for extra details.
+
+In [1]: from apps.book_reviews.models import *
+
+In [2]: User.objects.create(first_name='Cody', last_name='Williams', email='cody@cody.com')
+Out[2]: <User: User object>
+
+In [3]: User.objects.create(first_name='Cody2', last_name='Williams', email='cody@cody.com')
+Out[3]: <User: User object>
+
+In [4]: User.objects.create(first_name='Cody3', last_name='Williams', email='cody@cody.com')
+Out[4]: <User: User object>
+
+In [5]: Book.objects.create(name='hello', desc='world', uploader= User.objects.get(id=1))
+Out[5]: <Book: Book object>
+
+In [6]: Book.objects.get(id=1).likes.add(User.objects.get(id=1))
+
+In [7]: Book.objects.get(id=1).likes.all()
+Out[7]: <QuerySet [<User: User object>]>
+
+In [8]: Book.objects.get(id=1).likes.count()
+Out[8]: 1
+
+In [9]: Book.objects.get(id=1).likes.add(User.objects.get(id=1))
+
+In [10]: Book.objects.get(id=1).likes.count()
+Out[10]: 1
+
+In [11]: Book.objects.get(id=1).likes.add(User.objects.get(id=2))
+
+In [12]: Book.objects.get(id=1).likes.add(User.objects.get(id=3))
+
+In [13]: Book.objects.get(id=1).likes.all()
+Out[13]: <QuerySet [<User: User object>, <User: User object>, <User: User object>]>
+
+In [14]: User.objects.get(id=1).books_liked.all()
+Out[14]: <QuerySet [<Book: Book object>]>
+
+In [15]: User.objects.get(id=1).books_liked.count()
+Out[15]: 1
+
+In [16]: Book.objects.create(name='new book', desc='the highlight reel', uploader= User.objects.get(id=3))
+Out[16]: <Book: Book object>
+
+In [17]: Book.objects.create(name='this is it', desc='this is a description', uploader= User.objects.get(id=2))
+Out[17]: <Book: Book object>
+
+In [18]: Book.objects.get(id=2).likes.add(User.objects.get(id=3))
+
+In [19]: Book.objects.get(id=).likes.add(User.objects.get(id=3))
+  File "<ipython-input-19-12e700de5599>", line 1
+    Book.objects.get(id=).likes.add(User.objects.get(id=3))
+                        ^
+SyntaxError: invalid syntax
+
+
+In [20]: Book.objects.get(id=1).likes.add(User.objects.get(id=3))
+
+In [21]: Book.objects.get(id=1).likes.count()
+Out[21]: 3
+
+In [22]:
