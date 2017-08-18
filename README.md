@@ -56,3 +56,5 @@ https://www.dropbox.com/s/h3texmoqm801j8w/github_workflow_v4.pdf?dl=0
 [Django Documentation - Making Queries](
 https://docs.djangoproject.com/en/1.11/topics/db/queries/ "Django Documentation - Making Queries") <br>
 [Django Documentation - QuerySet API](https://docs.djangoproject.com/en/1.11/ref/models/querysets/#update "Django Documentation - QuerySet API") <br>
+[Django Documentation - QuerySet API](https://youtu.be/LJjXdxAMTOs "Django Documentation - QuerySet API") <br>
+
