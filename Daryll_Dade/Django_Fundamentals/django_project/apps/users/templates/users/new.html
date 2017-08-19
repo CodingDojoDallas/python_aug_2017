@@ -2,6 +2,8 @@
 <html>
     <head>
         <meta charset="utf-8">
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'users/style.css' %}"
         <title>New Users</title>
     </head>
     <body>
@@ -22,7 +24,7 @@
             </div>
             <div>
                 <label>Coonfirm Password:</label>
-                <input type="password" name="password_confirmation" />
+            <input type="password" name="password_confirmation" />
             </div>
             <div>
                 <input type="submit" value="Register" />
@@ -31,8 +33,7 @@
             {% if messages %}
             <div>
                 {% for error in messages %}
-                    <p  class="error">{{ error }}</p>
-                    </p>
+            <p class="error">{{ error }}</p>
                 {% endfor %}
             </div>
             {% endif %}

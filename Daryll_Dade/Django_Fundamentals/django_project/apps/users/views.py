@@ -23,3 +23,9 @@ def create(request):
 				messages.error(request, error )
 			#redirect to home page
 		return redirect('/users/new.html')
+	else:
+		#put the user_id into session
+		request.session['user_id'] = result['user'].id
+		#above line = DICTIONARIES GET BRACKAT NOTATION
+					#Classes get DOT Notation!
+		#all database entries are classes so DOT notation for db entries!!!!!
