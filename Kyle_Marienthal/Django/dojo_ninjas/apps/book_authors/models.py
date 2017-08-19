@@ -9,9 +9,6 @@ class Book(models.Model):
     desc = models.TextField()
     created_at =models.DateTimeField(auto_now_add=True) 
     updated_at =models.DateTimeField(auto_now=True)
-    def __str__(self):
-        print "Name: {}".format(self.name)
-        print "Desc: {}".format(self.desc)
 
 class Author(models.Model):
     first_name = models.CharField(max_length=255)
