@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>New Users</title>
+    </head>
+    <body>
+        <h1>New Users</h1>
+        <form action="/users/create" method="POST">
+            {% csrf_token %}
+            <div>
+                <label>Name:</label>
+                <input type="text" name="name" />
+            </div>
+            <div>
+                <label>Email:</label>
+                <input type="text" name="email" />
+            </div>
+            <div>
+                <label>Password:</label>
+                <input type="password" name="password" />
+            </div>
+            <div>
+                <label>Coonfirm Password:</label>
+                <input type="password" name="password_confirmation" />
+            </div>
+            <div>
+                <input type="submit" value="Register" />
+            </div>
+        </form>
+            {% if messages %}
+            <div>
+                {% for error in messages %}
+                    <p  class="error">{{ error }}</p>
+                    </p>
+                {% endfor %}
+            </div>
+            {% endif %}
+
+    </body>
+</html>

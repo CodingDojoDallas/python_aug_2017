@@ -38,7 +38,7 @@ class UserManager(models.Manager):
 
          #step 3: if valid create the user and the session
         if not errors:
-            users = user.objects.create(
+            user = User.objects.create(
                 name=post['name'],
                 email=post['email'],
                 #import bcrypt, create a hashed password using bcrypt
@@ -53,8 +53,7 @@ class UserManager(models.Manager):
             return {'status': False, 'errors': errors}
 
 class User(models.Model):
-    first_name = models.CharField(max_length = 255)
-    last_name = models.CharField(max_length = 255)
+    name = models.CharField(max_length = 255)
     email = models.CharField(max_length = 255)
     password = models.CharField(max_length = 255)
     created_at = models.DateTimeField(auto_now_add = True)
