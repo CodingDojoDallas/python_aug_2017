@@ -34,3 +34,6 @@ def create(request):
 def success(request):
 	print "success route"
 	return render(request, 'users/success.html')
+
+def login(request):
+	return render(request, 'user/login.html')
