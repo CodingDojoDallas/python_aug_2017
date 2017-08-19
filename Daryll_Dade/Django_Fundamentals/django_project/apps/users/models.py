@@ -29,7 +29,7 @@ class UserManager(models.Manager):
             errors.append('Email already in use')
 
         #passwords should be at least 4 characters
-        if len(post['password']) , 4:
+        if len(post['password']) < 4:
             errors.append('Password must be at least four characters')
         if post['password'] != post['password_confirmation']:
             errors.append('Passwords do not match')

@@ -4,4 +4,4 @@ from __future__ import unicode_literals
 from django.shortcuts import render
 
 def index(request):
-	return render(request, 'login_reg/index.html')
+	return render(request, 'users/index.html')

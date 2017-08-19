@@ -13,5 +13,8 @@ def new(request):
 	return render(request, 'users/new.html')
 
 def create(request):
+	print request.POST
 	if request.method == 'Post':
-		User.object.validate_registration()
+		result = User.object.validate_registration(request.POST)
+		print result
+		return redirect('/')
