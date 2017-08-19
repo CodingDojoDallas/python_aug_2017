@@ -8,7 +8,7 @@ from django.shortcuts import render, redirect, reverse, HttpResponse
 #     Responce ="HttpResponse Index Page"
 #     return HttpResponse(Responce)
 
-def index(request, blog_id):
+def index(request, blog_id=0):
 
     if blog_id == 0:
         index_page_info = "Placeholder for Blogs List"
@@ -27,22 +27,22 @@ def create(request):
 
     return redirect('/')
 
-def show(request,blog_id=id):
+def show(request,blog_id = 0):
 
     response = {
-        'blog_id': id,
+        'blog_id': blog_id,
     }
 
     return HttpResponce(response)
 
-def edit(request, id=id):
+def edit(request, blog_id = 0):
 
     response ={
-        'edit_id': id,
+        'edit_id': blog_id,
     }
     return httpresponse(response)
 
-def destroy(request, id=id):
+def destroy(request, blog_id=0):
 
 
 
