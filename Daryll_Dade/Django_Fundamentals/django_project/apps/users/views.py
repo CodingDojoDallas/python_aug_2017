@@ -28,4 +28,9 @@ def create(request):
 		request.session['user_id'] = result['user'].id
 		#above line = DICTIONARIES GET BRACKAT NOTATION
 					#Classes get DOT Notation!
-		#all database entries are classes so DOT notation for db entries!!!!!
+		#all database entries are instances of a class so DOT notation for db entries!!!!!
+		return redirect('users/success')
+
+def success(request):
+	print "success route"
+	return render(request, 'users/success.html')
