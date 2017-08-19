@@ -4,7 +4,7 @@ from datetime import datetime
 
 # Create your views here.
 def index(request):
-    request.session.flush()
+    # request.session.flush()
     if 'word_array' not in request.session:
         request.session['word_array'] = []
 

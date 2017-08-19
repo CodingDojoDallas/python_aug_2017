@@ -36,6 +36,8 @@ https://www.dropbox.com/s/h3texmoqm801j8w/github_workflow_v4.pdf?dl=0
 [Python Django - Session Words Demo ](https://youtu.be/Vfcp3fIrSrs "Python Django - Session Words Demo") <br>
 [Python Django - Intro to Models ](https://youtu.be/wsSEMNWc6wY "Python Django - Intro to Models") <br>
 [Python Django - Basic CRUD](https://youtu.be/e-V4XsbKN5E "Python Django - Basic CRUD") <br>
+[Python Django - Login & Registration](https://youtu.be/vaNlU2BC2Lw "Python Django - Login & Registration") <br>
+[Python Django - Many-to-Many](https://youtu.be/LJjXdxAMTOs "Python Django - Many-to-Many") <br>
 
 # Resources
 
@@ -55,3 +57,4 @@ https://www.dropbox.com/s/h3texmoqm801j8w/github_workflow_v4.pdf?dl=0
 [Django Documentation - Making Queries](
 https://docs.djangoproject.com/en/1.11/topics/db/queries/ "Django Documentation - Making Queries") <br>
 [Django Documentation - QuerySet API](https://docs.djangoproject.com/en/1.11/ref/models/querysets/#update "Django Documentation - QuerySet API") <br>
+
