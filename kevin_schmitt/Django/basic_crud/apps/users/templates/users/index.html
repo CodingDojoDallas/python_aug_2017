@@ -5,7 +5,6 @@
     </head>
     <body>
         <div class="container">
-            {{users}}
             <h1>These are all my users</h1>
             <a href='/users/new'>Create a New User</a>
             <table>
@@ -17,7 +16,7 @@
                 </tr>
                 {% for user in users %}
                 <tr>
-                    <td>{{user.name}}</td>
+                    <td><a href='/users/show/{{user.id}}'>{{user.name}}</a></td>
                     <td>{{user.email}}</td>
                     <td>{{user.age}}</td>
                     <td>{{user.created_at}}</td>

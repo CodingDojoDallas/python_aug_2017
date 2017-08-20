@@ -21,3 +21,25 @@ def getUsers(request):
     users = User.objects.all()
     context = { 'users': users}
     return render(request, 'users/index.html', context)
+
+def show(request, user_id):
+    user = User.objects.get(id=user_id)
+    context ={ 'user': user }
+    return render(request, 'users/show.html', context)
+
+def edit(request, user_id):
+    user = User.objects.get(id=user_id)
+    context ={ 'user': user }
+    return render(request, 'users/edit.html', context)
+
+def update(request, user_id):
+    User.objects.filter(id=user_id).update(
+        name=request.POST['name'],
+        email = request.POST['email'], 
+        age=request.POST['age'],
+    )
+    return redirect('/users/get')
+
+def delete(request, user_id):
+    User.objects.filter(id=user_id).delete()
+    return redirect('/users/get')
