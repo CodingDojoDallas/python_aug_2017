@@ -5,6 +5,24 @@
     </head>
     <body>
         hello world
+        <form action='/users/create' method='POST'>
+            {% csrf_token %}
+            <div>
+                <label>Name</label>
+                <input type='text' name='name'>
+            </div>
+            <div>
+                <label>Email</label>
+                <input type='text' name='email'>
+            </div>
+            <div>
+                <label>age</label>
+                <input type='number' name='age' min='1' step='1'>
+            </div>
+            <div>
+                <input type='submit' value='Create User'>
+            </div>
+        </form>
     </body>
 
 </html>

@@ -3,5 +3,7 @@ from . import views
 
 urlpatterns = [
     url(r'^$', views.index),
-    url(r'^users/new$', views.new),
+    url(r'^new$', views.new),
+    url(r'^create$', views.create),
+    url(r'^get$', views.getUsers),
 ]
