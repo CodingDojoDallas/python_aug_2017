@@ -21,13 +21,18 @@
                 <tr>
                     <td>Dojo Tshirt</td>
                     <td>$19.99</td>
-                    <td><select>
-                            <option name = '1'>1</option>
-                            <option name = '2'>2</option>
-                            <option name = '3'>3</option>
-                       
-                    </select></td>
-                    <td><input type="submit" value="Buy!"></td>
+                    <td>
+                        <form action='/buy' method="POST">
+                            {% csrf_token %}
+                            <select name='quantity'>
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                            </select>
+                            <input type='hidden' name='price' value='19.99'/>
+                            <input type="submit" value="Buy!">
+                        </form>
+                    </td>
                 </tr>
                 <tr>
                         <td>Dojo Sweater</td>
@@ -38,7 +43,7 @@
                                 <option name = '3'>3</option>
                            
                         </select></td>
-                        <td><input type="submit" value="Buy!"></td>
+                        <td><form action='/buy' method="POST"><input type="submit" value="Buy!"></form></td>
                     </tr>
                     <tr>
                             <td>Dojo cup</td>
@@ -49,7 +54,7 @@
                                     <option name = '3'>3</option>
                                
                             </select></td>
-                            <td><input type="submit" value="Buy!"></td>
+                            <td><form action='/buy' method="POST"><input type="submit" value="Buy!"></form></td>
                         </tr>
                         <tr>
                                 <td>Algo Book</td>
@@ -60,7 +65,7 @@
                                         <option name = '3'>3</option>
                                    
                                 </select></td>
-                                <td><input type="submit" value="Buy!"></td>
+                                <td><form action='/buy' method="POST"><input type="submit" value="Buy!"></form></td>
                             </tr>
             </table>
         </div>
