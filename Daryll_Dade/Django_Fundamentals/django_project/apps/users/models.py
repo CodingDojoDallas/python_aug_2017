@@ -50,7 +50,15 @@ class UserManager(models.Manager):
             #use 'status' to prove success/failure
             return {'status': True, 'user': user}
         else:
-            return {'status': False, 'errors': errors}
+            return {'status': False, 'errors': 'Invalid credentials'}
+
+    def validate_login(self, post):
+        user = User.objects.filter(email=post['email']).first()
+        if user and bycrypt.checkpw(post['password'].encode(), user.password):
+            return { 'status': True, 'user': user }
+        else:
+            return { 'status': False, 'error': errors }
+
 
 class User(models.Model):
     name = models.CharField(max_length = 255)
