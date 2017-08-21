@@ -1,0 +1,24 @@
+<html>
+    <head>
+        <meta charset='utf-8'>
+        {% load static %}
+        <link rel='stylesheet' href='{% static 'course/css/style.css' %}'>
+        <title>New Course</title>        
+    </head>
+    <body>
+        <h2>Add a new course</h2>
+        <div class="container">
+            <form action='/course/add' method='post'>
+                <div>
+                    <label>Name:</label>
+                    <input type='text' name='name'>
+                </div>
+                <div>
+                    <label>Description:</label>
+                    <input type='textarea' name='desc'>
+                </div>
+                <input type='submit' value='Add'>
+            </form>
+        </div>
+    </body>
+</html>
