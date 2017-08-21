@@ -51,5 +51,5 @@ def authenticate(request):
 			return redirect('/users/success')
 
 def logout(request):
-	request.session.flust()
+	request.session.flush()
 	return redirect('/')
