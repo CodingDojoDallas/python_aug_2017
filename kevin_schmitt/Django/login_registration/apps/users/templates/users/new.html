@@ -1,7 +1,7 @@
 <html>
     <head>
         {% load static %}
-        <link rel='stylesheet' href='{% static 'users/stlye.css' %}'>
+        <link rel='stylesheet' href="{% static 'users/stlye.css' %}">
     </head>
     <body>
         <div class="container">
@@ -14,11 +14,11 @@
                 </div>
                 <div>
                     <label>Email</label>
-                    <input type='text' name='name'>
+                    <input type='text' name='email'>
                 </div>
                 <div>
                     <label>Password</label>
-                    <input type='password' name='name'>
+                    <input type='password' name='password'>
                 </div>
                 <div>
                     <label>Confirm Password</label>
@@ -26,8 +26,13 @@
                 </div>
                 <input type='submit' value="Register">
             </form>
-
-
+            {% if messages %}
+                </div>
+                    {% for error in messages %}
+                        <p id='error'>{{ error }}</p>
+                    {% endfor %}
+                </div>
+            {% endif %}
 
         </div>
 

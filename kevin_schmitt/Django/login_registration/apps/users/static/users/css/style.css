@@ -1,4 +1,3 @@
-.maindiv{
-    border-style: 5px solid black;
-    width: 50%;
+#error {
+    color: red;
 }
