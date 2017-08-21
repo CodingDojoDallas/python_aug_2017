@@ -4,7 +4,11 @@ from . import views
 urlpatterns = [
     url(r'^$', views.index),
     url(r'^new$', views.new),
+    url(r'^get$', views.get),
+    url(r'^add$', views.add),
+    url(r'^delete/(?P<course_id>\d+)$', views.delete),
 ]
+
 
 
 # urlpatterns = [

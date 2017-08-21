@@ -1,24 +1,42 @@
 <html>
     <head>
-        <meta charset='utf-8'>
         {% load static %}
-        <link rel='stylesheet' href='{% static 'course/css/style.css' %}'>
+        <link rel='stylesheet' href='{% static "course/css/style.css" %}'>
         <title>New Course</title>        
     </head>
     <body>
         <h2>Add a new course</h2>
         <div class="container">
             <form action='/course/add' method='post'>
+                {%csrf_token%}
                 <div>
                     <label>Name:</label>
                     <input type='text' name='name'>
                 </div>
                 <div>
                     <label>Description:</label>
-                    <input type='textarea' name='desc'>
+                    <textarea name='desc'></textarea>
                 </div>
                 <input type='submit' value='Add'>
             </form>
+        </div>
+        <div class="table">
+            <h2>Courses</h2>
+            <table>
+                <tr>
+                    <th>Course Name</th>
+                    <th>Description</th>
+                    <th>Date Added</th>
+                    <th>Actions</th>
+                </tr>
+                {% for course in courses %}
+                <tr>
+                    <td>{{ course.name }}</td>
+                    <td>{{ course.desc }}</td>
+                    <td>{{ course.created_at }}</td>
+                    <td><a href='/course/delete/{{ course.id }}'>remove</a></td>
+                </tr>
+                {% endfor %}
         </div>
     </body>
 </html>
