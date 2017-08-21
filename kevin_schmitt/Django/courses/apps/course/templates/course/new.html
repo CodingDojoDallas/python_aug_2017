@@ -20,6 +20,13 @@
                 <input type='submit' value='Add'>
             </form>
         </div>
+        {% if messages %}
+            </div>
+                {% for error in messages %}
+                    <p class='error'>{{ error }}</p>
+                {% endfor %}
+            </div>
+        {% endif %}
         <div class="table">
             <h2>Courses</h2>
             <table>

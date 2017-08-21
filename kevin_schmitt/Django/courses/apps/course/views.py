@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 from .models import *
+from django.contrib import messages
 # Create your views here.
 
 def index(request):
@@ -13,18 +14,25 @@ def new(request):
     return render(request, 'course/new.html', context)
 
 def add(request):
-    # errors=[]
     # print 'this is my add page! its redirecting'
-    # if len(request.POST['name']) < 6:
-    #     errors.append('Name must be more than 5 characters')
-    # if len(request.POST['desc']) < 16:
-    #     errors.append('Description must be more than 15 characters')
-    # return redirect('/course/get')
-    # if not errors:
-    name = request.POST['name']
-    desc = request.POST['desc']
-    Course.objects.create(name=name,desc=desc)
-    return redirect('/course/get')
+    # name = request.POST['name']
+    # desc = request.POST['desc']
+    # Course.objects.create(name=name,desc=desc)
+    if request.method == 'POST':
+        result = Course.objects.validate(request.POST)
+        print result
+        print result['status']
+        #if dict - have to use square bracket notation
+        #if class - have to use . notation
+        if result['status'] == False:
+            #create flash messages
+            for error in result['errors']:
+                messages.error(request, error)
+            return redirect('/course/new')
+        else:
+            #put user_id into session
+            # request.session['user_id'] = result['user'].id
+            return redirect('/course/new')
 
 def get(request):
     courses = Course.objects.all()
