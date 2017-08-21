@@ -1,0 +1,35 @@
+<html>
+    <head>
+        {% load static %}
+        <link rel='stylesheet' href='{% static 'users/stlye.css' %}'>
+    </head>
+    <body>
+        <div class="container">
+            <h1>Register a New User</h1>
+            <form action='/users/create' method='POST'>
+                {% csrf_token %}
+                <div>
+                    <label>Name</label>
+                    <input type='text' name='name'>
+                </div>
+                <div>
+                    <label>Email</label>
+                    <input type='text' name='name'>
+                </div>
+                <div>
+                    <label>Password</label>
+                    <input type='password' name='name'>
+                </div>
+                <div>
+                    <label>Confirm Password</label>
+                    <input type='password' name='password_confirmation'>
+                </div>
+                <input type='submit' value="Register">
+            </form>
+
+
+
+        </div>
+
+    </body>
+</html>
