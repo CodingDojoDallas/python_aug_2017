@@ -43,4 +43,8 @@ def authenticate(request):
             return redirect('/user/login')
         else:
             request.session['user_id'] = result['user'].id
-            return redirect('/users/succes')
+            return redirect('/users/success')
+
+def logout(request):
+    request.session.flush()
+    return redirect('/')
