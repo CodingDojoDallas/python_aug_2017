@@ -8,6 +8,16 @@ import bcrypt
 
 class UserManager(models.Manager):
     #DO NOT PASS THE FULL REQUEST OBJECT TO THE MANAGER!
+    def validate_login(self, post):
+        user = User.objects.filter(email=post['email']).first()
+        if user and bcrypt.checkpw(post['password'].encode(), user.password.encode()):
+            #confirms whether or not I found one
+            return { 'status': True, 'user': user }
+        else:
+            return { 'status': False, 'error': "Invalid credentials"}
+
+
+
     def validate_registration(self, post):
         #step 1: validate the form
         errors = []

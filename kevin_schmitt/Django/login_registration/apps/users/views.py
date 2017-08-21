@@ -21,4 +21,26 @@ def create(request):
             #create flash messages
             for error in result['errors']:
                 messages.error(request, error)
-        return redirect('/users/new')
+            return redirect('/users/new')
+        else:
+            #put user_id into session
+            request.session['user_id'] = result['user'].id
+            return redirect('/users/success')
+
+def success(request):
+    return render(request, 'users/success.html')
+
+def login(request):
+    return render(request, 'users/login.html')
+
+def authenticate(request):
+    if request.method == 'POST':
+        result = User.objects.validate_login(request.POST)
+        print result
+        if result['status'] == False:
+            #generate error message
+            messages.error(request, result['error'])
+            return redirect('/user/login')
+        else:
+            request.session['user_id'] = result['user'].id
+            return redirect('/users/succes')
