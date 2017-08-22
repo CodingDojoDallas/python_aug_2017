@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Login and Registration</title>
+    </head>
+    <body>
+        <h1>Login And Registration:</h1>
+        <form action="/users/create" method="POST">
+            {% csrf_token %}
+            <div>
+                <label>Name:</label>
+                <input type="text" name="name" />
+            </div>
+            <div>
+                <label>Email:</label>
+                <input type="text" name="email" />
+            </div>
+            <div>
+                <label>Password:</label>
+                <input type="password" name="password" />
+            </div>
+            <div>
+                <label>Coonfirm Password:</label>
+                <input type="password" name="password_confirmation" />
+            </div>
+            <div>
+                <input type="submit" name="Register" />
+            </div>
+        </form>
+    </body>
+</html>
