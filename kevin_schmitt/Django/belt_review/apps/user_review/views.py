@@ -23,7 +23,7 @@ def register(request):
         #if dict - have to use square bracket notation
         #if class - have to use . notation
         if result['status'] == False:
-            request.session['name'] = ''
+            # request.session['name'] = ''
             #create flash messages
             for error in result['errors']:
                 messages.error(request, error)
@@ -31,7 +31,7 @@ def register(request):
         else:
             #put user_id into session
             request.session['user_id'] = result['user'].id
-            return redirect('/user_review/success')
+            return redirect('/user_review/succes')
 
 def login(request):
     print 'this is login**********************'
@@ -50,10 +50,11 @@ def login(request):
 
 def success(request):
     print 'this is success***************'
-    if request.session['name'] == '':
-        return redirect('/user_review')
-    else:
+    if request.session['name']:
         return render(request, 'user_review/wall.html')
+        
+    else:
+        return redirect('/user_review/new')
 
 def logout(request):
     request.session.flush()
