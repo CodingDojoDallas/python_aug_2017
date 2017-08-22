@@ -38,6 +38,10 @@ https://www.dropbox.com/s/h3texmoqm801j8w/github_workflow_v4.pdf?dl=0
 [Python Django - Basic CRUD](https://youtu.be/e-V4XsbKN5E "Python Django - Basic CRUD") <br>
 [Python Django - Login & Registration](https://youtu.be/vaNlU2BC2Lw "Python Django - Login & Registration") <br>
 [Python Django - Many-to-Many](https://youtu.be/LJjXdxAMTOs "Python Django - Many-to-Many") <br>
+[Python Django - Posts with Likes](https://youtu.be/XIgdQfKl84U "Python Django - Post with Likes") <br>
+[Git - Using Multiple Branches](https://youtu.be/tAerkoqYKEc "Git - Using Multiple Branches") <br>
+[Python Django - Adding the Unlike Button (Part 1)](https://youtu.be/XIgdQfKl84U "Python Django - Adding the Unlike Button (Part 1)") <br>
+[Python Django - Adding the Unlike Button (Part 2)](https://youtu.be/J3Y4v6IoV4c "Python Django - Adding the Unlike Button (Part 2)") <br>
 
 # Resources
 
@@ -57,4 +61,4 @@ https://www.dropbox.com/s/h3texmoqm801j8w/github_workflow_v4.pdf?dl=0
 [Django Documentation - Making Queries](
 https://docs.djangoproject.com/en/1.11/topics/db/queries/ "Django Documentation - Making Queries") <br>
 [Django Documentation - QuerySet API](https://docs.djangoproject.com/en/1.11/ref/models/querysets/#update "Django Documentation - QuerySet API") <br>
-
+[Django Documentation - Annotate & Aggregation](https://docs.djangoproject.com/en/1.11/topics/db/aggregation/ "Django Documentation - Annotate & Aggregation") <br>

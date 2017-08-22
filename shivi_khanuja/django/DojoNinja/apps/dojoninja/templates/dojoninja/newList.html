@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        {% load static %}
+        <link href="{% static 'css/style.css' %}" rel="stylesheet">
+    <body>
+        <h1>New list</h1>
+        <form action ="/dojoninja/newList" method="post">
+           <% crsf_token%>
+            <table>
+                <tr>
+                    <th>Name</th>
+                    <th>City</th>
+                    <th>State</th>
+                    <th>Created_at</th>
+                </tr>
+                {% for Dojo in dojoninja %}
+                <tr>
+                    <td>{{ Dojo.name}}</td>
+                    <td>{{ Dojo.city}}</td>
+                    <td>{{ Dojo.state}}</td>  
+                </tr>
+                {% endfor %}
+            </table>
+            
+        </form>
+    
+    </body>
+</html>
