@@ -1,0 +1,22 @@
+.container {
+    width: 90%;
+    margin: auto;
+}
+
+    .container p {
+        text-align: center;
+    }
+
+.halfSize {
+    width: 48%;
+    display: inline-block;
+}
+.border-left {
+    border-left: 1px solid black;
+}
+.border-right {
+    border-right: 1px solid black;
+}
+.error{
+    color : red;
+}ages
