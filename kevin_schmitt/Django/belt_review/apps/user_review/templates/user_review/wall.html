@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Books Wall</title>
+    {% load static %}
+    <link rel='stylesheet' href="{% static 'user_review/css/style.css' %}">
+</head>
+    <body>
+        <div class="left">
+            <h2>Welcome, {{ request.session.name }}!</h2>
+            <h5><a href='/user_review/logout'>Logout</a></h5>
+        
+            <h3>Recent Book Reviews:</h3>
+                <div class="book_reviews">
+                <!-- List all book reviews -->
+                </div>
+        </div>
+        <div class="right">
+            <a href='/user_review/add'>Add Book and Review</a>
+            <a href='/user_review/logout'>Logout</a>
+            <h3>Other Books with Reviews:</h3>
+            <div class="scroll_books">
+
+                <!-- should scroll through books -->
+
+            </div>
+        </div>
+    </body>
+</html>

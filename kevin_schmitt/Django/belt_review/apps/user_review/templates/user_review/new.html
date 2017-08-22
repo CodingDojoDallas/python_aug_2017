@@ -1,16 +1,20 @@
 <html>
     <head>
         {% load static %}
-        <link rel='stylesheet' href="{% static 'users/css/style.css' %}">
+        <link rel='stylesheet' href="{% static 'user_review/css/style.css' %}">
     </head>
     <body>
         <div class="container">
             <h1>Register a New User</h1>
-            <form action='/users/create' method='POST'>
+            <form action='/user_review/register' method='POST'>
                 {% csrf_token %}
                 <div>
                     <label>Name</label>
                     <input type='text' name='name'>
+                </div>
+                <div>
+                    <label>Alias</label>
+                    <input type='text' name='alias'>
                 </div>
                 <div>
                     <label>Email</label>
@@ -20,6 +24,7 @@
                     <label>Password</label>
                     <input type='password' name='password'>
                 </div>
+                *Password should be atleast 4 characters.
                 <div>
                     <label>Confirm Password</label>
                     <input type='password' name='password_confirmation'>
@@ -29,12 +34,26 @@
             {% if messages %}
                 <div>
                     {% for error in messages %}
-                        <p id='error'>{{ error }}</p>
+                        <p class='error'>{{ error }}</p>
                     {% endfor %}
                 </div>
             {% endif %}
-
         </div>
-        <a href='/users/login'>Already have an Account?</a>
+        <div class="container">
+            <h1>Login an Existing User</h1>
+            <form action='/user_review/login' method='post'>
+                {% csrf_token %}
+                <div>
+                    <label>Email</label>
+                    <input type='text' name='email'>
+                </div>
+                <div>
+                    <label>Password</label>
+                    <input type='password' name='password'>
+                </div>
+                <input type='submit' value='Login'>
+            </form>
+            <a href='/user_review/logout'>Logout</a>
+        </div>
     </body>
 </html>
