@@ -13,11 +13,16 @@ def is_logged_in(request):
 
 def index(request):
 	is_logged_in(request)
+	posts = Post.objects.all()
 
-	if 'user_id' not in request.session:
-		return redirect('/')
+	for post in posts:
+		if request.session['user_id'] in post.likes.values_list('id', flat=True):
+			post.liked = True
+		else:
+			post.liked = False
+
 	context = {
-		'posts' : Post.objects.all(),
+		'posts' : posts,
 	}
 	return render(request, 'posts/index.html', context)
 
@@ -34,9 +39,14 @@ def create(request):
 
 def create_like(request, post_id):
 	is_logged_in(request)
-
 	current_user = User.objects.get(id=request.session['user_id'])
 	post = Post.objects.get(id=post_id)
 	post.likes.add(current_user)
+	return redirect('/posts')
+
+def destroy_like(request, post_id):
+	current_user = User.objects.get(id=request.session['user_id'])
+	post = Post.objects.get(id=post_id)
+	post.likes.remove(current_user)
 	return redirect('/posts')
 

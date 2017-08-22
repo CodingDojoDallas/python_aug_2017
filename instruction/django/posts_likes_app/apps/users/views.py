@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages
+from django.db.models import Count
 
 from .models import User
 # Create your views here.
@@ -44,6 +45,14 @@ def authenticate(request):
 def logout(request):
 	request.session.flush()
 	return redirect('/')
+
+def show(request, user_id):
+	user = User.objects.annotate(num_posts=Count('posts')).filter(id=user_id).first()
+	context = {
+		'user' : user,
+	}
+	return render(request, 'users/show.html', context)
+
 
 
 

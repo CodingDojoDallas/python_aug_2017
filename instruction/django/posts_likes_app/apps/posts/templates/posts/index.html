@@ -25,12 +25,19 @@
 		<div class="posts">
 			{% for post in posts %}
 				<div>
-					<p>{{ post.user.name }} - {{ post.content }} at {{ post.created_at }}</p>
+					<p><a href="/users/{{ post.user.id }}">{{ post.user.name }}</a> - {{ post.content }} at {{ post.created_at }}</p>
 					<p>{{ post.likes.count }} likes</p>
-					<form action="/likes/create/{{ post.id }}" method="post">
-						{% csrf_token %}
-						<input type="submit" value="Like">
-					</form>
+					{% if post.liked == True %}
+						<form action="/likes/destroy/{{ post.id }}" method="post">
+							{% csrf_token %}
+							<input type="submit" value="Unlike">
+						</form>
+					{% else %}
+						<form action="/likes/create/{{ post.id }}" method="post">
+							{% csrf_token %}
+							<input type="submit" value="Like">
+						</form>
+					{% endif %}
 				</div>
 			{% endfor %}
 		</div>	
