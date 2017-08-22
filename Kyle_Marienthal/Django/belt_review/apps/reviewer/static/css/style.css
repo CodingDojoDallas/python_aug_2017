@@ -1,0 +1,9 @@
+*{
+    color: green;
+}
+
+
+.info_stuff{
+    display: inline-block;
+    vertical-align: top;
+}
