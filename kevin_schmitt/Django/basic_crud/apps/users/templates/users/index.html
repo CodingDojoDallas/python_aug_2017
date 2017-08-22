@@ -1,0 +1,28 @@
+<html>
+    <head>
+        {% load static %}
+        <link rel='stylesheet' href='{% static 'users/style.css' %}'>
+    </head>
+    <body>
+        <div class="container">
+            <h1>These are all my users</h1>
+            <a href='/users/new'>Create a New User</a>
+            <table>
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Age</th>
+                    <th>Created At</th>
+                </tr>
+                {% for user in users %}
+                <tr>
+                    <td><a href='/users/show/{{user.id}}'>{{user.name}}</a></td>
+                    <td>{{user.email}}</td>
+                    <td>{{user.age}}</td>
+                    <td>{{user.created_at}}</td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+    </body>    
+</html>

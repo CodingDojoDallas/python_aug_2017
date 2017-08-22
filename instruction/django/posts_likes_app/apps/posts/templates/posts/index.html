@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Posts App</title>
+	{% load static %}
+	<link rel="stylesheet" href="{% static 'posts/style.css' %}">
+</head>
+<body>
+	<div class="container">
+		<div id="newPostForm">
+			<div>
+				<a href="/users/logout">Logout</a>
+			</div>
+			<form action="/posts/create" method="post">
+				{% csrf_token %}
+				<div>
+					<label>Write a new Post</label>
+				</div>
+				<div>
+					<textarea name="content"></textarea>
+				</div>
+				<input type="submit" value="Create Post">
+			</form>
+		</div>
+		<div class="posts">
+			{% for post in posts %}
+				<div>
+					<p><a href="/users/{{ post.user.id }}">{{ post.user.name }}</a> - {{ post.content }} at {{ post.created_at }}</p>
+					<p>{{ post.likes.count }} likes</p>
+					{% if post.liked == True %}
+						<form action="/likes/destroy/{{ post.id }}" method="post">
+							{% csrf_token %}
+							<input type="submit" value="Unlike">
+						</form>
+					{% else %}
+						<form action="/likes/create/{{ post.id }}" method="post">
+							{% csrf_token %}
+							<input type="submit" value="Like">
+						</form>
+					{% endif %}
+				</div>
+			{% endfor %}
+		</div>	
+	</div>
+</body>
+</html>
