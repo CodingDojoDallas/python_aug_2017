@@ -7,7 +7,7 @@ def home(request):
     return redirect('/users/new')
 
 def new(request):
-    return render(request,'/users/new.html')
+    return render(request,'users/new.html')
 
 def create(request):
     if request.method == 'POST':
