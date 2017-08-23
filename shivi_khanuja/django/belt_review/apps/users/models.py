@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 
 from django.db import models
@@ -32,7 +31,14 @@ class UserManager(models.Manager):
             return {'status':False, 'errors':errors}
     
     def login():
-        pass
+        if request.method == 'POST':
+              result = User.objects.validate_login(request.POST)
+        if result ['status'] == False:
+              messages.error(request, result['error'])
+              return redirect('/users/new')
+        else:
+              
+              return redirect('/users/books')
 
 class User(models.Model):
     name=models.CharField(max_length=255)
@@ -42,16 +48,17 @@ class User(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     objects = UserManager()
+class Author(models.Model):
+    name=models.CharField(max_length=255)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True) 
 class Book(models.Model):
     title=models.CharField(max_length= 255)
     author=models.ForeignKey(Author,related_name='books')
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
-    user = Models.ForeignKey(User, related_name='author')
-class Author(models.Model):
-    name=models.CharField(max_length=255)
-    created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField(auto_now=True)
+    user = models.ForeignKey(User, related_name='author')
+
 class Review(models.Model):
     content=models.TextField()
     rating=models.IntegerField()
