@@ -15,3 +15,9 @@
     vertical-align: top;
     width: 48%;
 }
+.scroll_books{
+    overflow-y: auto;
+    border: 3px solid black;
+    height: 200px;
+    background: yellow;
+}

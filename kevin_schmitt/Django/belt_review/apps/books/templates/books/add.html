@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -20,14 +21,16 @@
         </div>
         <div>
             <label>Choose Author from the list:</label>
-            <select>
+            <select name='author1'>
                 <option value=""></option>
-                <option value="">loop through authors</option>
+                {% for author in authors %}                    
+                    <option value="">{{ author.name }}</option>
+                {% endfor %}
             </select>
         </div>
         <div>
             <label for="">Or add a new author</label>
-            <input type="text" name='author'>
+            <input type="text" name='author2'>
         </div>
         <div>
             <label>Review:</label>
