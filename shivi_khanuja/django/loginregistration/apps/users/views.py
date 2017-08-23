@@ -13,12 +13,12 @@ def create(request):
     if request.method == 'POST':
         result =User.objects.validate_registration(request.POST)
         if result['status'] == False:
-            for error in results ['errors']:
+            for error in result ['errors']:
                  messages.error(request, error)
                  return redirect ('/users/new')
         else:
             request.session['user_id'] = result ['user'].user_id
-            return redirect('/users/success')
+            return redirect('users/success.html')
 
 def success(request):
     return render(request, 'users/success.html')
@@ -31,10 +31,10 @@ def authenticate(request):
           result = User.objects.validate_login(request.POST)
           if result ['status'] == False:
               messages.error(request, result['error'])
-              return redirect('/users/login')
+              return redirect('users/new.html')
           else:
-              request.session['user_id'] = result['user'].user
-              return redirect('/users/success')
+              
+              return redirect('users/success.html')
 
 def logout(request):
     request.session.flush()
