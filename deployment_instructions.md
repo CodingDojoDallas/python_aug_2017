@@ -26,7 +26,7 @@ venv/
 ```
 Push your project to GitLab
 ```
-git remote add origin <address_to_repo_on_GitLab>
+git remote add origin {{address_to_repo_on_GitLab}}
 git add .
 git commit -m 'initial commit'
 git push -u origin master
@@ -36,12 +36,12 @@ Navigate to the directory where you saved your `.pem` file
 
 IF you have NEVER used this `.pem` file before to connect to an Amazon Instance then change permissions
 ```
-chmod 400 <pem_file>
+chmod 400 {{pem_file}}
 ```
 
 Now, connect to your Amazon Instance
 ```
-ssh -i <pem_file> ubuntu@<public_ip>
+ssh -i {{pem_file}} ubuntu@{{public_ip}}
 ```
 
 Update the Ubuntu machine
@@ -54,12 +54,12 @@ sudo pip install virtualenv
 
 Clone your repository
 ```
-git clone <address_to_repo_on_GitLab>
+git clone {{address_to_repo_on_GitLab}}
 ```
 
 Create `virtual environment` and install dependencies
 ```
-cd <repo_name>
+cd {{repo_name}}
 virtualenv venv
 source venv/bin/activate
 pip install -r requirements.txt
@@ -69,7 +69,7 @@ pip install gunicorn
 
 Update your `settings.py` file
 ```
-cd <project_name>
+cd {{project_name}}
 sudo vim settings.py
 ```
 
