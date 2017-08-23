@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    {% load static %}
+    <link rel='stylesheet' href="{% static 'books/css/style.css' %}">
+</head>
+<body>
+    <div class="header">
+        <p><a href='/user_review/success'>Home</a> ___ <a href='/user_review/logout'>Logout</a></p>
+    </div>
+    <h2>Add a New Book Title and a Review:</h2>
+    <form action='/books/create' method='post'>
+        {% csrf_token %}
+        <div>
+            <label>Book Title:</label>
+            <input type="text" name='title'>
+        </div>
+        <div>
+            <label>Choose Author from the list:</label>
+            <select>
+                <option value=""></option>
+                <option value="">loop through authors</option>
+            </select>
+        </div>
+        <div>
+            <label for="">Or add a new author</label>
+            <input type="text" name='author'>
+        </div>
+        <div>
+            <label>Review:</label>
+            <input type="text" name='review'>
+        </div>
+        <div>
+            <label>Rating:</label>
+            <input type="number" name='rating' min='1' max='5' step='1'>
+        </div>
+        <div>
+            <input type="submit" value='Add Book and Review'>
+        </div>
+    </form>
+</body>
+</html>
