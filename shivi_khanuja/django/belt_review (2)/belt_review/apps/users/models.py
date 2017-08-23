@@ -30,13 +30,15 @@ class UserManager(models.Manager):
         else:
             return {'status':False, 'errors':errors}
     
-    def validate_login(self, post):
-        user = User.objects.filter(email = post['email']).first()
-        if user and bcrypt.checkpw(post['password'].encode(), user.password.encode()):
-            return {'status' : True, 'user': user}
+    def login():
+        if request.method == 'POST':
+              result = User.objects.validate_login(request.POST)
+        if result ['status'] == False:
+              messages.error(request, result['error'])
+              return redirect('/users/new')
         else:
-            return{'status' : False, 'error': 'Invalid Credentials'}
-                
+              
+              return redirect('/users/books')
 
 class User(models.Model):
     name=models.CharField(max_length=255)
@@ -46,7 +48,6 @@ class User(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     objects = UserManager()
-
 class Author(models.Model):
     name=models.CharField(max_length=255)
     created_at = models.DateTimeField(auto_now_add=True)

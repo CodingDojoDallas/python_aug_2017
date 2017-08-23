@@ -19,13 +19,21 @@ def register(request):
                 messages.error(request, error)
             return redirect('/')
         else:
-            return redirect('/users/books')
+            return redirect('/users/success')
 
 def new(request):
     return render(request, 'users/books.html')
         
 def login(request):
-    return redirect('/users/books')
+    # if they actually log in, then redirect to success, if not throw an error message at them
+    if request.method == 'POST':
+        result = User.objects.validate_login(request.POST)
+    if result['status'] == False: #generate an error message
+        messages.error(request, result['error'])
+        return redirect('/')
+    else: #save the id into session
+        request.session['user_id'] = result['user'].id
+        return redirect('/users/success')
 
 def success(request):
     return render(request, 'users/books.html')
