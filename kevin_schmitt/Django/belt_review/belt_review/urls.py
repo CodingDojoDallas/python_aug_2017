@@ -18,4 +18,6 @@ from django.conf.urls import url,include
 urlpatterns = [
     url(r'^$', include('apps.user_review.urls')),
     url(r'^user_review/', include('apps.user_review.urls')),
+    url(r'^books/', include('apps.books.urls')),
+
 ]

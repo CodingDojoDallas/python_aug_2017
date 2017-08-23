@@ -5,14 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     {% load static %}
-    <link rel='stylesheet' href="{% static 'user_review/css/style.css' %}">
+    <link rel='stylesheet' href="{% static 'books/css/style.css' %}">
 </head>
 <body>
     <div class="header">
         <p><a href='/user_review/success'>Home</a> ___ <a href='/user_review/logout'>Logout</a></p>
     </div>
     <h2>Add a New Book Title and a Review:</h2>
-    <form method='post' action='/user_review/create'>
+    <form action='/books/create' method='post'>
+        {% csrf_token %}
         <div>
             <label>Book Title:</label>
             <input type="text" name='title'>

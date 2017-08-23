@@ -4,6 +4,7 @@ from __future__ import unicode_literals
 from django.db import models
 import bcrypt
 
+
 # Create your models here.
 
 class UserManager(models.Manager):
@@ -43,6 +44,8 @@ class UserManager(models.Manager):
         else:
             return { 'status': False, 'errors': errors}
         #step 3: if valid create the user and the session
+        
+    
 
 class User(models.Model):
     name = models.CharField(max_length=255)
@@ -60,4 +63,5 @@ class Book(models.Model):
     rating = models.IntegerField()
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
-    uploader = models.ForeignKey(User, related_name='uploaded_books')
+    user = models.ForeignKey(User, related_name='books')
+    objects = UserManager()

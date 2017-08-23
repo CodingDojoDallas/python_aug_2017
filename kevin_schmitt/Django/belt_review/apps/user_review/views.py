@@ -31,7 +31,8 @@ def register(request):
         else:
             #put user_id into session
             request.session['user_id'] = result['user'].id
-            return redirect('/user_review/succes')
+            request.session['name'] = result['user'].name
+            return redirect('/books/success')
 
 def login(request):
     print 'this is login**********************'
@@ -46,19 +47,12 @@ def login(request):
         else:
             request.session['user_id'] = result['user'].id
             request.session['name'] = result['user'].name
-            return redirect('/user_review/success')
+            return redirect('/books/success')
 
-def success(request):
-    print 'this is success***************'
-    if request.session['name']:
-        return render(request, 'user_review/wall.html')
-        
-    else:
-        return redirect('/user_review/new')
 
 def logout(request):
     request.session.flush()
+    print 'this is logout*****************'
     return redirect('/user_review')
 
-def add(request):
-    return render(request, 'user_review/add.html')
+

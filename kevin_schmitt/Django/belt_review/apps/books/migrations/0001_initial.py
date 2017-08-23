@@ -8,8 +8,10 @@ import django.db.models.deletion
 
 class Migration(migrations.Migration):
 
+    initial = True
+
     dependencies = [
-        ('user_review', '0001_initial'),
+        ('user_review', '0002_book'),
     ]
 
     operations = [
@@ -23,7 +25,7 @@ class Migration(migrations.Migration):
                 ('rating', models.IntegerField()),
                 ('created_at', models.DateTimeField(auto_now_add=True)),
                 ('updated_at', models.DateTimeField(auto_now=True)),
-                ('user', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='books', to='user_review.User')),
+                ('uploader', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='uploaded_books', to='user_review.User')),
             ],
         ),
     ]
