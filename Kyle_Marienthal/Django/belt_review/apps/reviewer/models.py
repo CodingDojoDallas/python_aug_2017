@@ -31,8 +31,12 @@ class UserManager(models.Manager):
         else:
             return {'status':False, 'errors':errors}
     
-    def login():
-        pass
+    def validate_login(self, post):
+        user = User.objects.filter(email = post['email']).first()
+        if user and bcrypt.checkpw(post['password'].encode(), user.password.encode()):
+            return {'status' : True, 'user': user}
+        else:
+            return{'status' : False, 'error': 'Invalid Credentials'}
 
 class User(models.Model):
     name=models.CharField(max_length=255)
