@@ -18,7 +18,7 @@ def create(request):
                  return redirect ('/users/new')
         else:
             request.session['user_id'] = result ['user'].user_id
-            return redirect('users/success.html')
+            return redirect('/users/success')
 
 def success(request):
     return render(request, 'users/success.html')
@@ -31,10 +31,10 @@ def authenticate(request):
           result = User.objects.validate_login(request.POST)
           if result ['status'] == False:
               messages.error(request, result['error'])
-              return redirect('users/new.html')
+              return redirect('/users/new')
           else:
               
-              return redirect('users/success.html')
+              return redirect('/users/success')
 
 def logout(request):
     request.session.flush()
