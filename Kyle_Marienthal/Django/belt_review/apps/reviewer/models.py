@@ -78,3 +78,5 @@ class Review(models.Model):
     user = models.ForeignKey(User,related_name='reviews')
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True) 
+
+    
