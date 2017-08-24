@@ -19,13 +19,13 @@ def register(request):
                 messages.error(request, error)
             return redirect('/')
         else:
-            return redirect('/users/books')
+            return redirect('/users/success')
 
 def new(request):
     return render(request, 'users/books.html')
         
 def login(request):
-    return redirect('/users/books')
+    return redirect('/users/success')
 
 def success(request):
     return render(request, 'users/books.html')
