@@ -1,0 +1,11 @@
+<html>
+    <head>
+        {% load static %}
+        <link rel='stylesheet' href="{% static 'users/css/style.css' %}">
+    </head>
+    <body>
+        <h1>Hello again! You are logged in as {{ request.session.name }} {{ result.user.name }}</h1>
+    <a href='/users/logout'>Logout</a>
+    </body>
+</html>
+
