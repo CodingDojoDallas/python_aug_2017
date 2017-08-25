@@ -1,4 +1,4 @@
-# Instructions for submitting assignments on GitHub -- 
+# Instructions for submitting assignments on GitHub
 
 open terminal/gitbash
 
