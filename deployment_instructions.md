@@ -2,6 +2,7 @@
 ```
 {{repoName}} == the name of your repository on GitLab
 {{projectName}} == the name you used for the django-admin startproject command
+{{yourEC2.public.ip}} == the public IP address of your Amazon EC2 instance
 ```
 # Deployment Instructions
 
@@ -41,7 +42,7 @@ chmod 400 {{pem_file}}
 
 Now, connect to your Amazon Instance
 ```
-ssh -i {{pem_file}} ubuntu@{{public_ip}}
+ssh -i {{pem_file}} ubuntu@{{yourEC2.public.ip}}
 ```
 
 Update the Ubuntu machine
