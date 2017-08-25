@@ -84,7 +84,7 @@ ALLOWED_HOSTS = ['{{yourEC2.public.ip}}']
 STATIC_ROOT = os.path.join(BASE_DIR, "static/")
 ```
 
-After editing, press `esc` to exit Insert Mode.  Then, type  `:wp` and press Enter to exit VIM.
+After editing, press `esc` to exit Insert Mode.  Then, type  `:wp` and press `Enter` to exit VIM.
 
 Collect your static files
 ```
@@ -112,7 +112,7 @@ ExecStart=/home/ubuntu/{{repoName}}/venv/bin/gunicorn --workers 3 --bind unix:/h
 [Install]
 WantedBy=multi-user.target
 ```
-Edit the code by replacing {{repoName}} and {{projectName}} with the appropriate data.  Then, press `esc` to exit Insert Mode.  Then, type `:wq` and press `enter` to exit VIM.
+Edit the code by replacing {{repoName}} and {{projectName}} with the appropriate data.  Then, press `esc` to exit Insert Mode.  Then, type `:wq` and press `Enter` to exit VIM.
 
 Restart Gunicorn
 ```
