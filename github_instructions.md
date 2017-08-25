@@ -27,9 +27,9 @@ git commit -m '<NAME OF ASSIGNMENTS TO TURN IN>'
 git push
 ```
 
-Go to website of your repo on github github.com/<username>/<repo name>
+Go to website of your repo on github github.com/{{username}}/{{repo name}}
 
-Click the green button
+Click the `Pull Request` button
 
 Add a more specific comment if you feel you need to
 
