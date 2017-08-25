@@ -83,7 +83,7 @@ ALLOWED_HOSTS = ['{{yourEC2.public.ip}}']
 STATIC_ROOT = os.path.join(BASE_DIR, "static/")
 ```
 
-After editing, press `esc` to exit Insert Mode
+After editing, press `esc` to exit Insert Mode.  Then, type  `:wp` and press Enter to exit VIM.
 
 Collect your static files
 ```
