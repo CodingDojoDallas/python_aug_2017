@@ -44,6 +44,7 @@ https://www.dropbox.com/s/h3texmoqm801j8w/github_workflow_v4.pdf?dl=0
 [Python Django - Adding the Unlike Button (Part 2)](https://youtu.be/J3Y4v6IoV4c "Python Django - Adding the Unlike Button (Part 2)") <br>
 [Python Django - Belt Review](https://youtu.be/tFMuZ2zNXos "Python Django - Belt Review") <br>
 [Python Django - Deployment](https://youtu.be/jDLd1mmBx5I "Python Django - Deployment") <br>
+[Python Django - Deploying Quotes Exam](https://youtu.be/Cz2BGxpWR2c "Python Django - Deploying Quotes Exam") <br>
 
 # Resources
 
