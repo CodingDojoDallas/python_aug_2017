@@ -18,6 +18,8 @@ git fetch upstream
 git merge upstream/master
 ```
 
+After merging you may enter VIM, the terminal text-editor.  If so type `:q`, then press `Enter`.
+
 add and commit your new files/folders
 ```
 git add .
