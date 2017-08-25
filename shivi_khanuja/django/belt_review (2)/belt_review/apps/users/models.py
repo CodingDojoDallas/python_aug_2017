@@ -30,39 +30,50 @@ class UserManager(models.Manager):
         else:
             return {'status':False, 'errors':errors}
     
-    def login():
-        if request.method == 'POST':
-              result = User.objects.validate_login(request.POST)
-        if result ['status'] == False:
-              messages.error(request, result['error'])
-              return redirect('/users/new')
+    def validate_login(self, post):
+        user = User.objects.filter(email = post['email']).first()
+        if user and bcrypt.checkpw(post['password'].encode(), user.password.encode()):
+            return {'status' : True, 'user': user}
         else:
-              
-              return redirect('/users/books')
+            return{'status' : False, 'error': 'Invalid Credentials'}
+
+class BookManager(models.Manager):
+    def validate_book(self, post):
+        errors=[]
+        if post['title'] == '':
+            errors.append('Add a title')
+        if post['review'] == '':
+            errors.append('Add a review')
+        # if 
+        
 
 class User(models.Model):
-    name=models.CharField(max_length=255)
-    alias=models.CharField(max_length=255)
-    email=models.CharField(max_length=255)
-    password=models.CharField(max_length=255)
+    name = models.CharField(max_length=255)
+    alias = models.CharField(max_length=255)
+    email = models.CharField(max_length=255)
+    password = models.CharField(max_length=255)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     objects = UserManager()
+
+
 class Author(models.Model):
-    name=models.CharField(max_length=255)
-    created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField(auto_now=True) 
-class Book(models.Model):
-    title=models.CharField(max_length= 255)
-    author=models.ForeignKey(Author,related_name='books')
+    name = models.CharField(max_length=255)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
-    user = models.ForeignKey(User, related_name='author')
+
+class Book(models.Model):
+    title = models.CharField(max_length= 255)
+    author = models.ForeignKey(Author,related_name='books')
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+    user = models.ForeignKey(User, related_name='books')
+    objects = BookManager()
 
 class Review(models.Model):
-    content=models.TextField()
-    rating=models.IntegerField()
-    book=models.ForeignKey(Book,related_name='reviews')
-    user=models.ForeignKey(User,related_name='reviews')
+    content = models.TextField()
+    rating = models.IntegerField()
+    book = models.ForeignKey(Book,related_name='reviews')
+    user = models.ForeignKey(User,related_name='reviews')
     created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField(auto_now=True)         
+    updated_at = models.DateTimeField(auto_now=True) 

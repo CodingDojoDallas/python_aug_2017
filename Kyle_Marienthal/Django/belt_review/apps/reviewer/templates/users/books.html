@@ -4,7 +4,8 @@
         <title></title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link href="css/style.css" rel="stylesheet">
+        {% load static %}
+        <link href="{% static 'css/style.css' %}" rel="stylesheet">
     </head>
     <body>
         <div>
@@ -14,6 +15,10 @@
         <div>
             <h1>Other Books With Reviews</h1>
             <p>in a scroll box</p>
+        </div>
+        <div>
+            <!-- link that leads to the book review/upload page -->
+            <a href="/books/add">Add Book and Review</a>
         </div>
     </body>
 </html>

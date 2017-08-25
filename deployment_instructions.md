@@ -2,6 +2,7 @@
 ```
 {{repoName}} == the name of your repository on GitLab
 {{projectName}} == the name you used for the django-admin startproject command
+{{yourEC2.public.ip}} == the public IP address of your Amazon EC2 instance
 ```
 # Deployment Instructions
 
@@ -41,7 +42,7 @@ chmod 400 {{pem_file}}
 
 Now, connect to your Amazon Instance
 ```
-ssh -i {{pem_file}} ubuntu@{{public_ip}}
+ssh -i {{pem_file}} ubuntu@{{yourEC2.public.ip}}
 ```
 
 Update the Ubuntu machine
@@ -83,7 +84,7 @@ ALLOWED_HOSTS = ['{{yourEC2.public.ip}}']
 STATIC_ROOT = os.path.join(BASE_DIR, "static/")
 ```
 
-After editing, press `esc` to exit Insert Mode
+After editing, press `esc` to exit Insert Mode.  Then, type  `:wp` and press `Enter` to exit VIM.
 
 Collect your static files
 ```
@@ -111,7 +112,7 @@ ExecStart=/home/ubuntu/{{repoName}}/venv/bin/gunicorn --workers 3 --bind unix:/h
 [Install]
 WantedBy=multi-user.target
 ```
-Edit the code by replacing {{repoName}} and {{projectName}} with the appropriate data.  Then, press `esc` to exit Insert Mode.  Then, type `:wq` and press `enter` to exit VIM.
+Edit the code by replacing {{repoName}} and {{projectName}} with the appropriate data.  Then, press `esc` to exit Insert Mode.  Then, type `:wq` and press `Enter` to exit VIM.
 
 Restart Gunicorn
 ```
