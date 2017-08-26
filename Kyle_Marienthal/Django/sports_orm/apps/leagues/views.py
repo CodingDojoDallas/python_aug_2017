@@ -17,14 +17,13 @@ def index(request):
 		"all_Dallas_teams": Team.objects.filter(location='Dallas'),
 		"all_Raptors_teams": Team.objects.filter(team_name__icontains = 'rapto'),
 		"all_City_location_teams": Team.objects.filter(location__contains = 'City'),
-		"all_first_letter_T_teams": Team.objects.filter(team_name__startswith='T')
-		# "all_teams_alphabetically": 
-		# "all_teams_reverse_alpha": 
-		# "all_last_name_Cooper_players": 
-		# "all_first_name_Joshua_players": 
-		# "all_Cooper_not_Joshua_players": 
-		# "all_Alexander_and_Wyatt_players": 
-
+		"all_first_letter_T_teams": Team.objects.filter(team_name__startswith='T'),
+		"all_teams_alphabetically": Team.objects.order_by('team_name'),
+		"all_teams_reverse_alpha": Team.objects.order_by('-team_name'),
+		"all_last_name_Cooper_players": Player.objects.filter(last_name='Cooper'),
+		"all_first_name_Joshua_players": Player.objects.filter(first_name='Joshua'),
+		"all_Cooper_not_Joshua_players": Player.objects.filter(last_name='Cooper').exclude(first_name='Joshua'),
+		"all_Alexander_and_Wyatt_players": Player.objects.filter(first_name='Alexander')|Player.objects.filter(first_name='Wyatt').order_by('first_name')
 	}
 	return render(request, "leagues/index.html", context)
 
