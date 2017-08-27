@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="css/style.css" rel="stylesheet">
+    </head>
+    <body>
+        <h1>Add a New Book Title and a Review:</h1>
+        <form action="book/add" method="post">
+            {% csrf_token %}
+        <div>
+            <label>Book Title:</label>
+            <input type="text">            
+        </div>
+        <div>
+            <label>Author:</label>
+            <p>Choose Author
+                {% for author in authors %}
+                    <select name='author_select'>
+                        <option value="">{{ author.name }}</option>
+                    </select>
+                {% endfor %}
+
+            </p>
+        </div>
+        <div>
+                <label >Or add a new author:</label>
+                <input name='author_addin' type="text">
+        </div>
+        <div>
+                <label>Review:</label>
+                <input type="textarea">
+        </div>
+        <div>
+            <label>Rating:<input type='number' step='1' max='5' min='1'>stars</label>
+
+        </div>
+        <div>
+            <!-- button here -->
+            <input type="submit" value='Add Book and Review'>
+        </div>
+        </form>
+
+    </body>
+</html>
+
+    

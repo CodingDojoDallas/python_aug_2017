@@ -42,6 +42,10 @@ https://www.dropbox.com/s/h3texmoqm801j8w/github_workflow_v4.pdf?dl=0
 [Git - Using Multiple Branches](https://youtu.be/tAerkoqYKEc "Git - Using Multiple Branches") <br>
 [Python Django - Adding the Unlike Button (Part 1)](https://youtu.be/XIgdQfKl84U "Python Django - Adding the Unlike Button (Part 1)") <br>
 [Python Django - Adding the Unlike Button (Part 2)](https://youtu.be/J3Y4v6IoV4c "Python Django - Adding the Unlike Button (Part 2)") <br>
+[Python Django - Belt Review](https://youtu.be/tFMuZ2zNXos "Python Django - Belt Review") <br>
+[Python Django - Deployment](https://youtu.be/jDLd1mmBx5I "Python Django - Deployment") <br>
+[Python Django - Deploying Quotes Exam](https://youtu.be/Cz2BGxpWR2c "Python Django - Deploying Quotes Exam") <br>
+[Python Django - Updating Deployed App](https://youtu.be/96oQKMyLnRI "Python Django - Updating Deployed App") <br>
 
 # Resources
 

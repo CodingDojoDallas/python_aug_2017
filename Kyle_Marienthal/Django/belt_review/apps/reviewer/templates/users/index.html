@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        {% load static %}
+        <link href="{%static 'css/style.css' %}" rel="stylesheet">
+    </head>
+    <body>
+        <h1>Welcome</h1> 
+        <div class = 'info_stuff'>
+            <h2>Register</h2>
+            <form action = "users/register" method = "post">
+                {% csrf_token %}
+                <div>
+                    <label>Name:</label>              
+                </div>
+                <input type = "text" name = "name">
+                <div>
+                    <label>Alias:</label>
+                </div>
+                <input type = "text" name = "alias">
+                <div>
+                    <label>Email:</label>
+                </div>
+                <input type = "text" name = "email">
+                <div>
+                    <label>Password:</label>
+                </div>
+                <input type = "password" name = "password">
+                <div>
+                    <label>Confirm PW:</label>
+                </div>
+                <input type = "password" name = "confpass">
+                <div>
+                    <input type = "submit" value = "Register">
+                </div>
+            
+            </form>
+        </div>
+
+        <div class = 'info_stuff'>
+            <h2>Login</h2>
+            <form class = 'info_stuff' action = "/users/login" method = "post">
+                {% csrf_token %}
+                <div>
+                    <label>Email:</label>              
+                </div>
+                <input type = "text" name = "email">
+                <div>
+                    <label>Password:</label>
+                </div>
+                <input type = "password" name = "password">
+                <div>
+                    <input type = "submit" value = "Login">
+                </div>
+            </form>
+        </div>   
+        {% if messages %}
+            {% for error in messages %}
+                <div>
+                    {{error}}
+                </div>
+            {% endfor %}
+        {% endif %}
+    </body>
+</html>
