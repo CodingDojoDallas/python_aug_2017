@@ -33,10 +33,11 @@ def index(request):
 		"Leagues_with_Sophia": League.objects.filter(teams__curr_players__first_name='Sophia'),
 		"Flores":Player.objects.filter(last_name='Flores').exclude(all_teams__team_name = 'Roughriders'),
 		"Sam_Evans_Teams": Team.objects.filter(all_players__first_name='Samuel',all_players__last_name='Evans'),
-		"Tiger_Cat_Players": Player.objects.filter(all_teams__team_name='Tiger-Cats')
-
-
-
+		"Tiger_Cat_Players": Player.objects.filter(all_teams__team_name='Tiger-Cats'),
+		"Not_Current_Vikings": Player.objects.filter(all_teams__team_name='Vikings').exclude(curr_team__team_name='Vikings'),
+		"Jacob_Gray_Past": Team.objects.filter(all_players__first_name='Jacob',all_players__last_name='Gray').exclude(team_name='Colts'),
+		"all_joshs_AFABP": Player.objects.filter(first_name='Joshua', all_teams__league__name = 'Atlantic Federation of Amateur Baseball Players')
+		
 
 	}
 	return render(request, "leagues/index.html", context)
