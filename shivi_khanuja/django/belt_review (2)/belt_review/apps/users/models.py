@@ -10,15 +10,13 @@ class UserManager(models.Manager):
     def validate_registration(self, post):
         errors=[]
         if post['name'] == '':
-            errors.append('fill out your damn name')
-        if post['alias'] == '':
-            errors.append('gimme dat code name')
+            errors.append('Name cannot be blank')
         if len(post['email']) < 5:
-            errors.append('email por favor')
+            errors.append('email cannot be blank')
         if len(post['password']) < 3:
-            errors.append('keep it secret, keep it safe')
+            errors.append('Password cannot be blank')
         if post['password'] != post['confpass']:
-                errors.append('get your shit together')
+                errors.append('Password cannot be blank')
         if not errors:
             user=User.objects.create(
                 name = post['name'],
