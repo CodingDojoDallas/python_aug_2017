@@ -206,11 +206,34 @@
 					{% for team in Sam_Evans_Teams %}
 					<li>{{team.team_name}}</li>
 					{% endfor %}
-				</ol>
-				
+				</ol>				
 				<h1>Tiger Cat Players</h1>
 				<ol>
 					{% for player in Tiger_Cat_Players %}
+					<li>{{player.first_name}} {{player.last_name}}</li>
+					{% endfor %}
+				</ol>
+				<h1>Old Vikings Players</h1>
+				<ol>
+					{% for player in Not_Current_Vikings %}
+					<li>{{player.first_name}} {{player.last_name}}</li>
+					{% endfor %}
+				</ol>
+				<h1>Old Vikings Players</h1>
+				<ol>
+					{% for player in Not_Current_Vikings %}
+					<li>{{player.first_name}} {{player.last_name}}</li>
+					{% endfor %}
+				</ol>
+				<h1>Jacob Gray's Past</h1>
+				<ol>
+					{% for team in Jacob_Gray_Past %}
+					<li>{{team.team_name}}</li>
+					{% endfor %}
+				</ol>
+				<h1>all joshs AFABP</h1>
+				<ol>
+					{% for player in all_joshs_AFABP %}
 					<li>{{player.first_name}} {{player.last_name}}</li>
 					{% endfor %}
 				</ol>
