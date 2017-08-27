@@ -149,6 +149,71 @@
 
 			<div>
 				<h1>Sports ORM part II</h1>
+				<h1>Atlantic Soccer Conference Teams</h1>
+				<ol>
+					{% for team in Atlantic_Soccer_Conference %}
+					<li>{{team.team_name}}</li>
+					{% endfor %}
+				</ol>
+				
+				<h1>Boston Penguins</h1>
+				<ol>
+					{% for player in Boston_Penguins %}
+					<li>{{player.first_name}} {{player.last_name}}</li>
+					{% endfor %}
+				</ol>
+				<h1>International Collegiate Baseball Conference</h1>
+				<ol>
+					{% for player in players_in_CBC %}
+					<li>{{player.first_name}} {{player.last_name}}</li>
+					{% endfor %}
+				</ol>
+				<h1>Lopezzzss</h1>
+				<ol>
+					{% for individual in Lopezs %}
+					<li>{{individual.first_name}} {{individual.last_name}}</li>
+					{% endfor %}
+				</ol>
+				
+				<h1>All Football Players</h1>
+				<ol>
+					{% for individual in all_football_players %}
+					<li>{{individual.first_name}} {{individual.last_name}}</li>
+					{% endfor %}
+				</ol>
+				
+				<h1>Teams with Sophia</h1>
+				<ol>
+					{% for individual in Teams_with_Sophia %}
+					<li>{{individual.team_name}}</li>
+					{% endfor %}
+				</ol>
+				
+				<h1>Leagues with Sophia</h1>
+				<ol>
+					{% for individual in Leagues_with_Sophia %}
+					<li>{{individual.name}}</li>
+					{% endfor %}
+				</ol>
+				<h1>Flores</h1>
+				<ol>
+					{% for individual in Flores %}
+					<li>{{individual.first_name}} {{individual.last_name}}</li>
+					{% endfor %}
+				</ol>
+				<h1>Sam Evans has played on</h1>
+				<ol>
+					{% for team in Sam_Evans_Teams %}
+					<li>{{team.team_name}}</li>
+					{% endfor %}
+				</ol>
+				
+				<h1>Tiger Cat Players</h1>
+				<ol>
+					{% for player in Tiger_Cat_Players %}
+					<li>{{player.first_name}} {{player.last_name}}</li>
+					{% endfor %}
+				</ol>
 				
 			</div>
 	</body>
