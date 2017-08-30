@@ -7,5 +7,3 @@ urlpatterns = [
     url(r'^test$', views.test)
 ]
 
-
-# daily commit line
