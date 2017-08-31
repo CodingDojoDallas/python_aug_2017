@@ -17,7 +17,7 @@ def create(request):
                  messages.error(request, error)
                  return redirect ('/users/new')
         else:
-            request.session['user_id'] = result ['user'].user_id
+            request.session['user_id'] = result ['user'].id
             return redirect('/users/success')
 
 def success(request):
