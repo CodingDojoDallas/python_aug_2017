@@ -1,0 +1,8 @@
+html{
+	text-align: center;
+}
+tr{
+	border: 2pt solid black;
+	border-radius: 10px;
+	display: inline-block;
+}
