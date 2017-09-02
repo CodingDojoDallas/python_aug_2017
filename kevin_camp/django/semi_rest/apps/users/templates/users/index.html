@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		{% load static %}
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="{% static 'users/css/style.css' %}">
+		<title>User Index</title>
+	</head>
+	<body>
+		<div class="container">
+			{{ users }}
+			<h1>These are all the users</h1>
+			<a href="/users/new">Create a New User</a>
+			<table>
+				<tr>
+					<th>Name</th>
+					<th>Email</th>
+					<th>Age</th>
+					<th>Created At</th>
+				</tr>
+				<tr>
+					{% for users in users %}
+						<td>{{ user.name }}</td>
+						<td>{{ user.email }}</td>
+						<td>{{ user.age }}</td>
+						<td>{{ user.created_at }}</td>
+					{% endfor %}
+				</tr>
+			</table>
+		</div>
+	</body>
+</html>
