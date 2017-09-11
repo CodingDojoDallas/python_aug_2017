@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 
 from django.db import models
@@ -10,13 +11,15 @@ class UserManager(models.Manager):
     def validate_registration(self, post):
         errors=[]
         if post['name'] == '':
-            errors.append('Name cannot be blank')
+            errors.append('fill out your damn name')
+        if post['alias'] == '':
+            errors.append('gimme dat code name')
         if len(post['email']) < 5:
-            errors.append('email cannot be blank')
+            errors.append('email por favor')
         if len(post['password']) < 3:
-            errors.append('Password cannot be blank')
+            errors.append('keep it secret, keep it safe')
         if post['password'] != post['confpass']:
-                errors.append('Password cannot be blank')
+                errors.append('get your shit together')
         if not errors:
             user=User.objects.create(
                 name = post['name'],
@@ -35,43 +38,32 @@ class UserManager(models.Manager):
         else:
             return{'status' : False, 'error': 'Invalid Credentials'}
 
-class BookManager(models.Manager):
-    def validate_book(self, post):
-        errors=[]
-        if post['title'] == '':
-            errors.append('Add a title')
-        if post['review'] == '':
-            errors.append('Add a review')
-        # if 
-        
-
 class User(models.Model):
-    name = models.CharField(max_length=255)
-    alias = models.CharField(max_length=255)
-    email = models.CharField(max_length=255)
-    password = models.CharField(max_length=255)
+    name=models.CharField(max_length=255)
+    alias=models.CharField(max_length=255)
+    email=models.CharField(max_length=255)
+    password=models.CharField(max_length=255)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     objects = UserManager()
 
 
 class Author(models.Model):
-    name = models.CharField(max_length=255)
+    name=models.CharField(max_length=255)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
 class Book(models.Model):
-    title = models.CharField(max_length= 255)
-    author = models.ForeignKey(Author,related_name='books')
+    title=models.CharField(max_length= 255)
+    author=models.ForeignKey(Author,related_name='books')
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
-    user = models.ForeignKey(User, related_name='books')
-    objects = BookManager()
-
+    user = models.ForeignKey(User, related_name='author')
+    
 class Review(models.Model):
-    content = models.TextField()
-    rating = models.IntegerField()
-    book = models.ForeignKey(Book,related_name='reviews')
-    user = models.ForeignKey(User,related_name='reviews')
+    content=models.TextField()
+    rating=models.IntegerField()
+    book=models.ForeignKey(Book,related_name='reviews')
+    user=models.ForeignKey(User,related_name='reviews')
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True) 

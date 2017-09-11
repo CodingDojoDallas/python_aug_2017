@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    {% load static %}
+    <link href="{%static 'users/style.css' %}" rel="stylesheet">
+
+</head>
+<body>
+    <div class = "background">
+        <a class ="float_left" href ="/users/home">Home</a>
+        <a class ="float_right" href ="/users/logout">Logout</a>
+    <h1>Hello {{user.name}}</h1>
+    <h2>Your Trip Schedules</h2>
+   
+    <form action="/users/detination" method ="POST" >
+        <table>
+            <th>Destination</th>
+            <th>Travel Start Date</th>
+            <th>Travel End Date</th>
+            <th>Plan</th>
+        </table>
+        
+    </form>
+</div>
+</body>
+</html>
