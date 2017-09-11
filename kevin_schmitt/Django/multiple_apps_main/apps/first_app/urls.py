@@ -6,3 +6,4 @@ urlpatterns = [
     url(r'^$', views.index),    # This line has changed!
     url(r'^test$', views.test)
 ]
+

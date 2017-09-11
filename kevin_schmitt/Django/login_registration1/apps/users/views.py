@@ -7,9 +7,14 @@ def home(request):
     return redirect('/users/new')
 
 def new(request):
-    return render(request, 'users/new.html')
+    print "this is new**********"
+    if 'user_id' in request.session:
+        return redirect('/users/success')
+    else:
+        return render(request, 'users/new.html')
 
 def create(request):
+    print 'this is create************'
     print request.POST
     if request.method == 'POST':
         result = User.objects.validate_registration(request.POST)
@@ -25,26 +30,34 @@ def create(request):
         else:
             #put user_id into session
             request.session['user_id'] = result['user'].id
+            request.session['name'] = result['user'].name
             return redirect('/users/success')
 
 def success(request):
-    return render(request, 'users/success.html')
+    print 'this is success***********'
+    if 'user_id' not in request.session:
+        return redirect('/users/new')
+    else:
+        return render(request, 'users/success.html')
 
-def login(request):
-    return render(request, 'users/login.html')
+# def login(request):
+#     return render(request, 'users/login.html')
 
 def authenticate(request):
+    print 'this is authenticate*******************'
     if request.method == 'POST':
         result = User.objects.validate_login(request.POST)
         print result
         if result['status'] == False:
             #generate error message
             messages.error(request, result['error'])
-            return redirect('/users/login')
+            return redirect('/users/new')
         else:
             request.session['user_id'] = result['user'].id
+            request.session['name'] = result['user'].name
             return redirect('/users/success')
 
 def logout(request):
+    print 'this is logout***************'
     request.session.flush()
     return redirect('/')

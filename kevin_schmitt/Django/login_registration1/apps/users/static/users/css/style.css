@@ -1,0 +1,12 @@
+#error {
+    color: red;
+}
+body{
+    background-color: #c9e0ed;
+}
+.half_size{
+    display: inline-block;
+    width: 48%;
+    border: 3px solid black;
+    vertical-align: top;
+}
