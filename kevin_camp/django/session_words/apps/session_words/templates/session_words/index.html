@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		{% load static %}
+		<link rel="stylesheet" href="{% static 'css/style.css' %}">
+		<title>Session Words</title>
+	</head>
+	<body>
+		<div class="container">
+			<h1>Session Words</h1>
+			<div class="left_half">
+				<h2>Add a new word</h2>
+				<form action="/words" method="post">
+					{% csrf_token %}
+					<div >
+						<input type="text" name="word">
+					</div>
+					<div>
+						<label>Choose a color</label>
+					</div>
+					<div>
+						<input type="radio" name="color" value="red">Red
+					</div>
+					<div>
+						<input type="radio" name="color" value="green">Green
+					</div>
+					<div>
+						<input type="radio" name="color" value="blue">Blue
+					</div>
+					<div>
+						<input type="radio" name="font">Show in BIG fonts!
+					</div>
+						<input type="submit" value="Add to session">
+				</form>
+				<div>
+					{% if messages %}
+						{% for message in messages %}
+							<p class="error">{{ message }}</p>
+						{% endfor %}
+					{% endif %}
+				</div>
+			</div>
+
+			<div class="right_half">
+				<div>
+					<form class="clear" action="/reset" method="post">
+					{% csrf_token %}
+						<input type="submit" value="Clear Session">
+					</form>
+				</div>
+				<div>
+					{% for word in request.session.word_array %}
+						<p class = "{{ word.color }} {{ word.font_size }}">{{ word.value }} - {{ word.time }}</p>
+					{% endfor %}
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

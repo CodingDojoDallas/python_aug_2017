@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	{% load static %}
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="{% static 'users/css/style.css' %}">
+	<title>Login Registration</title>
+</head>
+
+<body>
+
+	<div class="container">
+		<h1>Welcome!</h1>
+		<div class="register">
+			<h2>Register</h2>
+			<form class="form" action="/users/create" method="post">
+				{% csrf_token %}
+				<div class="input">
+					<label>Name:</label>
+					<input type="text" name="name">
+				</div>
+				<div class="input">
+					<label>Username:</label>
+					<input type="text" name="user_name">
+				</div>
+				<div class="input">
+					<label>Password:</label>
+					<input type="password" name="password">
+				</div>
+				<p>*Password should be at least 8 characters</p>
+				<div class="input">
+					<label>Confirm PW:</label>
+					<input type="password" name="confirm_p">
+				</div>
+				<div class="submit">
+					<input type="submit" value="Register">
+				</div>
+			</form>
+		</div>
+		<div>
+		{% if messages %}
+			{% for error in messages %}
+				<p class="errors">{{ error }}</p>
+			{% endfor %}
+		{% endif %}
+		</div>
+		<div class="login">
+			<h2>Login</h2>
+			<form class="form" action="/users/authenticate" method="post">
+				{% csrf_token %}
+				<div class="input">
+					<label>Username:</label>
+					<input type="text" name="user_name">
+				</div>
+				<div class="input">
+					<label>Password:</label>
+					<input type="password" name="password">
+				</div>
+				<div class="submit">
+					<input type="submit" value="Login">
+				</div>
+			</form>
+		</div>
+	</div>
+</body>
+
+</html>
